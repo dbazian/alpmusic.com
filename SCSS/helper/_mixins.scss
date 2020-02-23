@@ -1,0 +1,56 @@
+/* MIXIN */
+
+@mixin flex-box($flex-direction: initial, $justify-content: initial, $align-items: initial, $flex-wrap: initial) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin animation-pos($width, $height, $opacity: 1, $z-index: 0) {
+    position: absolute;
+     width: $width;
+     height: $height;
+     opacity: $opacity;
+     z-index: $z-index;
+}
+
+@mixin note-style($left) {
+    &:hover { width: 6rem; }
+    left: $left;
+    width: 5rem;
+    transform: translateY(-100vh);
+    position: absolute;
+    opacity: 0;
+    transition: width 1s;
+    cursor: pointer;
+}
+
+@mixin size-position($width, $height, $margin) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+}
+
+@mixin font-style($family, $color, $size, $align: center) {
+font-family: $family;
+color: $color;
+font-size: $size;
+text-align: $align;
+}
+
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 800px) { @content; }
+
+    } @else if $size == tablet-down-2 {
+      @media (max-width: 900px) { @content; }
+
+    } @else if $size == tablet-down1 {
+      @media (max-width: 1200px) { @content; }
+      
+    } @else if $size == big-desktop-up {
+      @media (min-width: 2000px) { @content; }
+    }
+  }

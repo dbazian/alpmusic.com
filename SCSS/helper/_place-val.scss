@@ -1,0 +1,47 @@
+
+/* VARIABLES */
+
+$main-text-color: #262626;
+$brand-color: #009DD1;
+$background-color: white;
+$secondary-accent:   #00BFFF;
+$third-accent: rgb(180, 180, 180);
+
+$main-font: 'miller-display', 'times', 'serif';
+$secondary-font: 'forma-djr-display', sans-serif;
+
+$standard-border: 6px solid #272525;
+$contact-border: $secondary-accent 6px solid;
+$main-shadow: 2px 2px 2px $secondary-accent;
+
+/* PLACEHOLDERS */
+
+%header-links {
+    &:hover { color: $secondary-accent; }
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+    font-family: $main-font;
+    transition: color .6s ease;
+}
+
+%full {
+    height: 100%;
+    width: 100%;
+}
+
+%max {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+%form-param {
+    width: 35rem;
+    text-align: center;
+    height: 7vh;
+    margin: .5rem 0px;
+    font-size: 1.5rem;
+    border: $standard-border;
+    box-shadow: 0 8px 6px -6px black;
+}

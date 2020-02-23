@@ -1,0 +1,526 @@
+@import "helper/mixins";
+@import "helper/place-val";
+@import "helper/animations";
+
+/* WHOLE PAGE */
+
+html {
+    font-size: 16px;
+    overflow-y: hidden;
+
+    body { 
+        @include size-position(auto, 100vh, 0);
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+
+        .mobile-container {
+            display: none;
+            @include for-size(phone-only) {
+                @include size-position(auto, 100%, 0);
+                @include flex-box(initial, center, center);
+                background-color: black;
+            }
+
+        .mobile-pic {
+            display: none;
+            @include for-size(phone-only) {
+                display: block;
+                width: 100%;           }
+            }
+        }
+    }
+}
+        
+/* EACH PAGE */
+
+.container {
+    @extend %full;
+    scroll-snap-align: start;
+    overflow: hidden;
+    @include for-size(phone-only) {
+        display: none;
+    }
+}
+
+/* NAV BAR */
+
+nav {
+    @include flex-box(row center center);
+    @include size-position(100%, 7rem, auto);
+    position: relative;
+    background-color: $main-text-color;
+    overflow: hidden;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-image-source: linear-gradient(45deg, $main-text-color, $brand-color, $secondary-accent, $brand-color, $brand-color, $secondary-accent, $brand-color, $main-text-color);
+    border-image-slice: 1;
+    
+    .header-side {
+        @include flex-box(initial, center, center);
+        width: 40vw;
+
+        a { @extend %header-links;
+            @include for-size(tablet-down1) {
+                font-size: 2rem;
+            }    
+            @include for-size(tablet-down2) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+      
+    .header-center { 
+        @include flex-box(initial, center, center);
+        @include size-position(20vw, auto, 0 1.2rem 0 0 );
+        
+            
+        p {
+            @include font-style($main-font, white, 4rem);
+            letter-spacing: 2px;
+            vertical-align: center;
+        }
+
+        #logo-title { 
+            width: 21vw;
+        }
+    }
+}
+
+/* LIBRARY */
+    
+#library nav { z-index: 5; }
+
+.library-under-nav { 
+    height: calc(100% - 8rem);
+    text-align: center;
+
+    h1 {
+        @include font-style($main-font, $main-text-color, 1.5rem); 
+        margin: 1rem 0 0 0;
+        padding: 1rem 0;
+        display: inline-block;
+    }
+
+    .blue-text { 
+        &:hover { color: $secondary-accent; }
+        @include font-style($main-font, $brand-color, 1.5rem);
+        text-decoration: none;
+        transition: color 1s;
+    }
+
+    .animation-box {
+        @include flex-box(initial, center, center);
+        position: relative;
+        height: 15rem;
+
+        .white-bg-slide {
+            @include animation-pos(100%, 15rem, 1, 3);
+            background-color: $background-color;
+            animation: slow-slide 4s forwards;
+        }
+
+        .staff { @include animation-pos(60rem, 10rem, 1, 1); }
+
+        .logo-notes { 
+            @include animation-pos(60rem, 10rem, 1, 2);
+            @include flex-box(row, initial, center);
+            position: relative;
+
+            .logo { width: 16rem; }
+
+            #note1 { 
+                    @include note-style(18rem);
+                    animation: note-animation1 3s .5s forwards; }
+
+            #note2 { 
+                    @include note-style(26rem); 
+                    animation: note-animation2 3s 1s forwards; }
+
+            #note3 { 
+                    @include note-style(34rem);
+                    animation: note-animation3 3s 1.5s forwards; }
+
+            #note4 { 
+                    @include note-style(42rem); 
+                    animation: note-animation4 3s 2s forwards; }
+
+            #note5 { 
+                    @include note-style(50rem);
+                    animation: note-animation5 3s 3s forwards; }
+            }
+        }
+
+    .below-animation { position: relative; 
+
+        .white-bg-slide {
+            @include animation-pos(100%, 100%, 1, 3);
+            background-color: $background-color;
+            animation: slow-slide 3s 5s forwards;
+        }
+        
+        p {
+            @include font-style($secondary-font, $main-text-color, 1.5rem);
+            @include size-position(auto, 2rem, 0);
+            padding: 0 0 1rem 0;
+
+            img { width: 1.5rem; }
+        }
+
+        .song-information {
+            @include size-position(40rem, 3rem, 1rem auto);
+            text-align: center;
+
+            p { 
+                padding-top: 1rem; 
+                display: inline-block;
+            }
+
+            #song-switch-title {
+                @include font-style($secondary-font, $brand-color, 1rem);
+                margin-right: 1rem;
+            }
+
+            #song-switch-album {
+                @include font-style($secondary-font, $brand-color, 1rem);
+                margin: 0 1rem;
+            }
+        }
+        
+        .music-player { 
+            @include flex-box (initial, center, center);
+            @include size-position(50rem, 3rem, auto);
+
+            .icons {
+                &:hover { opacity: 1; }
+                width: 3rem;
+                opacity: .5;
+                transition: opacity .5s;
+                margin-right: 1rem;
+            }
+
+                #pause { display: block; }
+                #play { display: none; }
+                #mute { display: none; }
+                #volume { display: block; }
+            
+            .slider {
+                &:hover { opacity: 1; }
+                @include size-position(100%, .5rem, auto);
+                border-radius: 5px;
+                appearance: none;
+                background: $secondary-accent;
+                opacity: .7;
+                transition: opacity .2s;
+            }
+
+            .slider::-webkit-slider-thumb {
+                @include size-position(1rem, 1rem, initial);
+                appearance: none;
+                border-radius: 50%;
+                background: $brand-color;
+                cursor: pointer;   
+            }
+
+            .slider::-ms-thumb {
+                @include size-position(1rem, 1rem, initial);
+                appearance: none;
+                border-radius: 50%;
+                background: $brand-color;
+                cursor: pointer;   
+            }
+        }
+    }
+}
+
+/* APP */
+
+.app-background {
+    @include flex-box(initial, center, center);
+    position: relative;
+    height: calc(100% - 8rem);
+
+    #box-logo {
+        width: 45%;
+        opacity: .1;
+    }
+}
+.app-under-nav {
+    @include flex-box(row, center, center);
+    @include size-position(100%, calc(100% - 10rem), auto);
+    position: absolute;
+
+    .app-container {
+        @include flex-box(column, center, center);
+        margin: 0 15rem 2rem 0;
+        text-align: center;
+
+        .text-box {
+            display: inline-block;
+        }
+ 
+            h2  { 
+                @include font-style($main-font, $main-text-color, 2.5vw);
+                margin: 0 0 2rem 0; 
+                display: inline-block;
+            }
+
+            #blue-text2 {
+                @include font-style($main-font, $brand-color, 2.5vw);
+            }
+
+            p { 
+                @include font-style($secondary-font, $main-text-color, 1.5vw); 
+                margin: 0;
+            }
+        
+            #blue-text { 
+                @include font-style($secondary-font, $brand-color, 1.5vw); 
+                margin: 0 0 2rem 0;
+        }
+
+        .app-links { @include flex-box(row, center, center);
+
+            img { width: 12rem; margin: 1rem; border-radius: 1vw; }
+        }
+    }
+    
+    .app-container2 {
+        @include flex-box(initial, center, center);
+        flex-basis: fill;
+        flex-shrink: 1;
+        #app-screen { width: 17vw; flex-shrink: 1; }
+    }
+}
+
+/* APP SCREEN ANIMATION */
+
+.app-visible {
+    opacity:0;
+    transition: opacity 1s;
+}
+      
+.slide {
+    animation-name: slide; 
+    animation-duration: 1s;
+    opacity: 1;
+}
+
+/* ABOUT */
+
+#about { background-color: black;
+
+    .about-under-nav {
+        @include flex-box(initial, center, initial);
+        @include size-position(100vw, calc(100% - 10rem), auto);
+        background-color: black;
+
+        video {
+            @extend %max;
+            outline: none;
+        }
+    }
+}
+/* CLIENTS */
+
+.clients-under-nav {
+    @include flex-box(initial, center, center);
+    @include size-position(100%, calc(100% - 8rem), auto);
+    overflow: hidden;
+
+    #client-pic {
+        max-width: 100%;
+        width: 75%;
+        transition: width 1s;
+    }
+
+    .client-grow {
+        animation-name: grow;
+        animation-duration: 2s;
+    }
+    
+    #client-pic-small {
+        @extend %max;
+        display: none;
+    }
+}
+
+/* TEAM */
+
+.full-team-under-nav { 
+    display: block;
+     
+    .learn-more {
+        @include flex-box(row, center, center);
+        @include size-position(100%, 8vh, 0);
+        @include font-style($main-font, $main-text-color, 1vw);
+
+        .blue-text { color: $brand-color; }
+    }
+
+    .team-under-nav {
+        @include flex-box(column, center, center, nowrap);
+        @include size-position(100%, 75%, auto);
+        position: relative;
+        overflow: hidden;
+
+        .team-photo-container { @include flex-box(row, center, center);
+            
+            #darrell-animation, #nick-animation, #dave-animation {
+                flex-direction: column;
+                min-height: 100%;
+            
+                #darrell, #nick, #dave  { 
+                    @include size-position(24.2vw, auto, 0 1em);
+                    cursor: pointer;
+                    max-width: 100%;
+                }
+
+                .name { 
+                    @include flex-box(row, center, center);
+                    @include font-style($secondary-font, $main-text-color, 1.8vw); }
+            }
+                
+                .blue-text {
+                    @include font-style($main-font, $brand-color, 1.8vw);
+                    font-style: italic;
+                    margin: 0; 
+                }
+
+            #darrell-info, #nick-info, #dave-info {
+                @include font-style($secondary-font, $main-text-color, 1.8vw);
+                width: 40rem;
+                max-width: 50vw;
+                max-height: 20vw;
+
+                .blue-text { 
+                    @include font-style($secondary-font, $brand-color, 1.8vw);
+                    margin: 0;
+                    display: inline-block;
+                }
+            }
+            
+            .hidden { display: none; }
+        }
+    }
+}
+
+/* TEAM IPAD */
+
+    .team-under-nav-pad { display: none;
+
+        .team-head { 
+            text-align: center;
+            font-size: 3vw;
+            margin: 1rem 0;
+        }
+
+        .both-columns {
+            @include flex-box (row, initial, initial, nowrap);
+            @extend %full;
+        
+            .left-column, .right-column {
+                width: 50%;
+                flex-direction: column;
+            
+                #darrell-container-pad, #dave-container-pad, #nick-container-pad {
+                    @include flex-box (initial, initial, column);
+
+                    #darrell-pad, #nick-pad, #dave-pad  { width: 45vw; }
+
+                    #darrell-full-pic, #dave-full-pic, #nick-full-pic {
+                        display: none;
+                        width: 45vw;
+                    }
+                    .name-pad {
+                        font-size: 3vw;
+                        text-align: center;
+                        width: 39vw;
+                        margin-top: .5em;
+                    }
+                }
+
+                #darrell-info-pad, #nick-info-pad, #dave-info-pad {
+                    font-size: 3vw;
+                    text-align: center;
+                    align-items: center;
+                    width: 45vw;
+                    display: none;
+                }
+            }
+        }
+    }
+
+/* Contact */
+
+.contact-under-nav {
+    @include flex-box(column, center, center);
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: .5rem;
+
+    form {
+    
+        p { margin: 0;
+        font-family: $main-font;
+    }
+
+        input[type=text] {
+            &:focus { border: $contact-border }
+            @extend %form-param;
+        }
+
+        input[type=email] {
+            &:focus { border: $contact-border }
+            @extend %form-param;
+        }
+
+        textarea {                 
+            @extend %form-param; 
+            height: 15vh;
+            &:focus { border: $contact-border } 
+        }
+
+        button[type=submit] {
+            &:hover { background-color: $secondary-accent; }
+            &:active { 
+                margin-top: 1rem; 
+                margin-bottom: .5rem; 
+                box-shadow: 0px 0px; 
+            }
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0px 8px 9px 0px;
+            @extend %form-param;
+            width: 15rem;
+            margin: .5rem 0 1rem 0;
+            background-color: white;
+        }
+    }
+
+    .links {
+        text-align: center;
+        margin-bottom: 2em;
+        
+
+        .small-link {
+            &:hover { width: 6rem; }
+            display: inline-block;
+            width: 5rem;
+            transition: width 1s;
+        }
+    }
+}
+
+
+/* Scrollbar */
+
+
+::-webkit-scrollbar { width: 1vw; }
+::-webkit-scrollbar-track { background: $third-accent; }  
+::-webkit-scrollbar-thumb { background: $brand-color; &:hover { background: $secondary-accent; } }
+
+::-ms-scrollbar { width: 1vw; }
+::-ms-scrollbar-track { background: $third-accent; }
+::-ms-scrollbar-thumb { background: $brand-color; &:hover { background: $secondary-accent; } }
