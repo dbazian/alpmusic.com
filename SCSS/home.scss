@@ -254,6 +254,7 @@ nav {
     @include flex-box(initial, center, center);
     position: relative;
     height: calc(100% - 8rem);
+    overflow: hidden;
 
     #box-logo {
         width: 45%;
@@ -264,6 +265,7 @@ nav {
     @include flex-box(row, center, center);
     @include size-position(100%, calc(100% - 10rem), auto);
     position: absolute;
+
 
     .app-container {
         @include flex-box(column, center, center);

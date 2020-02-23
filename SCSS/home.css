@@ -773,6 +773,7 @@ nav .header-center #logo-title {
       flex-wrap: initial;
   position: relative;
   height: calc(100% - 8rem);
+  overflow: hidden;
 }
 
 .app-background #box-logo {
