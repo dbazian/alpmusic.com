@@ -477,8 +477,9 @@ nav {
     margin-top: .5rem;
 
     form {
-    
-        p { margin: 0;
+        
+        p
+        label { margin: 0;
         font-family: $main-font;
     }
 

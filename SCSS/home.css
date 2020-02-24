@@ -1247,7 +1247,7 @@ nav .header-center #logo-title {
   margin-top: .5rem;
 }
 
-.contact-under-nav form p {
+.contact-under-nav form p label {
   margin: 0;
   font-family: "miller-display", "times", "serif";
 }
