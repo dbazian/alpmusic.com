@@ -119,7 +119,7 @@ nav {
             animation: slow-slide 4s forwards;
         }
 
-        .staff { @include animation-pos(60rem, auto, 1, 1); }
+        .staff { @include animation-pos(60rem, 10rem, 1, 1); }
 
         .logo-notes { 
             @include animation-pos(60rem, 10rem, 1, 2);
@@ -420,6 +420,52 @@ nav {
         }
     }
 }
+
+/* TEAM IPAD */
+
+    .team-under-nav-pad { display: none;
+
+        .team-head { 
+            text-align: center;
+            font-size: 3vw;
+            margin: 1rem 0;
+        }
+
+        .both-columns {
+            @include flex-box (row, initial, initial, nowrap);
+            @extend %full;
+        
+            .left-column, .right-column {
+                width: 50%;
+                flex-direction: column;
+            
+                #darrell-container-pad, #dave-container-pad, #nick-container-pad {
+                    @include flex-box (initial, initial, column);
+
+                    #darrell-pad, #nick-pad, #dave-pad  { width: 45vw; }
+
+                    #darrell-full-pic, #dave-full-pic, #nick-full-pic {
+                        display: none;
+                        width: 45vw;
+                    }
+                    .name-pad {
+                        font-size: 3vw;
+                        text-align: center;
+                        width: 39vw;
+                        margin-top: .5em;
+                    }
+                }
+
+                #darrell-info-pad, #nick-info-pad, #dave-info-pad {
+                    font-size: 3vw;
+                    text-align: center;
+                    align-items: center;
+                    width: 45vw;
+                    display: none;
+                }
+            }
+        }
+    }
 
 /* Contact */
 
