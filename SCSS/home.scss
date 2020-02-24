@@ -73,7 +73,6 @@ nav {
     .header-center { 
         @include flex-box(initial, center, center);
         @include size-position(20vw, auto, 0 1.2rem 0 0 );
-        
             
         p {
             @include font-style($main-font, white, 4rem);
@@ -298,7 +297,7 @@ nav {
 
         .app-links { @include flex-box(row, center, center);
 
-            img { width: 18rem; margin: 1rem; border-radius: 1vw; }
+            img { width: 10rem; margin: 1rem; border-radius: 1vw; }
         }
     }
     
