@@ -15,7 +15,7 @@ nav .header-side a:hover {
   color: #00BFFF;
 }
 
-.container, .team-under-nav-pad .both-columns {
+.container {
   height: 100%;
   width: 100%;
 }
@@ -104,8 +104,8 @@ nav .header-side a:hover {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(2rem);
-            transform: translateY(2rem);
+    -webkit-transform: translateY(2.4rem);
+            transform: translateY(2.4rem);
     opacity: 1;
   }
 }
@@ -114,8 +114,8 @@ nav .header-side a:hover {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(2rem);
-            transform: translateY(2rem);
+    -webkit-transform: translateY(2.4rem);
+            transform: translateY(2.4rem);
     opacity: 1;
   }
 }
@@ -125,8 +125,8 @@ nav .header-side a:hover {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0.5rem);
-            transform: translateY(0.5rem);
+    -webkit-transform: translateY(0.9rem);
+            transform: translateY(0.9rem);
     opacity: 1;
   }
 }
@@ -136,8 +136,8 @@ nav .header-side a:hover {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0.5rem);
-            transform: translateY(0.5rem);
+    -webkit-transform: translateY(0.9rem);
+            transform: translateY(0.9rem);
     opacity: 1;
   }
 }
@@ -191,8 +191,8 @@ nav .header-side a:hover {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0.7rem);
-            transform: translateY(0.7rem);
+    -webkit-transform: translateY(1.1rem);
+            transform: translateY(1.1rem);
     opacity: 1;
   }
 }
@@ -202,8 +202,8 @@ nav .header-side a:hover {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0.7rem);
-            transform: translateY(0.7rem);
+    -webkit-transform: translateY(1.1rem);
+            transform: translateY(1.1rem);
     opacity: 1;
   }
 }
@@ -473,7 +473,7 @@ nav .header-center #logo-title {
 .library-under-nav .animation-box .staff {
   position: absolute;
   width: 60rem;
-  height: 10rem;
+  height: auto;
   opacity: 1;
   z-index: 1;
 }
@@ -1140,87 +1140,6 @@ nav .header-center #logo-title {
 }
 
 .full-team-under-nav .team-under-nav .team-photo-container .hidden {
-  display: none;
-}
-
-/* TEAM IPAD */
-.team-under-nav-pad {
-  display: none;
-}
-
-.team-under-nav-pad .team-head {
-  text-align: center;
-  font-size: 3vw;
-  margin: 1rem 0;
-}
-
-.team-under-nav-pad .both-columns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
-  -webkit-box-align: initial;
-      -ms-flex-align: initial;
-          align-items: initial;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.team-under-nav-pad .both-columns .left-column, .team-under-nav-pad .both-columns .right-column {
-  width: 50%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: initial;
-  -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-          flex-direction: initial;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
-  -webkit-box-align: column;
-      -ms-flex-align: column;
-          align-items: column;
-  -ms-flex-wrap: initial;
-      flex-wrap: initial;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad #darrell-pad, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #nick-pad, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #dave-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad #darrell-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad #nick-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad #dave-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad #darrell-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad #nick-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad #dave-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #darrell-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #nick-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #dave-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad #darrell-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad #nick-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad #dave-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad #darrell-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad #nick-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad #dave-pad {
-  width: 45vw;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .left-column #dave-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .left-column #dave-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .left-column #dave-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .left-column #nick-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .left-column #nick-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .left-column #nick-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .right-column #dave-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .right-column #dave-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .right-column #dave-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .right-column #nick-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .right-column #nick-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .right-column #nick-container-pad #nick-full-pic {
-  display: none;
-  width: 45vw;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad .name-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad .name-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad .name-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad .name-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad .name-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad .name-pad {
-  font-size: 3vw;
-  text-align: center;
-  width: 39vw;
-  margin-top: .5em;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-info-pad, .team-under-nav-pad .both-columns .left-column #nick-info-pad, .team-under-nav-pad .both-columns .left-column #dave-info-pad, .team-under-nav-pad .both-columns .right-column #darrell-info-pad, .team-under-nav-pad .both-columns .right-column #nick-info-pad, .team-under-nav-pad .both-columns .right-column #dave-info-pad {
-  font-size: 3vw;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 45vw;
   display: none;
 }
 
