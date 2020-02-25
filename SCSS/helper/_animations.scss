@@ -6,6 +6,12 @@
     100% { width: 75%; }
   }
 
+  @keyframes small-grow {
+    0% { width: 100%; }
+    50% { width: 110%; }
+    100% { width: 100%; }
+  }
+
   /* SLIDES */
 
 @keyframes slow-slide { 

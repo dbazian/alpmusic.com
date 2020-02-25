@@ -26,15 +26,39 @@
 <audio class="song" id="songFour" preload="auto"><source src="Audio/Queen_Annes_Revenge.wav" type="audio/wav"></audio>
 <audio class="song" id="songFive" preload="auto"><source src="Audio/Sun_Kiss.wav" type="audio/wav"></audio>
 
-  <div class="mobile-container">
-    <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">
-  <img class="mobile-pic" src="IMG/ALP-Music-Logo-B.png"></a>
-  </div>
+<!-- MOBILE SITE -->
+
+<!-- Mobile Nav Bar -->
+
+  <nav class="mobile-nav">
+      <div id="myLinks">
+          <a href="https://alpmusic.sourceaudio.com">Library</a>
+          <a href="#m-home">Home</a>
+          <a href="#app">App</a>
+          <a href="#about">About</a>
+          <a href="#clients">Clients</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+          
+      </div>
+          <img id="nav-bar-image" src="IMG/nav-bar.svg" onclick="myFunction()">
+  </nav>
+
+<!-- Mobile Home Page-->
+
+<div class="mobile-home"><a name="m-home"></a>
+    <img id="mobile-logo" src="IMG/logo-full.svg">
+    <div id="main-text">
+      <h2>High Quality</h2>
+      <h2>Quick License</h2>
+      <h1>Music Library</h1>
+    </div>
+</div>
 
 <!-- LIBRARY SECTION -->
 
 <div class="container" id="library" role="presentation"><a name="home"></a>
-  <nav>
+  <nav class="desktop-nav">
     <div class="header-side" role="presentation">
         <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
         <a href="#app">App</a>
@@ -92,7 +116,7 @@
 <!-- APP SECTION -->
 
 <div class="container" id="app"><a name="app"></a>
-  <nav>
+  <nav class="desktop-nav">
     <div class="header-side">
       <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
       <a href="#home">Home</a>
@@ -136,7 +160,7 @@
 <!-- ABOUT SECTION-->
 
 <div class="container" id="about"><a name="about"></a>
-  <nav>
+  <nav class="desktop-nav">
     <div class="header-side" role="navigation">
       <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
       <a href="#app">App</a>
@@ -159,7 +183,7 @@
 <!-- CLIENTS SECTION-->
 
 <div class="container" id="clients"><a name="clients"></a>
-  <nav>
+  <nav class="desktop-nav">
     <div class="header-side" role="navigation">
       <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
       <a href="#app">App</a>
@@ -180,10 +204,38 @@
   </div>
 </div>
 
-<!-- TEAM SECTION-->
+<!-- TEAM SECTION -->
 
 <div class="container" id="team"><a name="team"></a>
-  <nav>
+
+<!-- Mobile Team -->
+
+<div class="mobile-team">
+
+  <div class="m-team-pic">
+    <img id="nick-m" class="m-team-pic" src="IMG/Nick.jpg" alt="Nick Marko C.E.O" title="Nick Marko C.E.O">
+    <p>Nick Marko - C.E.O</p>
+  </div>
+  
+  <div class="m-team-pic">
+    <img id="darrell-m" class="m-team-pic"  src="IMG/Darrell.jpg" alt="Darrell Bazian C T O" title="Darrell Bazian C.T.O">
+    <p>Darrell Bazian - C.T.O</p>
+  </div>
+
+  <div class="m-team-pic">
+    <img  id="dave-m" class="m-team-pic"  src="IMG/Dave.jpg" alt="David Karbon C.F.O" title="David Karbon C.F.O">
+    <p>Dave Karbon - C.F.O</p>
+  </div>
+  
+</div>
+
+
+
+
+
+
+<!-- Desktop Team -->
+  <nav class="desktop-nav">
     <div class="header-side" role="navigation">
       <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
       <a href="#app">App</a>
@@ -222,45 +274,12 @@
     </div>
   </div>
 </div>
-
-
-<!-- TEAM SECTION FOR IPAD -->
-
-      <div class="team-under-nav-pad">
-
-        <div class="team-head">Tap our pictures to learn more.</div>
-        <div class="both-columns" role="presentation">
-          <div class="left-column" role="presentation">
-            <div id="nick-container-pad" role="presentation">
-              <img id="nick-pad" src="IMG/NickPad.jpg" alt="Nick Marko C.E.O ALP Music">
-              <img id="nick-full-pic" src="IMG/Nick.jpg" alt="Nick Marko C.E.O ALP Music">
-              <div class="name-pad" id="nm-name-pad">Nick Marko - C.E.O</div>   
-            </div>  
-            <div id="darrell-info-pad">Darrell has recorded, mixed and mastered the ALP Music Library.  He is proficient in Pro Tools, Adobe Suites, HTML, CSS, Javascript, Wordpress and more.</div>
-            <div id="dave-container-pad">
-                <img  id="dave-pad" src="IMG/DavePad.jpg" alt="David Karbon C.F.O ALP Music">
-                <img  id="dave-full-pic" src="IMG/Dave.jpg" alt="David Karbon C.F.O ALP Music">
-                <div class="name-pad" id="dk-name-pad">David Karbon - C.F.O</div>
-              </div>
-            </div>
-    
-            <div class="right-column" role="presentation">
-              <div id="nick-info-pad">Former Sony/BMG recording artist produced by Michael Ivins of the Flaming Lips. Marko a multi-instrumentalist composed the ALP Catalog with Bazian.</div>
-              <div id="darrell-container-pad" role="presentation">
-                <img id="darrell-pad" src="IMG/DarrellPad.jpg" alt="Darrell Bazian C.T.O ALP Music">
-                <img id="darrell-full-pic" src="IMG/Darrell.jpg" alt="Darrell Bazian C.T.O ALP Music">
-                <div class="name-pad" id="db-name-pad">Darrell Bazian - C.T.O</div>
-              </div>
-              <div id="dave-info-pad">Dave serves as ALP Music's CFO and Project Consultant, where he helps clients select the right music for their project within a budget they can afford.</div>
-            </div>
-          </div>
-      </div>
-  </div>
+</div>
 
 <!-- CONTACT SECTION-->
 
 <div class="contact container"><a name="contact"></a>
-  <nav>
+  <nav class="desktop-nav">
     <div class="header-side" role="navigation">
       <a href="https://alpmusic.sourceaudio.com" target="blank">Library</a>
       <a href="#app">App</a>

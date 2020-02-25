@@ -1,7 +1,7 @@
 /* MIXIN */
 /* VARIABLES */
 /* PLACEHOLDERS */
-nav .header-side a {
+.desktop-nav .header-side a {
   margin: 0 1rem;
   text-decoration: none;
   color: white;
@@ -11,16 +11,16 @@ nav .header-side a {
   transition: color .6s ease;
 }
 
-nav .header-side a:hover {
+.desktop-nav .header-side a:hover {
   color: #00BFFF;
 }
 
-.container, .team-under-nav-pad .both-columns {
+.container {
   height: 100%;
   width: 100%;
 }
 
-#about .about-under-nav video, .clients-under-nav #client-pic-small {
+#about .about-under-nav video {
   max-height: 100%;
   max-width: 100%;
 }
@@ -57,6 +57,30 @@ nav .header-side a:hover {
   }
   100% {
     width: 75%;
+  }
+}
+
+@-webkit-keyframes small-grow {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 110%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes small-grow {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 110%;
+  }
+  100% {
+    width: 100%;
   }
 }
 
@@ -261,64 +285,115 @@ html body {
   height: 100vh;
   margin: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
-html body .mobile-container {
+/* MOBILE SITE */
+.mobile-nav {
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
   display: none;
 }
 
-@media (max-width: 800px) {
-  html body .mobile-container {
-    width: auto;
-    height: 100%;
-    margin: 0;
+@media (max-width: 1024px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.mobile-nav #myLinks {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: #262626;
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.mobile-nav #myLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 8vw;
+  display: block;
+  padding: 1rem;
+}
+
+.mobile-nav #nav-bar-image {
+  margin: 1rem;
+  float: right;
+}
+
+.mobile-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: none;
+  scroll-snap-align: start;
+  background-color: black;
+}
+
+@media (max-width: 1024px) {
+  .mobile-home {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    background-color: black;
   }
 }
 
-html body .mobile-container .mobile-pic {
-  display: none;
+.mobile-home #mobile-logo {
+  width: 80vw;
+  margin-top: 5vh;
 }
 
-@media (max-width: 800px) {
-  html body .mobile-container .mobile-pic {
-    display: block;
-    width: 100%;
-  }
+.mobile-home #main-text {
+  margin-bottom: 10vh;
 }
 
+.mobile-home #main-text h2 {
+  font-family: sans-serif;
+  color: white;
+  font-size: 8vw;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.mobile-home #main-text h1 {
+  font-family: sans-serif;
+  color: #00BFFF;
+  font-size: 8vw;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* DESKTOP SITE */
 /* EACH PAGE */
 .container {
   scroll-snap-align: start;
   overflow: hidden;
 }
 
-@media (max-width: 800px) {
-  .container {
-    display: none;
-  }
-}
-
 /* NAV BAR */
-nav {
+.desktop-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,7 +421,13 @@ nav {
   border-image-slice: 1;
 }
 
-nav .header-side {
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+.desktop-nav .header-side {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -366,12 +447,12 @@ nav .header-side {
 }
 
 @media (max-width: 1200px) {
-  nav .header-side a {
+  .desktop-nav .header-side a {
     font-size: 2rem;
   }
 }
 
-nav .header-center {
+.desktop-nav .header-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,7 +473,7 @@ nav .header-center {
   margin: 0 1.2rem 0 0;
 }
 
-nav .header-center p {
+.desktop-nav .header-center p {
   font-family: "miller-display", "times", "serif";
   color: white;
   font-size: 4rem;
@@ -401,11 +482,17 @@ nav .header-center p {
   vertical-align: center;
 }
 
-nav .header-center #logo-title {
+.desktop-nav .header-center #logo-title {
   width: 21vw;
 }
 
 /* LIBRARY */
+@media (max-width: 1024px) {
+  #library {
+    display: none;
+  }
+}
+
 #library nav {
   z-index: 5;
 }
@@ -776,9 +863,21 @@ nav .header-center #logo-title {
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .app-background {
+    height: 100%;
+  }
+}
+
 .app-background #box-logo {
   width: 45%;
   opacity: .1;
+}
+
+@media (max-width: 1024px) {
+  .app-background #box-logo {
+    width: 90%;
+  }
 }
 
 .app-under-nav {
@@ -803,7 +902,31 @@ nav .header-center #logo-title {
   position: absolute;
 }
 
+@media (max-width: 1024px) {
+  .app-under-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+}
+
 .app-under-nav .app-container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -823,6 +946,14 @@ nav .header-center #logo-title {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .app-under-nav .app-container {
+    width: 100%;
+    height: 50%;
+    margin: auto;
+  }
+}
+
 .app-under-nav .app-container .text-box {
   display: inline-block;
 }
@@ -836,11 +967,29 @@ nav .header-center #logo-title {
   display: inline-block;
 }
 
+@media (max-width: 1024px) {
+  .app-under-nav .app-container h2 {
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 5vw;
+    text-align: center;
+  }
+}
+
 .app-under-nav .app-container #blue-text2 {
   font-family: "miller-display", "times", "serif";
   color: #009DD1;
   font-size: 2.5vw;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .app-under-nav .app-container #blue-text2 {
+    font-family: sans-serif;
+    color: #00BFFF;
+    font-size: 5vw;
+    text-align: center;
+  }
 }
 
 .app-under-nav .app-container p {
@@ -851,12 +1000,30 @@ nav .header-center #logo-title {
   margin: 0;
 }
 
+@media (max-width: 1024px) {
+  .app-under-nav .app-container p {
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 3.5vw;
+    text-align: center;
+  }
+}
+
 .app-under-nav .app-container #blue-text {
   font-family: "forma-djr-display", sans-serif;
   color: #009DD1;
   font-size: 1.5vw;
   text-align: center;
   margin: 0 0 2rem 0;
+}
+
+@media (max-width: 1024px) {
+  .app-under-nav .app-container #blue-text {
+    font-family: sans-serif;
+    color: #00BFFF;
+    font-size: 3.5vw;
+    text-align: center;
+  }
 }
 
 .app-under-nav .app-container .app-links {
@@ -878,9 +1045,15 @@ nav .header-center #logo-title {
 }
 
 .app-under-nav .app-container .app-links img {
-  width: 10rem;
+  width: 13rem;
   margin: 1rem;
   border-radius: 1vw;
+}
+
+@media (max-width: 1024px) {
+  .app-under-nav .app-container .app-links img {
+    width: 30vw;
+  }
 }
 
 .app-under-nav .app-container2 {
@@ -899,16 +1072,25 @@ nav .header-center #logo-title {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  -ms-flex-preferred-size: fill;
-      flex-basis: fill;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .app-under-nav .app-container2 {
+    width: 100%;
+    height: 50%;
+    margin: auto;
+  }
 }
 
 .app-under-nav .app-container2 #app-screen {
   width: 17vw;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+}
+
+@media (max-width: 1024px) {
+  .app-under-nav .app-container2 #app-screen {
+    width: 30vw;
+  }
 }
 
 /* APP SCREEN ANIMATION */
@@ -980,11 +1162,23 @@ nav .header-center #logo-title {
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .clients-under-nav {
+    height: 100%;
+  }
+}
+
 .clients-under-nav #client-pic {
   max-width: 100%;
   width: 75%;
   -webkit-transition: width 1s;
   transition: width 1s;
+}
+
+@media (max-width: 1024px) {
+  .clients-under-nav #client-pic {
+    display: none;
+  }
 }
 
 .clients-under-nav .client-grow {
@@ -995,15 +1189,83 @@ nav .header-center #logo-title {
 }
 
 .clients-under-nav #client-pic-small {
+  width: 100%;
   display: none;
+  margin-top: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .clients-under-nav #client-pic-small {
+    display: block;
+  }
+}
+
+.clients-under-nav .client-small-grow {
+  -webkit-animation-name: small-grow;
+          animation-name: small-grow;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 /* TEAM */
-.full-team-under-nav {
+#team .mobile-team {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #team .mobile-team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    background-color: black;
+    overflow-y: hidden;
+    max-height: 100vh;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  #team .mobile-team .m-team-pic {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0 0 0;
+    min-width: 100%;
+    pointer-events: none;
+    scroll-snap-align: start;
+  }
+  #team .mobile-team .m-team-pic p {
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+#team .full-team-under-nav {
   display: block;
 }
 
-.full-team-under-nav .learn-more {
+@media (max-width: 1024px) {
+  #team .full-team-under-nav {
+    display: none;
+  }
+}
+
+#team .full-team-under-nav .learn-more {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1028,11 +1290,11 @@ nav .header-center #logo-title {
   text-align: center;
 }
 
-.full-team-under-nav .learn-more .blue-text {
+#team .full-team-under-nav .learn-more .blue-text {
   color: #009DD1;
 }
 
-.full-team-under-nav .team-under-nav {
+#team .full-team-under-nav .team-under-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1055,7 +1317,7 @@ nav .header-center #logo-title {
   overflow: hidden;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container {
+#team .full-team-under-nav .team-under-nav .team-photo-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1073,7 +1335,7 @@ nav .header-center #logo-title {
       flex-wrap: initial;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container #darrell-animation, .full-team-under-nav .team-under-nav .team-photo-container #nick-animation, .full-team-under-nav .team-under-nav .team-photo-container #dave-animation {
+#team .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-animation, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-animation {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1081,7 +1343,7 @@ nav .header-center #logo-title {
   min-height: 100%;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container #darrell-animation #darrell, .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation #nick, .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation #dave, .full-team-under-nav .team-under-nav .team-photo-container #nick-animation #darrell, .full-team-under-nav .team-under-nav .team-photo-container #nick-animation #nick, .full-team-under-nav .team-under-nav .team-photo-container #nick-animation #dave, .full-team-under-nav .team-under-nav .team-photo-container #dave-animation #darrell, .full-team-under-nav .team-under-nav .team-photo-container #dave-animation #nick, .full-team-under-nav .team-under-nav .team-photo-container #dave-animation #dave {
+#team .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation #darrell, #team .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation #nick, #team .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation #dave, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-animation #darrell, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-animation #nick, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-animation #dave, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-animation #darrell, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-animation #nick, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-animation #dave {
   width: 24.2vw;
   height: auto;
   margin: 0 1em;
@@ -1089,7 +1351,7 @@ nav .header-center #logo-title {
   max-width: 100%;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container #darrell-animation .name, .full-team-under-nav .team-under-nav .team-photo-container #nick-animation .name, .full-team-under-nav .team-under-nav .team-photo-container #dave-animation .name {
+#team .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation .name, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-animation .name, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-animation .name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1111,7 +1373,7 @@ nav .header-center #logo-title {
   text-align: center;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container .blue-text {
+#team .full-team-under-nav .team-under-nav .team-photo-container .blue-text {
   font-family: "miller-display", "times", "serif";
   color: #009DD1;
   font-size: 1.8vw;
@@ -1120,7 +1382,7 @@ nav .header-center #logo-title {
   margin: 0;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container #darrell-info, .full-team-under-nav .team-under-nav .team-photo-container #nick-info, .full-team-under-nav .team-under-nav .team-photo-container #dave-info {
+#team .full-team-under-nav .team-under-nav .team-photo-container #darrell-info, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-info, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-info {
   font-family: "forma-djr-display", sans-serif;
   color: #262626;
   font-size: 1.8vw;
@@ -1130,7 +1392,7 @@ nav .header-center #logo-title {
   max-height: 20vw;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container #darrell-info .blue-text, .full-team-under-nav .team-under-nav .team-photo-container #nick-info .blue-text, .full-team-under-nav .team-under-nav .team-photo-container #dave-info .blue-text {
+#team .full-team-under-nav .team-under-nav .team-photo-container #darrell-info .blue-text, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-info .blue-text, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-info .blue-text {
   font-family: "forma-djr-display", sans-serif;
   color: #009DD1;
   font-size: 1.8vw;
@@ -1139,88 +1401,7 @@ nav .header-center #logo-title {
   display: inline-block;
 }
 
-.full-team-under-nav .team-under-nav .team-photo-container .hidden {
-  display: none;
-}
-
-/* TEAM IPAD */
-.team-under-nav-pad {
-  display: none;
-}
-
-.team-under-nav-pad .team-head {
-  text-align: center;
-  font-size: 3vw;
-  margin: 1rem 0;
-}
-
-.team-under-nav-pad .both-columns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
-  -webkit-box-align: initial;
-      -ms-flex-align: initial;
-          align-items: initial;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.team-under-nav-pad .both-columns .left-column, .team-under-nav-pad .both-columns .right-column {
-  width: 50%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: initial;
-  -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-          flex-direction: initial;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
-  -webkit-box-align: column;
-      -ms-flex-align: column;
-          align-items: column;
-  -ms-flex-wrap: initial;
-      flex-wrap: initial;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad #darrell-pad, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #nick-pad, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #dave-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad #darrell-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad #nick-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad #dave-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad #darrell-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad #nick-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad #dave-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #darrell-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #nick-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #dave-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad #darrell-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad #nick-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad #dave-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad #darrell-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad #nick-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad #dave-pad {
-  width: 45vw;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .left-column #darrell-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .left-column #dave-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .left-column #dave-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .left-column #dave-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .left-column #nick-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .left-column #nick-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .left-column #nick-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .right-column #darrell-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .right-column #dave-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .right-column #dave-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .right-column #dave-container-pad #nick-full-pic, .team-under-nav-pad .both-columns .right-column #nick-container-pad #darrell-full-pic, .team-under-nav-pad .both-columns .right-column #nick-container-pad #dave-full-pic, .team-under-nav-pad .both-columns .right-column #nick-container-pad #nick-full-pic {
-  display: none;
-  width: 45vw;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-container-pad .name-pad, .team-under-nav-pad .both-columns .left-column #dave-container-pad .name-pad, .team-under-nav-pad .both-columns .left-column #nick-container-pad .name-pad, .team-under-nav-pad .both-columns .right-column #darrell-container-pad .name-pad, .team-under-nav-pad .both-columns .right-column #dave-container-pad .name-pad, .team-under-nav-pad .both-columns .right-column #nick-container-pad .name-pad {
-  font-size: 3vw;
-  text-align: center;
-  width: 39vw;
-  margin-top: .5em;
-}
-
-.team-under-nav-pad .both-columns .left-column #darrell-info-pad, .team-under-nav-pad .both-columns .left-column #nick-info-pad, .team-under-nav-pad .both-columns .left-column #dave-info-pad, .team-under-nav-pad .both-columns .right-column #darrell-info-pad, .team-under-nav-pad .both-columns .right-column #nick-info-pad, .team-under-nav-pad .both-columns .right-column #dave-info-pad {
-  font-size: 3vw;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 45vw;
+#team .full-team-under-nav .team-under-nav .team-photo-container .hidden {
   display: none;
 }
 
@@ -1247,7 +1428,17 @@ nav .header-center #logo-title {
   margin-top: .5rem;
 }
 
-.contact-under-nav form p label {
+.contact-under-nav form {
+  max-width: 90%;
+}
+
+@media (max-width: 1024px) {
+  .contact-under-nav form {
+    margin-top: 5rem;
+  }
+}
+
+.contact-under-nav form label {
   margin: 0;
   font-family: "miller-display", "times", "serif";
 }
@@ -1256,8 +1447,20 @@ nav .header-center #logo-title {
   border: #00BFFF 6px solid;
 }
 
+@media (max-width: 1024px) {
+  .contact-under-nav form input[type=text] {
+    width: 90vw;
+  }
+}
+
 .contact-under-nav form input[type=email]:focus {
   border: #00BFFF 6px solid;
+}
+
+@media (max-width: 1024px) {
+  .contact-under-nav form input[type=email] {
+    width: 90vw;
+  }
 }
 
 .contact-under-nav form textarea {
@@ -1266,6 +1469,12 @@ nav .header-center #logo-title {
 
 .contact-under-nav form textarea:focus {
   border: #00BFFF 6px solid;
+}
+
+@media (max-width: 1024px) {
+  .contact-under-nav form textarea {
+    width: 90vw;
+  }
 }
 
 .contact-under-nav form button[type=submit] {
@@ -1289,6 +1498,12 @@ nav .header-center #logo-title {
           box-shadow: 0px 0px;
 }
 
+@media (max-width: 1024px) {
+  .contact-under-nav form button[type=submit] {
+    height: 5rem;
+  }
+}
+
 .contact-under-nav .links {
   text-align: center;
   margin-bottom: 2em;
@@ -1308,6 +1523,12 @@ nav .header-center #logo-title {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 1vw;
+}
+
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 ::-webkit-scrollbar-track {

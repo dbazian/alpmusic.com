@@ -43,6 +43,14 @@ $(document).ready(function() {
         }
         });
 
+        $('#client-pic-small').each(function() {
+          if (isScrolledIntoView(this) === true) {
+            $(this).addClass('client-small-grow');
+          } else {
+            $(this).removeClass('client-small-grow');
+          }
+          });
+
     });
 
     // PAGE LOAD LOGO ANIMATION
@@ -360,7 +368,6 @@ $("#play").click( function () {
   $("#pause").show();
 })
 
-
 // mute music if video is unmuted
 
 var vid = document.getElementById('alp-video');
@@ -402,4 +409,17 @@ fifthsong.onended = function () {
 }
 });
 
+// MOBILE SCRIPTS
 
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  var y = document.getElementById("main-text");
+  var z = document.getElementById("mobile-logo")
+  if (x.style.display === "block") {
+    x.style.display = "none";
+
+  } else {
+    x.style.display = "block";
+
+  }
+}
