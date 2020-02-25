@@ -24,17 +24,16 @@ html {
 .mobile-nav {
     width: 100%;
     position: fixed;
-    z-index: 5;
+    z-index: 2;
     display: none;
     @include for-size(phone-only) { display: block; }
     
     #myLinks {
         display: none;
         position: fixed;
-        z-index: 1;
         background-color: $main-text-color;
         width: 100%;
-        margin-top: 10vh;
+        opacity: .7;
 
         a {
             color: white;
@@ -47,7 +46,9 @@ html {
 
     #nav-bar-image { 
         margin: 1rem;
-        float: right;
+        right: 0;
+        z-index: 5;
+        position: fixed;
     }
 }
 
