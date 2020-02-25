@@ -34,11 +34,10 @@ html {
         opacity: .7;
 
         a {
-            color: white;
+            @include font-style(sans-serif, $secondary-accent, 2rem, left);
             text-decoration: none;
-            font-size: 8vw;
             display: block;
-            padding: 1rem;
+            margin: 1rem;
         }
     }
 

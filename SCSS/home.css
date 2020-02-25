@@ -314,11 +314,13 @@ html body {
 }
 
 .mobile-nav #myLinks a {
-  color: white;
+  font-family: sans-serif;
+  color: #00BFFF;
+  font-size: 2rem;
+  text-align: left;
   text-decoration: none;
-  font-size: 8vw;
   display: block;
-  padding: 1rem;
+  margin: 1rem;
 }
 
 .mobile-nav #nav-bar-image {
