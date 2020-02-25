@@ -13,9 +13,7 @@ html {
         overflow-y: scroll;
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-        min-height: -webkit-fill-available;
-        min-height: 100vh;
+        scroll-behavior: smooth; 
     }
 }
 
@@ -57,13 +55,11 @@ html {
     display: none;
     scroll-snap-align: start;
     background-color: black;
-    min-height: -webkit-fill-available;
-    min-height: 100vh;
     @include for-size(phone-only) {
         display: flex; 
     }
 
-    #mobile-logo { width: 80vw; }
+    #mobile-logo { width: 80vw; margin-top: -10vh; }
 
     h2 { @include font-style(sans-serif, white, 8vw); }
 
@@ -78,8 +74,6 @@ html {
     @extend %full;
     scroll-snap-align: start;
     overflow: hidden;
-    min-height: -webkit-fill-available;
-    min-height: 100vh;
 }
 
 /* NAV BAR */
@@ -326,7 +320,7 @@ html {
         @include flex-box(column, center, center);
         margin: 0 15rem 2rem 0;
         text-align: center;
-        @include for-size(phone-only) { @include size-position(100%, 40%, auto); }
+        @include for-size(phone-only) { @include size-position(100%, 40%, -10vh 0 0 0); }
 
         .text-box { display: inline-block; }
  
@@ -455,13 +449,12 @@ html {
             background-color: black;
             overflow-y: hidden;
             max-height: 100vh;
-            min-height: -webkit-fill-available;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
 
         .m-team-pic-container {
             @include flex-box(column, center, center);
-            @include size-position(100%, auto, auto);
+            @include size-position(100%, auto, -10vh 0 0 0);
             scroll-snap-align: start;
             pointer-events: none;
             min-width: 100%;
@@ -545,6 +538,7 @@ html {
         form { 
             text-align: center;
             font-size: 1.2rem;
+            @include for-size(phone-only) { font-family: sans-serif; margin-top: -10vh; };
 
             label {
                 margin: 0;

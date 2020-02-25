@@ -289,8 +289,6 @@ html body {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  min-height: -webkit-fill-available;
-  min-height: 100vh;
 }
 
 /* MOBILE SITE */
@@ -354,8 +352,6 @@ html body {
   display: none;
   scroll-snap-align: start;
   background-color: black;
-  min-height: -webkit-fill-available;
-  min-height: 100vh;
 }
 
 @media (max-width: 1024px) {
@@ -368,6 +364,7 @@ html body {
 
 .mobile-home #mobile-logo {
   width: 80vw;
+  margin-top: -10vh;
 }
 
 .mobile-home h2 {
@@ -389,8 +386,6 @@ html body {
 .container {
   scroll-snap-align: start;
   overflow: hidden;
-  min-height: -webkit-fill-available;
-  min-height: 100vh;
 }
 
 /* NAV BAR */
@@ -951,7 +946,7 @@ html body {
   .app-under-nav .app-container {
     width: 100%;
     height: 40%;
-    margin: auto;
+    margin: -10vh 0 0 0;
   }
 }
 
@@ -1243,7 +1238,6 @@ html body {
     background-color: black;
     overflow-y: hidden;
     max-height: 100vh;
-    min-height: -webkit-fill-available;
     -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -1266,7 +1260,7 @@ html body {
         flex-wrap: initial;
     width: 100%;
     height: auto;
-    margin: auto;
+    margin: -10vh 0 0 0;
     scroll-snap-align: start;
     pointer-events: none;
     min-width: 100%;
@@ -1457,6 +1451,13 @@ html body {
 #contact .contact-under-nav form {
   text-align: center;
   font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  #contact .contact-under-nav form {
+    font-family: sans-serif;
+    margin-top: -10vh;
+  }
 }
 
 #contact .contact-under-nav form label {
