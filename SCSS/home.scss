@@ -62,25 +62,12 @@ html {
         display: flex; 
     }
 
-        #mobile-logo {
-            width: 80vw;
-            margin-top: 5vh;
-        }
+    #mobile-logo { width: 80vw; }
 
-        #main-text {
-        margin-bottom: 5vh;
-    
-            h2 {
-                @include font-style(sans-serif, white, 8vw);
-                margin: 1rem 0;
-            }
+    h2 { @include font-style(sans-serif, white, 8vw); }
 
-            h1 {
-            @include font-style(sans-serif, $secondary-accent, 8vw);
-            margin: 1rem 0;
-            }
-        }
-    }
+    h1 { @include font-style(sans-serif, $secondary-accent, 8vw); }
+}
 
 /* DESKTOP SITE */
 
@@ -344,24 +331,33 @@ html {
                 @include font-style($main-font, $main-text-color, 2.5vw);
                 margin: 0 0 2rem 0; 
                 display: inline-block;
-                @include for-size(phone-only) { @include font-style(sans-serif, $main-text-color, 5vw); }
+                @include for-size(phone-only) { @include font-style(sans-serif, $main-text-color, 6vw); }
+            }
+
+            .for-app-mobile {
+                display: none;
+                @include for-size(phone-only) { 
+                    @include font-style(sans-serif, $main-text-color, 6vw); 
+                    display: block;
+                }
+                
             }
 
             #blue-text2 {
                 @include font-style($main-font, $brand-color, 2.5vw);
-                @include for-size(phone-only) { @include font-style(sans-serif, $secondary-accent, 5vw); }
+                @include for-size(phone-only) { @include font-style(sans-serif, $secondary-accent, 6vw); }
             }
 
             p { 
                 @include font-style($secondary-font, $main-text-color, 1.5vw); 
                 margin: 0;
-                @include for-size(phone-only) { @include font-style(sans-serif, $main-text-color, 3.5vw); }
+                @include for-size(phone-only) { @include font-style(sans-serif, $main-text-color, 4.5vw); }
             }
         
             #blue-text { 
                 @include font-style($secondary-font, $brand-color, 1.5vw); 
                 margin: 0 0 2rem 0;
-                @include for-size(phone-only) { @include font-style(sans-serif, $secondary-accent, 3.5vw); }
+                @include for-size(phone-only) { @include font-style(sans-serif, $secondary-accent, 4.5vw); }
         }
 
         .app-links { @include flex-box(row, center, center);
@@ -378,11 +374,9 @@ html {
     .app-container2 {
         @include flex-box(initial, center, center);
         position: relative;
-        @include for-size(phone-only) { @include size-position(100%, 40%, 0 0 3rem 0); }
+        @include for-size(phone-only) { display: none; }
 
-        #app-screen { width: 17vw; 
-        @include for-size(phone-only) { width: 30vw; }
-        }
+        #app-screen { width: 17vw; }
     }
 }
 
@@ -435,11 +429,9 @@ html {
     }
     
     #client-pic-small {
-        width: 100%;
         max-height: 75%;
         display: none;
-        margin-top: 4rem;
-        @include for-size(phone-only) { display: block; }
+        @include for-size(phone-only) { display: flex; }
     }
 
     .client-small-grow {
@@ -452,31 +444,27 @@ html {
 
 #team {
 
-.mobile-team {
-    display: none;
-    @include for-size(phone-only) { 
-        @include flex-box(initial, initial, center);
-        @include size-position(100%, 100vh, auto);
-        background-color: black;
-        overflow-y: hidden;
-        max-height: 100vh;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
+    .mobile-team {
+        display: none;
+        @include for-size(phone-only) { 
+            @include flex-box(initial, initial, center);
+            @include size-position(100%, 100vh, auto);
+            background-color: black;
+            overflow-y: hidden;
+            max-height: 100vh;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
 
         .m-team-pic-container {
-            @include size-position(100%, auto, 4rem 0 6rem 0);
+            @include size-position(100%, auto, auto);
             scroll-snap-align: start;
             pointer-events: none;
             min-width: 100%;
             max-height: 75%;
-        .m-team-pic {
-            width: 100%;
-        }
 
+        .m-team-pic { width: 100%; }
 
-            p { 
-                @include font-style(sans-serif, white, 1.5rem);
-            }
+            p { @include font-style(sans-serif, white, 1.5rem); }
         }
     }
 }
@@ -543,20 +531,20 @@ html {
 
 /* Contact */
 
-.contact-under-nav {
-    @include flex-box(column, center, center);
-    overflow: hidden;
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: .5rem;
+#contact {
+
+    .contact-under-nav {
+        @extend %full;
+        @include flex-box(column, center, center);
 
     form { 
-        max-width: 90%;
-        @include for-size(phone-only) { margin-top: 5rem; }
-   
+        text-align: center;
+        font-size: 1.5rem;
+
         label {
             margin: 0;
             font-family: $main-font;
+            @include for-size(phone-only) { font-family: sans-serif; };
         }
 
         input[type=text] {
@@ -600,7 +588,6 @@ html {
         text-align: center;
         margin-bottom: 2em;
         
-
         .small-link {
             &:hover { width: 6rem; }
             display: inline-block;
@@ -609,10 +596,9 @@ html {
         }
     }
 }
-
+}
 
 /* Scrollbar */
-
 
 ::-webkit-scrollbar { 
     width: 1vw;

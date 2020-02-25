@@ -15,7 +15,7 @@
   color: #00BFFF;
 }
 
-.container {
+.container, #contact .contact-under-nav {
   height: 100%;
   width: 100%;
 }
@@ -25,7 +25,7 @@
   max-width: 100%;
 }
 
-.contact-under-nav form input[type=text], .contact-under-nav form input[type=email], .contact-under-nav form textarea, .contact-under-nav form button[type=submit] {
+#contact .contact-under-nav form input[type=text], #contact .contact-under-nav form input[type=email], #contact .contact-under-nav form textarea, #contact .contact-under-nav form button[type=submit] {
   width: 35rem;
   text-align: center;
   height: 7vh;
@@ -362,27 +362,20 @@ html body {
 
 .mobile-home #mobile-logo {
   width: 80vw;
-  margin-top: 5vh;
 }
 
-.mobile-home #main-text {
-  margin-bottom: 5vh;
-}
-
-.mobile-home #main-text h2 {
+.mobile-home h2 {
   font-family: sans-serif;
   color: white;
   font-size: 8vw;
   text-align: center;
-  margin: 1rem 0;
 }
 
-.mobile-home #main-text h1 {
+.mobile-home h1 {
   font-family: sans-serif;
   color: #00BFFF;
   font-size: 8vw;
   text-align: center;
-  margin: 1rem 0;
 }
 
 /* DESKTOP SITE */
@@ -971,8 +964,22 @@ html body {
   .app-under-nav .app-container h2 {
     font-family: sans-serif;
     color: #262626;
-    font-size: 5vw;
+    font-size: 6vw;
     text-align: center;
+  }
+}
+
+.app-under-nav .app-container .for-app-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .app-under-nav .app-container .for-app-mobile {
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 6vw;
+    text-align: center;
+    display: block;
   }
 }
 
@@ -987,7 +994,7 @@ html body {
   .app-under-nav .app-container #blue-text2 {
     font-family: sans-serif;
     color: #00BFFF;
-    font-size: 5vw;
+    font-size: 6vw;
     text-align: center;
   }
 }
@@ -1004,7 +1011,7 @@ html body {
   .app-under-nav .app-container p {
     font-family: sans-serif;
     color: #262626;
-    font-size: 3.5vw;
+    font-size: 4.5vw;
     text-align: center;
   }
 }
@@ -1021,7 +1028,7 @@ html body {
   .app-under-nav .app-container #blue-text {
     font-family: sans-serif;
     color: #00BFFF;
-    font-size: 3.5vw;
+    font-size: 4.5vw;
     text-align: center;
   }
 }
@@ -1077,20 +1084,12 @@ html body {
 
 @media (max-width: 1024px) {
   .app-under-nav .app-container2 {
-    width: 100%;
-    height: 40%;
-    margin: 0 0 3rem 0;
+    display: none;
   }
 }
 
 .app-under-nav .app-container2 #app-screen {
   width: 17vw;
-}
-
-@media (max-width: 1024px) {
-  .app-under-nav .app-container2 #app-screen {
-    width: 30vw;
-  }
 }
 
 /* APP SCREEN ANIMATION */
@@ -1189,15 +1188,15 @@ html body {
 }
 
 .clients-under-nav #client-pic-small {
-  width: 100%;
   max-height: 75%;
   display: none;
-  margin-top: 4rem;
 }
 
 @media (max-width: 1024px) {
   .clients-under-nav #client-pic-small {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -1243,7 +1242,7 @@ html body {
   #team .mobile-team .m-team-pic-container {
     width: 100%;
     height: auto;
-    margin: 4rem 0 6rem 0;
+    margin: auto;
     scroll-snap-align: start;
     pointer-events: none;
     min-width: 100%;
@@ -1411,7 +1410,7 @@ html body {
 }
 
 /* Contact */
-.contact-under-nav {
+#contact .contact-under-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1427,62 +1426,59 @@ html body {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  overflow: hidden;
+}
+
+#contact .contact-under-nav form {
   text-align: center;
   font-size: 1.5rem;
-  margin-top: .5rem;
 }
 
-.contact-under-nav form {
-  max-width: 90%;
-}
-
-@media (max-width: 1024px) {
-  .contact-under-nav form {
-    margin-top: 5rem;
-  }
-}
-
-.contact-under-nav form label {
+#contact .contact-under-nav form label {
   margin: 0;
   font-family: "miller-display", "times", "serif";
 }
 
-.contact-under-nav form input[type=text]:focus {
+@media (max-width: 1024px) {
+  #contact .contact-under-nav form label {
+    font-family: sans-serif;
+  }
+}
+
+#contact .contact-under-nav form input[type=text]:focus {
   border: #00BFFF 6px solid;
 }
 
 @media (max-width: 1024px) {
-  .contact-under-nav form input[type=text] {
+  #contact .contact-under-nav form input[type=text] {
     width: 90vw;
   }
 }
 
-.contact-under-nav form input[type=email]:focus {
+#contact .contact-under-nav form input[type=email]:focus {
   border: #00BFFF 6px solid;
 }
 
 @media (max-width: 1024px) {
-  .contact-under-nav form input[type=email] {
+  #contact .contact-under-nav form input[type=email] {
     width: 90vw;
   }
 }
 
-.contact-under-nav form textarea {
+#contact .contact-under-nav form textarea {
   height: 15vh;
 }
 
-.contact-under-nav form textarea:focus {
+#contact .contact-under-nav form textarea:focus {
   border: #00BFFF 6px solid;
 }
 
 @media (max-width: 1024px) {
-  .contact-under-nav form textarea {
+  #contact .contact-under-nav form textarea {
     width: 90vw;
   }
 }
 
-.contact-under-nav form button[type=submit] {
+#contact .contact-under-nav form button[type=submit] {
   cursor: pointer;
   border-radius: 10px;
   -webkit-box-shadow: 0px 8px 9px 0px;
@@ -1492,11 +1488,11 @@ html body {
   background-color: white;
 }
 
-.contact-under-nav form button[type=submit]:hover {
+#contact .contact-under-nav form button[type=submit]:hover {
   background-color: #00BFFF;
 }
 
-.contact-under-nav form button[type=submit]:active {
+#contact .contact-under-nav form button[type=submit]:active {
   margin-top: 1rem;
   margin-bottom: .5rem;
   -webkit-box-shadow: 0px 0px;
@@ -1504,24 +1500,24 @@ html body {
 }
 
 @media (max-width: 1024px) {
-  .contact-under-nav form button[type=submit] {
+  #contact .contact-under-nav form button[type=submit] {
     height: 5rem;
   }
 }
 
-.contact-under-nav .links {
+#contact .contact-under-nav .links {
   text-align: center;
   margin-bottom: 2em;
 }
 
-.contact-under-nav .links .small-link {
+#contact .contact-under-nav .links .small-link {
   display: inline-block;
   width: 5rem;
   -webkit-transition: width 1s;
   transition: width 1s;
 }
 
-.contact-under-nav .links .small-link:hover {
+#contact .contact-under-nav .links .small-link:hover {
   width: 6rem;
 }
 
