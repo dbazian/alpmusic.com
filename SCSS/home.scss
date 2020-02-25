@@ -22,7 +22,6 @@ html {
 /* MOBILE SITE */
 
 .mobile-nav {
-    height: 10vh;
     width: 100%;
     position: fixed;
     z-index: 5;
@@ -323,7 +322,7 @@ html {
         @include flex-box(column, center, center);
         margin: 0 15rem 2rem 0;
         text-align: center;
-        @include for-size(phone-only) { @include size-position(100%, 40%, 5rem 0 0 0); }
+        @include for-size(phone-only) { @include size-position(100%, 40%, auto); }
 
         .text-box { display: inline-block; }
  
