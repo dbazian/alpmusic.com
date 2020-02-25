@@ -14,6 +14,7 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
+        min-height: -webkit-fill-available;
     }
 }
 
@@ -55,6 +56,7 @@ html {
     display: none;
     scroll-snap-align: start;
     background-color: black;
+    min-height: -webkit-fill-available;
     @include for-size(phone-only) {
         display: flex; 
     }
@@ -74,6 +76,7 @@ html {
     @extend %full;
     scroll-snap-align: start;
     overflow: hidden;
+    min-height: -webkit-fill-available;
 }
 
 /* NAV BAR */
@@ -449,6 +452,7 @@ html {
             background-color: black;
             overflow-y: hidden;
             max-height: 100vh;
+            min-height: -webkit-fill-available;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
 
@@ -533,7 +537,7 @@ html {
 
     .contact-under-nav {
         @extend %full;
-        @include flex-box(column, center, center);
+        @include for-size(phone-only) { @include flex-box(column, center, center); }
 
         form { 
             text-align: center;

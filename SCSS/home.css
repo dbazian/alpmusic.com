@@ -289,6 +289,7 @@ html body {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  min-height: -webkit-fill-available;
 }
 
 /* MOBILE SITE */
@@ -352,6 +353,7 @@ html body {
   display: none;
   scroll-snap-align: start;
   background-color: black;
+  min-height: -webkit-fill-available;
 }
 
 @media (max-width: 1024px) {
@@ -385,6 +387,7 @@ html body {
 .container {
   scroll-snap-align: start;
   overflow: hidden;
+  min-height: -webkit-fill-available;
 }
 
 /* NAV BAR */
@@ -1237,6 +1240,7 @@ html body {
     background-color: black;
     overflow-y: hidden;
     max-height: 100vh;
+    min-height: -webkit-fill-available;
     -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -1427,22 +1431,24 @@ html body {
 }
 
 /* Contact */
-#contact .contact-under-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: initial;
-      flex-wrap: initial;
+@media (max-width: 1024px) {
+  #contact .contact-under-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+  }
 }
 
 #contact .contact-under-nav form {
