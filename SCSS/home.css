@@ -290,6 +290,7 @@ html body {
       scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   min-height: -webkit-fill-available;
+  min-height: 100vh;
 }
 
 /* MOBILE SITE */
@@ -354,6 +355,7 @@ html body {
   scroll-snap-align: start;
   background-color: black;
   min-height: -webkit-fill-available;
+  min-height: 100vh;
 }
 
 @media (max-width: 1024px) {
@@ -388,6 +390,7 @@ html body {
   scroll-snap-align: start;
   overflow: hidden;
   min-height: -webkit-fill-available;
+  min-height: 100vh;
 }
 
 /* NAV BAR */
