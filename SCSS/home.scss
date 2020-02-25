@@ -14,8 +14,6 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
-        @include for-size(phone-only) {
-        }
     }
 }
 
@@ -456,13 +454,14 @@ html {
             scroll-behavior: smooth;
 
         .m-team-pic-container {
+            @include flex-box(column, center, center);
             @include size-position(100%, auto, auto);
             scroll-snap-align: start;
             pointer-events: none;
             min-width: 100%;
-            max-height: 75%;
+            max-height: 100%;
 
-        .m-team-pic { width: 100%; }
+        .m-team-pic { width: 75%; }
 
             p { @include font-style(sans-serif, white, 1.5rem); }
         }
@@ -537,79 +536,70 @@ html {
         @extend %full;
         @include flex-box(column, center, center);
 
-    form { 
-        text-align: center;
-        font-size: 1.5rem;
+        form { 
+            text-align: center;
+            font-size: 1.2rem;
 
-        label {
-            margin: 0;
-            font-family: $main-font;
-            @include for-size(phone-only) { font-family: sans-serif; };
-        }
-
-        input[type=text] {
-            &:focus { border: $contact-border }
-            @extend %form-param;
-            @include for-size(phone-only) { width: 90vw; }
-        }
-
-        input[type=email] {
-            &:focus { border: $contact-border }
-            @extend %form-param;
-            @include for-size(phone-only) { width: 90vw; }
-        }
-
-        textarea {                 
-            @extend %form-param; 
-            height: 15vh;
-            &:focus { border: $contact-border } 
-            @include for-size(phone-only) { width: 90vw; }
-        }
-
-        button[type=submit] {
-            &:hover { background-color: $secondary-accent; }
-            &:active { 
-                margin-top: 1rem; 
-                margin-bottom: .5rem; 
-                box-shadow: 0px 0px; 
+            label {
+                margin: 0;
+                font-family: $main-font;
+                @include for-size(phone-only) { font-family: sans-serif; };
             }
-            cursor: pointer;
-            border-radius: 10px;
-            box-shadow: 0px 8px 9px 0px;
-            @extend %form-param;
-            width: 15rem;
-            margin: .5rem 0 1rem 0;
-            background-color: white;
-            @include for-size(phone-only) { height: 5rem; }
-        }
-    }
 
-    .links {
-        text-align: center;
-        margin-bottom: 2em;
-        
-        .small-link {
-            &:hover { width: 6rem; }
-            display: inline-block;
-            width: 5rem;
-            transition: width 1s;
+            input[type=text] {
+                &:focus { border: $contact-border }
+                @extend %form-param;
+                @include for-size(phone-only) { width: 75vw; height: 2rem; }
+            }
+
+            input[type=email] {
+                &:focus { border: $contact-border }
+                @extend %form-param;
+                @include for-size(phone-only) { width: 75vw; height: 2rem; }
+            }
+
+            textarea {                 
+                @extend %form-param; 
+                height: 15vh;
+                &:focus { border: $contact-border } 
+                @include for-size(phone-only) { width: 75vw; height: 8rem; }
+            }
+
+            button[type=submit] {
+                &:hover { background-color: $secondary-accent; }
+                &:active { 
+                    margin-top: 1rem; 
+                    margin-bottom: .5rem; 
+                    box-shadow: 0px 0px; 
+                }
+                cursor: pointer;
+                border-radius: 10px;
+                box-shadow: 0px 8px 9px 0px;
+                @extend %form-param;
+                width: 15rem;
+                margin: .5rem 0 1rem 0;
+                background-color: white;
+                @include for-size(phone-only) { height: 4rem; }
+            }
+        }
+
+        .links { text-align: center;
+            
+            .small-link {
+                display: inline-block;
+                width: 5rem;
+            }
         }
     }
-}
 }
 
 /* Scrollbar */
 
-::-webkit-scrollbar { 
-    width: 1vw;
-    @include for-size(phone-only) {
-        display: none;
-     }
+::-webkit-scrollbar { width: 1vw; @include for-size(phone-only) { display: none; } }
 
- }
-::-webkit-scrollbar-track { background: $third-accent; }  
-::-webkit-scrollbar-thumb { background: $brand-color; &:hover { background: $secondary-accent; } }
+::-webkit-scrollbar-track { background: $third-accent; @include for-size(phone-only) { display: none; } }  
 
-::-ms-scrollbar { width: 1vw; }
-::-ms-scrollbar-track { background: $third-accent; }
-::-ms-scrollbar-thumb { background: $brand-color; &:hover { background: $secondary-accent; } }
+::-webkit-scrollbar-thumb {
+    &:hover { background: $secondary-accent; }
+    background: $brand-color; 
+    @include for-size(phone-only) { display: none; } }
