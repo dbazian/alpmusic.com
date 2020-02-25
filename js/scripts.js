@@ -1,10 +1,5 @@
 $(document).ready(function() {
 
-  window.onresize = function() {
-    document.body.height = window.innerHeight;
-  }
-  window.onresize(); // called to initially set the height.
-
 // CHECK IF ELEM IS SCROLLED INTO VIEW
 
   function isScrolledIntoView(elem) {
@@ -428,4 +423,9 @@ function myFunction() {
 
   }
 }
+
+window.onresize = function() {
+  document.body.height = window.innerHeight;
+}
+window.onresize(); 
 
