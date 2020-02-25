@@ -68,7 +68,7 @@ html {
         }
 
         #main-text {
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
     
             h2 {
                 @include font-style(sans-serif, white, 8vw);
@@ -336,7 +336,7 @@ html {
         @include flex-box(column, center, center);
         margin: 0 15rem 2rem 0;
         text-align: center;
-        @include for-size(phone-only) { @include size-position(100%, 50%, auto); }
+        @include for-size(phone-only) { @include size-position(100%, 40%, 5rem 0 0 0); }
 
         .text-box { display: inline-block; }
  
@@ -378,7 +378,7 @@ html {
     .app-container2 {
         @include flex-box(initial, center, center);
         position: relative;
-        @include for-size(phone-only) { @include size-position(100%, 50%, auto); }
+        @include for-size(phone-only) { @include size-position(100%, 40%, 0 0 3rem 0); }
 
         #app-screen { width: 17vw; 
         @include for-size(phone-only) { width: 30vw; }
@@ -436,6 +436,7 @@ html {
     
     #client-pic-small {
         width: 100%;
+        max-height: 75%;
         display: none;
         margin-top: 4rem;
         @include for-size(phone-only) { display: block; }
@@ -462,11 +463,16 @@ html {
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
 
-        .m-team-pic {
-            @include size-position(100%, auto, 1.5rem 0 0 0);
-            min-width: 100%;
-            pointer-events: none;
+        .m-team-pic-container {
+            @include size-position(100%, auto, 4rem 0 6rem 0);
             scroll-snap-align: start;
+            pointer-events: none;
+            min-width: 100%;
+            max-height: 75%;
+        .m-team-pic {
+            width: 100%;
+        }
+
 
             p { 
                 @include font-style(sans-serif, white, 1.5rem);
