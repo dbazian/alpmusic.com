@@ -424,8 +424,3 @@ function myFunction() {
   }
 }
 
-window.onresize = function() {
-  document.body.height = window.innerHeight;
-}
-window.onresize(); 
-
