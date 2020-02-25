@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   window.onresize = function() {
-    document.html.height = window.innerHeight;
+    document.body.height = window.innerHeight;
   }
   window.onresize(); // called to initially set the height.
 
