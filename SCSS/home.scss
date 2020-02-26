@@ -433,13 +433,12 @@ html {
 }
 
 .clients-under-nav {
-    @include flex-box(column, center, center);
+    @include flex-box(initial, center, center);
     @include size-position(100%, calc(100% - 8rem), auto);
     overflow: hidden;
-    @include for-size(phone-only) { height: 100%; }
+    @include for-size(phone-only) { height: 100vh; }
 
     #client-pic {
-        max-width: 100%;
         width: 75%;
         transition: width 1s;
         @include for-size(phone-only) { display: none; }
@@ -451,8 +450,9 @@ html {
     }
     
     #client-pic-small {
-        max-height: 75%;
         display: none;
+        width: 100%;
+        margin-bottom: 10vh;
         @include for-size(phone-only) { display: flex; }
     }
 }
@@ -615,7 +615,9 @@ html {
             }
         }
 
-        .links { text-align: center;
+        .links { 
+            text-align: center;
+            @include for-size(phone-only) { margin-bottom: 10vh; };
             
             .small-link {
                 display: inline-block;
