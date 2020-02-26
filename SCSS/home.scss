@@ -42,7 +42,7 @@ html {
     }
 
     #nav-bar-image { 
-        margin: 1rem;
+        margin: .5rem;
         right: 0;
         z-index: 5;
         position: fixed;
@@ -395,8 +395,15 @@ html {
 
 #about { background-color: black;
 
+    .mobile-title {
+        margin-left: 1rem;
+        display: none;
+        @include font-style(sans-serif, $secondary-accent, 5vw);
+        @include for-size(phone-only) { display: flex; }
+    }
+
     .about-under-nav {
-        @include flex-box(initial, center, center);
+        @include flex-box(column, center, initial);
         @include size-position(100vw, calc(100% - 10rem), auto);
         background-color: black;
         @include for-size(phone-only) { height: 100%; }
@@ -409,6 +416,7 @@ html {
 
         .about-alp-video-portrait {
             width: 100%;
+            margin-bottom: 20vh;
             display: none;
             @include for-size(phone-only) { display: flex; }
         }
@@ -416,8 +424,16 @@ html {
 }
 /* CLIENTS */
 
+#clients {
+
+    .mobile-title {
+        display: none;
+        @include font-style(sans-serif, $secondary-accent, 5vw);
+        @include for-size(phone-only) { display: flex; }
+}
+
 .clients-under-nav {
-    @include flex-box(initial, center, center);
+    @include flex-box(column, center, center);
     @include size-position(100%, calc(100% - 8rem), auto);
     overflow: hidden;
     @include for-size(phone-only) { height: 100%; }
@@ -439,27 +455,29 @@ html {
         display: none;
         @include for-size(phone-only) { display: flex; }
     }
-
-    .client-small-grow {
-        animation-name: small-grow;
-        animation-duration: 2s;
-    }
+}
 }
 
 /* TEAM */
 
 #team {
 
-    .mobile-team {
+    .mobile-title {
         display: none;
-        @include for-size(phone-only) { 
-            @include flex-box(initial, initial, center);
-            @include size-position(100%, 100vh, auto);
-            background-color: black;
-            overflow-y: hidden;
-            max-height: 100vh;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
+        @include font-style(sans-serif, $secondary-accent, 5vw);
+        @include for-size(phone-only) { display: flex; }
+}
+
+    .mobile-team {
+        @include size-position(100%, 100vh, auto);
+        background-color: black;
+        position: relative;
+        overflow-y: hidden;
+        max-height: 100vh;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        display: none;
+        @include for-size(phone-only) { @include flex-box(initial, initial, center); }
 
         .m-team-pic-container {
             @include flex-box(column, center, center);
@@ -474,7 +492,6 @@ html {
             p { @include font-style(sans-serif, white, 1.5rem); }
         }
     }
-}
 
 .full-team-under-nav { 
     display: block;
@@ -540,6 +557,12 @@ html {
 
 #contact {
 
+    .mobile-title {
+        display: none;
+        @include font-style(sans-serif, $secondary-accent, 5vw);
+        @include for-size(phone-only) { display: flex; }
+}
+
     .contact-under-nav {
         @extend %full;
         @include for-size(phone-only) { @include flex-box(column, center, center); }
@@ -547,7 +570,7 @@ html {
         form { 
             text-align: center;
             font-size: 1.2rem;
-            @include for-size(phone-only) { font-family: sans-serif; margin-top: -10vh; };
+            @include for-size(phone-only) { font-family: sans-serif; };
 
             label {
                 margin: 0;

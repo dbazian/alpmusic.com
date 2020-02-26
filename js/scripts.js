@@ -42,15 +42,6 @@ $(document).ready(function() {
           $(this).removeClass('client-grow');
         }
         });
-
-        $('#client-pic-small').each(function() {
-          if (isScrolledIntoView(this) === true) {
-            $(this).addClass('client-small-grow');
-          } else {
-            $(this).removeClass('client-small-grow');
-          }
-          });
-
     });
 
     // PAGE LOAD LOGO ANIMATION
