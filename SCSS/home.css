@@ -1163,6 +1163,7 @@ html body {
 
 /* CLIENTS */
 #clients .mobile-title {
+  margin-left: 1rem;
   display: none;
   font-family: sans-serif;
   color: #00BFFF;
@@ -1228,7 +1229,7 @@ html body {
 #clients .clients-under-nav #client-pic-small {
   display: none;
   width: 100%;
-  margin-bottom: 10vh;
+  margin-bottom: 20vh;
 }
 
 @media (max-width: 1200px) {
@@ -1240,7 +1241,14 @@ html body {
 }
 
 /* TEAM */
+@media (max-width: 1200px) {
+  #team {
+    background-color: black;
+  }
+}
+
 #team .mobile-title {
+  margin-left: 1rem;
   display: none;
   font-family: sans-serif;
   color: #00BFFF;
@@ -1478,6 +1486,7 @@ html body {
 
 /* Contact */
 #contact .mobile-title {
+  margin-left: 1rem;
   display: none;
   font-family: sans-serif;
   color: #00BFFF;

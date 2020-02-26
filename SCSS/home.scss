@@ -427,6 +427,7 @@ html {
 #clients {
 
     .mobile-title {
+        margin-left: 1rem;
         display: none;
         @include font-style(sans-serif, $secondary-accent, 5vw);
         @include for-size(phone-only) { display: flex; }
@@ -452,7 +453,7 @@ html {
     #client-pic-small {
         display: none;
         width: 100%;
-        margin-bottom: 10vh;
+        margin-bottom: 20vh;
         @include for-size(phone-only) { display: flex; }
     }
 }
@@ -460,9 +461,11 @@ html {
 
 /* TEAM */
 
-#team {
+#team { @include for-size(phone-only) { background-color: black; } 
+
 
     .mobile-title {
+        margin-left: 1rem;
         display: none;
         @include font-style(sans-serif, $secondary-accent, 5vw);
         @include for-size(phone-only) { display: flex; }
@@ -558,6 +561,7 @@ html {
 #contact {
 
     .mobile-title {
+        margin-left: 1rem;
         display: none;
         @include font-style(sans-serif, $secondary-accent, 5vw);
         @include for-size(phone-only) { display: flex; }
