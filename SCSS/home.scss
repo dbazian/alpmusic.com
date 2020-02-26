@@ -403,7 +403,7 @@ html {
     }
 
     .about-under-nav {
-        @include flex-box(column, center, initial);
+        @include flex-box(column, center, center);
         @include size-position(100vw, calc(100% - 10rem), auto);
         background-color: black;
         @include for-size(phone-only) { height: 100%; }
