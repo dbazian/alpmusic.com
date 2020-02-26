@@ -569,7 +569,7 @@ html {
 
     .contact-under-nav {
         @extend %full;
-        @include for-size(phone-only) { @include flex-box(column, center, center); }
+        @include for-size(phone-only) { @include flex-box(column, center, center); height: 80vh; }
 
         form { 
             text-align: center;
