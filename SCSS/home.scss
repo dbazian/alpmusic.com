@@ -46,6 +46,7 @@ html {
         right: 0;
         z-index: 5;
         position: fixed;
+        width: 10vw; 
     }
 }
 
@@ -395,13 +396,21 @@ html {
 #about { background-color: black;
 
     .about-under-nav {
-        @include flex-box(initial, center, initial);
+        @include flex-box(initial, center, center);
         @include size-position(100vw, calc(100% - 10rem), auto);
         background-color: black;
+        @include for-size(phone-only) { height: 100%; }
 
-        video {
+        .about-alp-video {
             @extend %max;
             outline: none;
+            @include for-size(phone-only) { display: none; }
+        }
+
+        .about-alp-video-portrait {
+            width: 100%;
+            display: none;
+            @include for-size(phone-only) { display: flex; }
         }
     }
 }

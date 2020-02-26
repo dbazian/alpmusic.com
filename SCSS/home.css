@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-#about .about-under-nav video {
+#about .about-under-nav .about-alp-video {
   max-height: 100%;
   max-width: 100%;
 }
@@ -328,6 +328,7 @@ html body {
   right: 0;
   z-index: 5;
   position: fixed;
+  width: 10vw;
 }
 
 .mobile-home {
@@ -1126,9 +1127,9 @@ html body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: initial;
-      -ms-flex-align: initial;
-          align-items: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100vw;
@@ -1137,8 +1138,33 @@ html body {
   background-color: black;
 }
 
-#about .about-under-nav video {
+@media (max-width: 1024px) {
+  #about .about-under-nav {
+    height: 100%;
+  }
+}
+
+#about .about-under-nav .about-alp-video {
   outline: none;
+}
+
+@media (max-width: 1024px) {
+  #about .about-under-nav .about-alp-video {
+    display: none;
+  }
+}
+
+#about .about-under-nav .about-alp-video-portrait {
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #about .about-under-nav .about-alp-video-portrait {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 /* CLIENTS */
