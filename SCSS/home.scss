@@ -474,6 +474,8 @@ html {
     #team-title {
         @include font-style(sans-serif, white, 1rem);
         margin: 0;
+        display: none;
+        @include for-size(phone-only) { display: block; }
     }
 
     .mobile-team {
@@ -489,7 +491,7 @@ html {
 
         .m-team-pic-container {
             @include flex-box(column, center, center);
-            @include size-position(100%, auto, -10vh 0 0 0);
+            @include size-position(100%, auto, -20vh 0 0 0);
             scroll-snap-align: start;
             pointer-events: none;
             min-width: 100%;
@@ -650,6 +652,7 @@ html {
             .small-link {
                 display: inline-block;
                 width: 5vw;
+                @include for-size(phone-only) { width: 10vw; }
             }
         }
     }

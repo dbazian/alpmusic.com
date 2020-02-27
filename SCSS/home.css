@@ -1270,6 +1270,13 @@ html body {
   font-size: 1rem;
   text-align: center;
   margin: 0;
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  #team #team-title {
+    display: block;
+  }
 }
 
 #team .mobile-team {
@@ -1324,7 +1331,7 @@ html body {
       flex-wrap: initial;
   width: 100%;
   height: auto;
-  margin: -10vh 0 0 0;
+  margin: -20vh 0 0 0;
   scroll-snap-align: start;
   pointer-events: none;
   min-width: 100%;
@@ -1681,6 +1688,12 @@ html body {
 #contact .contact-under-nav .links .small-link {
   display: inline-block;
   width: 5vw;
+}
+
+@media (max-width: 1025px) {
+  #contact .contact-under-nav .links .small-link {
+    width: 10vw;
+  }
 }
 
 /* Scrollbar */
