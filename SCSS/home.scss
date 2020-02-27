@@ -472,7 +472,7 @@ html {
     .mobile-title {
         margin-left: 1rem;
         display: none;
-        @include font-style(sans-serif, $secondary-accent, 5vw, left);
+        @include font-style(sans-serif, $brand-color, 5vw, left);
         @include for-size(phone-only) { display: block; }
 }
 
@@ -632,7 +632,7 @@ html {
     .mobile-title {
         margin-left: 1rem;
         display: none;
-        @include font-style(sans-serif, $secondary-accent, 5vw, left);
+        @include font-style(sans-serif, $brand-color, 5vw, left);
         @include for-size(phone-only) { display: block; }
 }
 
