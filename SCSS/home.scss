@@ -14,6 +14,7 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
+        @include for-size(phone-only) { scroll-snap-type: none; }
     }
 }
 
@@ -293,53 +294,50 @@ html {
 
 /* APP */
 
+#app {
+
 .app-background {
     @include flex-box(initial, center, center);
-    position: relative;
     height: calc(100% - 8rem);
     overflow: hidden;
-    @include for-size(phone-only) { height: 100%; }
+    position: relative;
+    @include for-size(phone-only) { 
+        height: 100%;
+        @include flex-box(initial, center, center); }
 
     #box-logo {
         width: 45%;
+        position: absolute;
         opacity: .1;
         @include for-size(phone-only) { width: 90%; }
     }
 }
 
-.app-under-nav {
-    @include flex-box(row, center, center);
-    @include size-position(100%, calc(100% - 10rem), auto);
-    position: absolute;
+// MOBILE APP PAGE
+
+.app-under-nav-mobile {
+    @include size-position(100%, 100%, auto);
+    position: relative;
+    display: none;
     @include for-size(phone-only) {
-        @include flex-box(column, center, center);
-        @include size-position(100%, 100%, auto);
+        display: flex;
     }
 
     .app-container {
-        position: relative;
+        position: absolute;
         @include flex-box(column, center, center);
-        margin: 0 15rem 2rem 0;
+        @include size-position(100%, 100%, -10vh 0 0 0);
         text-align: center;
-        @include for-size(phone-only) { @include size-position(100%, 40%, -10vh 0 0 0); }
 
         .text-box { display: inline-block; }
  
             h2  { 
-                @include font-style($main-font, $main-text-color, 2.5vw);
+                @include font-style(sans-serif, $main-text-color, 6vw);
                 margin: 0 0 2rem 0; 
                 display: inline-block;
-                @include for-size(phone-only) { @include font-style(sans-serif, $main-text-color, 6vw); }
             }
 
-            .for-app-mobile {
-                display: none;
-                @include for-size(phone-only) { 
-                    @include font-style(sans-serif, $main-text-color, 6vw); 
-                    display: block;
-                }
-                
-            }
+            .for-app-mobile { @include font-style(sans-serif, $main-text-color, 6vw); }
 
             #blue-text2 {
                 @include font-style($main-font, $brand-color, 2.5vw);
@@ -347,15 +345,61 @@ html {
             }
 
             p { 
+                @include font-style(sans-serif, $main-text-color, 4.5vw);
+                margin: 0;
+            }
+        
+            #blue-text { 
+                @include font-style(sans-serif, $secondary-accent, 4.5vw); 
+                margin: 0 0 2rem 0;
+        }
+
+        .app-links { @include flex-box(row, center, center);
+
+            img { 
+                width: 30vw; 
+                margin: 1rem; 
+                border-radius: 1vw;
+             }
+        }
+    }
+}
+
+
+// DESKTOP APP PAGE
+
+.app-under-nav {
+    @include flex-box(row, center, center);
+    @include size-position(100%, calc(100% - 10rem), auto);
+    position: absolute;
+    @include for-size(phone-only) {
+        display: none;
+    }
+
+    .app-container {
+        position: relative;
+        @include flex-box(column, center, center);
+        margin: 0 15rem 2rem 0;
+        text-align: center;
+
+        .text-box { display: inline-block; }
+ 
+            h2  { 
+                @include font-style($main-font, $main-text-color, 2.5vw);
+                margin: 0 0 2rem 0; 
+                display: inline-block;
+            }
+
+            #blue-text2 { @include font-style($main-font, $brand-color, 2.5vw); }
+
+            p { 
                 @include font-style($secondary-font, $main-text-color, 1.5vw); 
                 margin: 0;
-                @include for-size(phone-only) { @include font-style(sans-serif, $main-text-color, 4.5vw); }
             }
         
             #blue-text { 
                 @include font-style($secondary-font, $brand-color, 1.5vw); 
                 margin: 0 0 2rem 0;
-                @include for-size(phone-only) { @include font-style(sans-serif, $secondary-accent, 4.5vw); }
         }
 
         .app-links { @include flex-box(row, center, center);
@@ -364,7 +408,6 @@ html {
                 width: 13rem; 
                 margin: 1rem; 
                 border-radius: 1vw;
-                @include for-size(phone-only) { width: 30vw; }
              }
         }
     }
@@ -372,10 +415,10 @@ html {
     .app-container2 {
         @include flex-box(initial, center, center);
         position: relative;
-        @include for-size(phone-only) { display: none; }
 
         #app-screen { width: 17vw; }
     }
+}
 }
 
 /* APP SCREEN ANIMATION */

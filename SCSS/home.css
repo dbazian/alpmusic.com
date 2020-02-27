@@ -267,6 +267,13 @@ html body {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 1025px) {
+  html body {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+  }
+}
+
 /* MOBILE SITE */
 .mobile-nav {
   width: 100%;
@@ -815,7 +822,7 @@ html body {
 }
 
 /* APP */
-.app-background {
+#app .app-background {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -831,29 +838,160 @@ html body {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  position: relative;
   height: calc(100% - 8rem);
   overflow: hidden;
+  position: relative;
 }
 
 @media (max-width: 1025px) {
-  .app-background {
+  #app .app-background {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
   }
 }
 
-.app-background #box-logo {
+#app .app-background #box-logo {
   width: 45%;
+  position: absolute;
   opacity: .1;
 }
 
 @media (max-width: 1025px) {
-  .app-background #box-logo {
+  #app .app-background #box-logo {
     width: 90%;
   }
 }
 
-.app-under-nav {
+#app .app-under-nav-mobile {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  #app .app-under-nav-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+#app .app-under-nav-mobile .app-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+  width: 100%;
+  height: 100%;
+  margin: -10vh 0 0 0;
+  text-align: center;
+}
+
+#app .app-under-nav-mobile .app-container .text-box {
+  display: inline-block;
+}
+
+#app .app-under-nav-mobile .app-container h2 {
+  font-family: sans-serif;
+  color: #262626;
+  font-size: 6vw;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  display: inline-block;
+}
+
+#app .app-under-nav-mobile .app-container .for-app-mobile {
+  font-family: sans-serif;
+  color: #262626;
+  font-size: 6vw;
+  text-align: center;
+}
+
+#app .app-under-nav-mobile .app-container #blue-text2 {
+  font-family: "miller-display", "times", "serif";
+  color: #009DD1;
+  font-size: 2.5vw;
+  text-align: center;
+}
+
+@media (max-width: 1025px) {
+  #app .app-under-nav-mobile .app-container #blue-text2 {
+    font-family: sans-serif;
+    color: #00BFFF;
+    font-size: 6vw;
+    text-align: center;
+  }
+}
+
+#app .app-under-nav-mobile .app-container p {
+  font-family: sans-serif;
+  color: #262626;
+  font-size: 4.5vw;
+  text-align: center;
+  margin: 0;
+}
+
+#app .app-under-nav-mobile .app-container #blue-text {
+  font-family: sans-serif;
+  color: #00BFFF;
+  font-size: 4.5vw;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+#app .app-under-nav-mobile .app-container .app-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+}
+
+#app .app-under-nav-mobile .app-container .app-links img {
+  width: 30vw;
+  margin: 1rem;
+  border-radius: 1vw;
+}
+
+#app .app-under-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -876,29 +1014,12 @@ html body {
 }
 
 @media (max-width: 1025px) {
-  .app-under-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    width: 100%;
-    height: 100%;
-    margin: auto;
+  #app .app-under-nav {
+    display: none;
   }
 }
 
-.app-under-nav .app-container {
+#app .app-under-nav .app-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -919,19 +1040,11 @@ html body {
   text-align: center;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container {
-    width: 100%;
-    height: 40%;
-    margin: -10vh 0 0 0;
-  }
-}
-
-.app-under-nav .app-container .text-box {
+#app .app-under-nav .app-container .text-box {
   display: inline-block;
 }
 
-.app-under-nav .app-container h2 {
+#app .app-under-nav .app-container h2 {
   font-family: "miller-display", "times", "serif";
   color: #262626;
   font-size: 2.5vw;
@@ -940,46 +1053,14 @@ html body {
   display: inline-block;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container h2 {
-    font-family: sans-serif;
-    color: #262626;
-    font-size: 6vw;
-    text-align: center;
-  }
-}
-
-.app-under-nav .app-container .for-app-mobile {
-  display: none;
-}
-
-@media (max-width: 1025px) {
-  .app-under-nav .app-container .for-app-mobile {
-    font-family: sans-serif;
-    color: #262626;
-    font-size: 6vw;
-    text-align: center;
-    display: block;
-  }
-}
-
-.app-under-nav .app-container #blue-text2 {
+#app .app-under-nav .app-container #blue-text2 {
   font-family: "miller-display", "times", "serif";
   color: #009DD1;
   font-size: 2.5vw;
   text-align: center;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container #blue-text2 {
-    font-family: sans-serif;
-    color: #00BFFF;
-    font-size: 6vw;
-    text-align: center;
-  }
-}
-
-.app-under-nav .app-container p {
+#app .app-under-nav .app-container p {
   font-family: "forma-djr-display", sans-serif;
   color: #262626;
   font-size: 1.5vw;
@@ -987,16 +1068,7 @@ html body {
   margin: 0;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container p {
-    font-family: sans-serif;
-    color: #262626;
-    font-size: 4.5vw;
-    text-align: center;
-  }
-}
-
-.app-under-nav .app-container #blue-text {
+#app .app-under-nav .app-container #blue-text {
   font-family: "forma-djr-display", sans-serif;
   color: #009DD1;
   font-size: 1.5vw;
@@ -1004,16 +1076,7 @@ html body {
   margin: 0 0 2rem 0;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container #blue-text {
-    font-family: sans-serif;
-    color: #00BFFF;
-    font-size: 4.5vw;
-    text-align: center;
-  }
-}
-
-.app-under-nav .app-container .app-links {
+#app .app-under-nav .app-container .app-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1031,19 +1094,13 @@ html body {
       flex-wrap: initial;
 }
 
-.app-under-nav .app-container .app-links img {
+#app .app-under-nav .app-container .app-links img {
   width: 13rem;
   margin: 1rem;
   border-radius: 1vw;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container .app-links img {
-    width: 30vw;
-  }
-}
-
-.app-under-nav .app-container2 {
+#app .app-under-nav .app-container2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1062,13 +1119,7 @@ html body {
   position: relative;
 }
 
-@media (max-width: 1025px) {
-  .app-under-nav .app-container2 {
-    display: none;
-  }
-}
-
-.app-under-nav .app-container2 #app-screen {
+#app .app-under-nav .app-container2 #app-screen {
   width: 17vw;
 }
 
