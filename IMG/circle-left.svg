@@ -1,0 +1,20 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="46.8" height="46.8" viewBox="0 0 46.8 46.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00bfff;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>circle-left</title>
+  <g>
+    <circle class="cls-1" cx="23.4" cy="23.4" r="23.4"/>
+    <rect class="cls-2" x="10.4" y="19.9" width="26" height="7"/>
+    <polygon class="cls-2" points="11.5 19 12.8 20.1 16.4 23.4 20 26.7 26.4 32.6 22 37.5 11.5 27.9 10.2 26.7 6.7 23.5 6.7 23.4 10.2 20.1 10.2 20.1 10.3 20.1 11.5 19"/>
+    <polygon class="cls-2" points="11.5 27.9 12.8 26.8 16.4 23.5 20 20.2 26.4 14.3 22 9.4 11.5 19 10.2 20.2 6.7 23.4 6.7 23.5 10.2 26.7 10.2 26.8 10.3 26.8 11.5 27.9"/>
+  </g>
+</svg>

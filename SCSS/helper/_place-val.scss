@@ -37,11 +37,11 @@ $main-shadow: 2px 2px 2px $secondary-accent;
 }
 
 %form-param {
-    width: 35rem;
+    width: 35vw;
     text-align: center;
-    height: 7vh;
+    height: 3vw;
     margin: .5rem 0;
     font-size: 1.5rem;
     border: $standard-border;
-    box-shadow: 0 8px 6px -6px black;
+    box-shadow: 8px 8px 8px -6px black;
 }

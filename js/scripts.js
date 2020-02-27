@@ -131,73 +131,6 @@ if (counterC % 2 == 1) {
 }
 });
 
-// TABLETS 
-
-// TEAM ANIMATIONS 
-
-// DARRELL IPAD ANIMATION 
-counterA = 0;
-$("#darrell-container-pad").click(function() {
- counterA++;
-if (counterA % 2 == 1) {
-    $("#darrell-pad").toggle();
-    $("#db-name-pad").toggle();
-    $("#nick-container-pad").toggle();
-    $("#dave-container-pad").toggle();
-    $("#darrell-info-pad").toggle();
-    $("#darrell-full-pic").toggle(400);
-  } else {
-    $("#darrell-full-pic").toggle();
-    $("#db-name-pad").toggle(400);
-    $("#nick-container-pad").toggle();
-    $("#dave-container-pad").toggle();
-    $("#darrell-info-pad").toggle();
-    $("#darrell-pad").toggle(400);
-  }
-});
-
-// NICK IPAD ANIMATION
-counterB = 0;
-$("#nick-container-pad").click(function() {
-  counterB++;
-if (counterB % 2 == 1) {
-  $("#nick-pad").toggle();
-  $("#nm-name-pad").toggle();
-  $("#dave-container-pad").toggle();
-  $("#darrell-container-pad").toggle();
-  $("#nick-info-pad").toggle();
-  $("#nick-full-pic").toggle(400);
-} else {
-  $("#nick-full-pic").toggle();
-  $("#nm-name-pad").toggle(400);
-  $("#dave-container-pad").toggle();
-  $("#darrell-container-pad").toggle();
-  $("#nick-info-pad").toggle();
-  $("#nick-pad").toggle(400);
-  }
-});
-
-// DAVE IPAD ANIMATION 
-counterC = 0;
-$("#dave-container-pad").click(function() {
-  counterC++;
-if (counterC % 2 == 1) {
-  $("#dave-pad").toggle();
-  $("#dk-name-pad").toggle();
-  $("#darrell-container-pad").toggle();
-  $("#nick-container-pad").toggle();
-  $("#dave-info-pad").toggle();
-  $("#dave-full-pic").toggle(400);
-} else {
-  $("#dave-full-pic").toggle();
-  $("#dk-name-pad").toggle(400);
-  $("#darrell-container-pad").toggle();
-  $("#nick-container-pad").toggle();
-  $("#dave-info-pad").toggle();
-  $("#dave-pad").toggle(400);
-  }
-});
-
 // Play Song 1
 
 $('#note1').click(function() {
@@ -398,19 +331,61 @@ fourthsong.onended = function () {
 fifthsong.onended = function () {
   songOne.play();
 }
+
+
+// MOBILE 
+
+// CLOSE NAV ON LINK CLICK
+
+$("#mob-app").click( function () {
+  $("#myLinks").toggle();
+})
+
+$("#mob-about").click( function () {
+  $("#myLinks").toggle();
+})
+
+$("#mob-home").click( function () {
+  $("#myLinks").toggle();
+})
+
+$("#mob-clients").click( function () {
+  $("#myLinks").toggle();
+})
+
+$("#mob-team").click( function () {
+  $("#myLinks").toggle();
+})
+
+$("#mob-contact").click( function () {
+  $("#myLinks").toggle();
+})
+
+// MOBILE TEAM ANIMATIONS
+
+counterC = 0;
+$(".mobile-team").click(function() {
+  counterC++;
+  if (counterC % 2 == 1) {
+  $(".m-team-pic").toggle(400);
+  $(".mob-hidden").toggle(400);
+
+} else {
+  $(".m-team-pic").toggle(400);
+  $(".mob-hidden").toggle(400);
+  }
 });
 
-// MOBILE SCRIPTS
+});
+
+// OPEN AND CLOSE NAV BAR
 
 function myFunction() {
   var x = document.getElementById("myLinks");
-  var y = document.getElementById("main-text");
-  var z = document.getElementById("mobile-logo")
   if (x.style.display === "block") {
     x.style.display = "none";
 
   } else {
     x.style.display = "block";
-
-  }
+}
 }

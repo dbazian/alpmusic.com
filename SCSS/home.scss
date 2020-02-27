@@ -163,7 +163,7 @@ html {
             animation: slow-slide 4s forwards;
         }
 
-        .staff { @include animation-pos(60rem, 10rem, 1, 1); }
+        .staff { @include animation-pos(60rem, auto, 1, 1); }
 
         .logo-notes { 
             @include animation-pos(60rem, 10rem, 1, 2);
@@ -471,6 +471,11 @@ html {
         @include for-size(phone-only) { display: flex; }
 }
 
+    #team-title {
+        @include font-style(sans-serif, white, 1rem);
+        margin: 0;
+    }
+
     .mobile-team {
         @include size-position(100%, 100vh, auto);
         background-color: black;
@@ -491,6 +496,28 @@ html {
             max-height: 100%;
 
         .m-team-pic { width: 75%; }
+
+        .mob-name-container {
+            @include flex-box(row, center, center);
+
+            .circle-right {
+                margin-left: 1rem;
+            }
+
+            .circle-left {
+                margin-right: 1rem;
+            }
+        }
+
+        .mob-hidden { 
+            @include flex-box(row, center, center);
+            display: none;
+            
+            .blue-text {
+            @include font-style(sans-serif, $secondary-accent, 1.5rem);
+            margin: 0;
+            }
+        }
 
             p { @include font-style(sans-serif, white, 1.5rem); }
         }
@@ -596,7 +623,7 @@ html {
 
             textarea {                 
                 @extend %form-param; 
-                height: 15vh;
+                height: 8rem;
                 &:focus { border: $contact-border } 
                 @include for-size(phone-only) { width: 75vw; height: 8rem; }
             }
@@ -604,16 +631,13 @@ html {
             button[type=submit] {
                 &:hover { background-color: $secondary-accent; }
                 &:active { 
-                    margin-top: 1rem; 
-                    margin-bottom: .5rem; 
+                    margin: 1rem 0 .5rem 0;
                     box-shadow: 0px 0px; 
                 }
+                @include size-position(15rem, 4vw, .5rem 0 1rem 0);
+                @extend %form-param;
                 cursor: pointer;
                 border-radius: 10px;
-                box-shadow: 0px 8px 9px 0px;
-                @extend %form-param;
-                width: 15rem;
-                margin: .5rem 0 1rem 0;
                 background-color: white;
                 @include for-size(phone-only) { height: 4rem; }
             }
@@ -625,7 +649,7 @@ html {
             
             .small-link {
                 display: inline-block;
-                width: 5rem;
+                width: 5vw;
             }
         }
     }
