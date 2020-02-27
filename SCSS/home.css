@@ -1669,7 +1669,7 @@ html body {
 @media (max-width: 1025px) {
   #contact .contact-under-nav form textarea {
     width: 75vw;
-    height: 8rem;
+    height: 7rem;
   }
 }
 

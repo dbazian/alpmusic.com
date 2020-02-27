@@ -667,7 +667,7 @@ html {
                 @extend %form-param; 
                 height: 8rem;
                 &:focus { border: $contact-border } 
-                @include for-size(phone-only) { width: 75vw; height: 8rem; }
+                @include for-size(phone-only) { width: 75vw; height: 7rem; }
             }
 
             button[type=submit] {
