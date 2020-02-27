@@ -625,6 +625,8 @@ html {
 
 /* Contact */
 
+#contact .container { @include for-size(phone-only) { scroll-snap-align: none; } }
+
 #contact { @include for-size(phone-only) { height: 90%; }
 
     .mobile-title {
@@ -636,7 +638,7 @@ html {
 
     .contact-under-nav {
         @extend %full;
-        @include for-size(phone-only) { @include flex-box(column, center, center); height: 90%; }
+        @include for-size(phone-only) { @include flex-box(column, center, center); height: 90%; scroll-snap-align: start; }
 
         form { 
             text-align: center;
@@ -693,9 +695,10 @@ html {
             }
         }
     }
-    .mobile-footer {
-        height: 10%;
-    }
+}
+
+.mobile-footer {
+    height: 70px;
 }
 
 /* Scrollbar */

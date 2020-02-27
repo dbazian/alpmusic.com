@@ -1566,6 +1566,12 @@ html body {
 
 /* Contact */
 @media (max-width: 1025px) {
+  #contact .container {
+    scroll-snap-align: none;
+  }
+}
+
+@media (max-width: 1025px) {
   #contact {
     height: 90%;
   }
@@ -1604,6 +1610,7 @@ html body {
     -ms-flex-wrap: initial;
         flex-wrap: initial;
     height: 90%;
+    scroll-snap-align: start;
   }
 }
 
@@ -1706,8 +1713,8 @@ html body {
   }
 }
 
-#contact .mobile-footer {
-  height: 10%;
+.mobile-footer {
+  height: 70px;
 }
 
 /* Scrollbar */
