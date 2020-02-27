@@ -1565,20 +1565,24 @@ html body {
 }
 
 /* Contact */
+@media (max-width: 1025px) {
+  #contact {
+    height: 90%;
+  }
+}
+
 #contact .mobile-title {
   margin-left: 1rem;
   display: none;
   font-family: sans-serif;
   color: #00BFFF;
   font-size: 5vw;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 1025px) {
   #contact .mobile-title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
   }
 }
 
@@ -1700,6 +1704,10 @@ html body {
   #contact .contact-under-nav .links .small-link {
     width: 10vw;
   }
+}
+
+.mobile-footer {
+  height: 10%;
 }
 
 /* Scrollbar */

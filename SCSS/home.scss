@@ -625,13 +625,13 @@ html {
 
 /* Contact */
 
-#contact {
+#contact { @include for-size(phone-only) { height: 90%; }
 
     .mobile-title {
         margin-left: 1rem;
         display: none;
-        @include font-style(sans-serif, $secondary-accent, 5vw);
-        @include for-size(phone-only) { display: flex; }
+        @include font-style(sans-serif, $secondary-accent, 5vw, left);
+        @include for-size(phone-only) { display: block; }
 }
 
     .contact-under-nav {
@@ -693,6 +693,10 @@ html {
             }
         }
     }
+}
+
+.mobile-footer {
+    height: 10%;
 }
 
 /* Scrollbar */
