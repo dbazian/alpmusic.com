@@ -367,7 +367,13 @@ html body {
   width: 100%;
   scroll-snap-align: start;
   overflow: hidden;
-  height: 90%;
+  height: 100%;
+}
+
+@media (max-width: 1025px) {
+  .container {
+    height: 90%;
+  }
 }
 
 /* NAV BAR */
