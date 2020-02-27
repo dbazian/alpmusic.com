@@ -371,9 +371,10 @@ $(".mobile-team").click(function() {
   $(".mob-hidden").toggle(400);
 
 } else {
-  $(".m-team-pic").toggle(400);
+  $(".m-team-pic").delay(400).toggle(400);
   $(".mob-hidden").toggle(400);
   }
+
 });
 
 });
