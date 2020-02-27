@@ -15,7 +15,7 @@
   color: #00BFFF;
 }
 
-.container, #contact .contact-under-nav {
+#contact .contact-under-nav {
   height: 100%;
   width: 100%;
 }
@@ -330,9 +330,6 @@ html body {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  width: 100%;
-  height: 100%;
-  margin: auto;
   display: none;
   scroll-snap-align: start;
   background-color: black;
@@ -348,7 +345,6 @@ html body {
 
 .mobile-home #mobile-logo {
   width: 80vw;
-  margin-top: -10vh;
 }
 
 .mobile-home h2 {
@@ -368,8 +364,10 @@ html body {
 /* DESKTOP SITE */
 /* EACH PAGE */
 .container {
+  width: 100%;
   scroll-snap-align: start;
   overflow: hidden;
+  height: 82.16%;
 }
 
 /* NAV BAR */
@@ -846,21 +844,6 @@ html body {
 @media (max-width: 1025px) {
   #app .app-background {
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
   }
 }
 
@@ -911,7 +894,7 @@ html body {
       flex-wrap: initial;
   width: 100%;
   height: 100%;
-  margin: -10vh 0 0 0;
+  margin: auto;
   text-align: center;
 }
 
@@ -1149,14 +1132,24 @@ html body {
   font-family: sans-serif;
   color: #00BFFF;
   font-size: 5vw;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 1025px) {
   #about .mobile-title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
+  }
+}
+
+#about .about-alp-video-portrait {
+  height: 75%;
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  #about .about-alp-video-portrait {
+    display: block;
   }
 }
 
@@ -1176,7 +1169,7 @@ html body {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  width: 100vw;
+  width: 100%;
   height: calc(100% - 10rem);
   margin: auto;
   background-color: black;
@@ -1184,32 +1177,12 @@ html body {
 
 @media (max-width: 1025px) {
   #about .about-under-nav {
-    height: 100%;
+    display: none;
   }
 }
 
 #about .about-under-nav .about-alp-video {
   outline: none;
-}
-
-@media (max-width: 1025px) {
-  #about .about-under-nav .about-alp-video {
-    display: none;
-  }
-}
-
-#about .about-under-nav .about-alp-video-portrait {
-  width: 100%;
-  margin-bottom: 20vh;
-  display: none;
-}
-
-@media (max-width: 1025px) {
-  #about .about-under-nav .about-alp-video-portrait {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 /* CLIENTS */
@@ -1219,14 +1192,12 @@ html body {
   font-family: sans-serif;
   color: #00BFFF;
   font-size: 5vw;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 1025px) {
   #clients .mobile-title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
   }
 }
 
@@ -1254,7 +1225,7 @@ html body {
 
 @media (max-width: 1025px) {
   #clients .clients-under-nav {
-    height: 100vh;
+    height: 82.16%;
   }
 }
 
@@ -1280,7 +1251,6 @@ html body {
 #clients .clients-under-nav #client-pic-small {
   display: none;
   width: 100%;
-  margin-bottom: 20vh;
 }
 
 @media (max-width: 1025px) {
@@ -1304,14 +1274,12 @@ html body {
   font-family: sans-serif;
   color: #00BFFF;
   font-size: 5vw;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 1025px) {
   #team .mobile-title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
   }
 }
 
@@ -1332,7 +1300,7 @@ html body {
 
 #team .mobile-team {
   width: 100%;
-  height: 100vh;
+  height: 82.16%;
   margin: auto;
   background-color: black;
   position: relative;
@@ -1382,7 +1350,7 @@ html body {
       flex-wrap: initial;
   width: 100%;
   height: auto;
-  margin: -20vh 0 0 0;
+  margin: 0 0 0 0;
   scroll-snap-align: start;
   pointer-events: none;
   min-width: 100%;
@@ -1413,10 +1381,12 @@ html body {
 
 #team .mobile-team .m-team-pic-container .mob-name-container .circle-right {
   margin-left: 1rem;
+  width: 10vw;
 }
 
 #team .mobile-team .m-team-pic-container .mob-name-container .circle-left {
   margin-right: 1rem;
+  width: 10vw;
 }
 
 #team .mobile-team .m-team-pic-container .mob-hidden {
@@ -1438,18 +1408,10 @@ html body {
   display: none;
 }
 
-#team .mobile-team .m-team-pic-container .mob-hidden .blue-text {
-  font-family: sans-serif;
-  color: #00BFFF;
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 0;
-}
-
 #team .mobile-team .m-team-pic-container p {
   font-family: sans-serif;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -1638,6 +1600,7 @@ html body {
             align-items: center;
     -ms-flex-wrap: initial;
         flex-wrap: initial;
+    height: 82.16%;
   }
 }
 
@@ -1727,12 +1690,6 @@ html body {
 
 #contact .contact-under-nav .links {
   text-align: center;
-}
-
-@media (max-width: 1025px) {
-  #contact .contact-under-nav .links {
-    margin-bottom: 10vh;
-  }
 }
 
 #contact .contact-under-nav .links .small-link {
