@@ -1587,7 +1587,6 @@ html body {
             align-items: center;
     -ms-flex-wrap: initial;
         flex-wrap: initial;
-    height: 80vh;
   }
 }
 
