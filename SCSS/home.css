@@ -267,13 +267,6 @@ html body {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 1025px) {
-  html body {
-    -ms-scroll-snap-type: none;
-        scroll-snap-type: none;
-  }
-}
-
 /* MOBILE SITE */
 .mobile-nav {
   width: 100%;
