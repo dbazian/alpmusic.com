@@ -86,10 +86,8 @@ html {
 
 .container {
     @include size-position(100%, 100%, auto);
-    
     scroll-snap-align: start;
     overflow: hidden;
-    @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
 }
 
 /* NAV BAR */
@@ -141,7 +139,6 @@ html {
 
 /* LIBRARY */
     
-
 #library {
     @include for-size(phone-only) {
         display: none; }
@@ -379,7 +376,6 @@ html {
     }
 }
 
-
 // DESKTOP APP PAGE
 
 .app-under-nav {
@@ -470,7 +466,7 @@ html {
         @include flex-box(column, center, center);
         @include size-position(100%, calc(100% - 10rem), auto);
         background-color: black;
-        @include for-size(phone-only) { display: none; }
+        @include for-size(phone-only) { display: none; height: 100%; }
 
         .about-alp-video {
             @extend %max;
@@ -494,7 +490,7 @@ html {
     @include flex-box(initial, center, center);
     @include size-position(100%, calc(100% - 8rem), auto);
     overflow: hidden;
-    @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
+    @include for-size(phone-only) {height: 100%; }
 
     #client-pic {
         width: 75%;
@@ -534,7 +530,7 @@ html {
     }
 
     .mobile-team {
-        @include size-position(100%, 90%, auto, relative);
+        @include size-position(100%, 100%, auto, relative);
         background-color: black;
         overflow-y: hidden;
         max-height: 100vh;
@@ -644,7 +640,7 @@ html {
 
 #contact .container { @include for-size(phone-only) { scroll-snap-align: none; } }
 
-#contact { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
+#contact {
 
     .mobile-title {
         margin-left: 1rem;
@@ -712,10 +708,6 @@ html {
             }
         }
     }
-}
-
-.mobile-footer {
-    height: 70px;
 }
 
 /* Scrollbar */
