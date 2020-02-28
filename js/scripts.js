@@ -53,6 +53,9 @@ $(document).ready(function() {
     $('#note4').addClass('note-animation4');
     $('#note5').addClass('note-animation5');
 
+
+
+
 // TEAM ANIMATIONS
 
 // DARRELL PICTURE ANIMATION
@@ -377,16 +380,17 @@ $(".mobile-team").click(function() {
 
 });
 
+$('#mobile-logo').addClass('mob-logo-ani');
+$('#mob-hq').addClass('mob-t1-ani');
+$('#mob-ql').addClass('mob-t2-ani');
+$('#mob-ml').addClass('mob-t3-ani');
+
+$("#nav-bar-image").click( function () {
+  $("#myLinks").toggle();
+  $("#myLinks").addClass("fall-down");
+})
+
+
 });
 
 // OPEN AND CLOSE NAV BAR
-
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-
-  } else {
-    x.style.display = "block";
-}
-}

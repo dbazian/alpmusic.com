@@ -59,3 +59,6 @@
 
 @keyframes fade-in-out { 50% { opacity: 1; }
                         100% { opacity: 0; } }
+
+@keyframes fall-down { 0% { transform: translateY(-100vh) } 
+                      100% { transform: translateY(0) } }

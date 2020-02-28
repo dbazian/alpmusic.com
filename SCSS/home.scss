@@ -14,7 +14,6 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
-
     }
 }
 
@@ -56,16 +55,23 @@ html {
     display: none;
     scroll-snap-align: start;
     background-color: black;
-    @include for-size(phone-only) {
-        display: flex; 
+    @include for-size(phone-only) { display: flex; }
+
+    #mobile-logo {
+        width: 80vw; 
     }
 
-    #mobile-logo { width: 80vw; }
+    h2 { @include font-style(sans-serif, white, 8vw); opacity: 0; }
 
-    h2 { @include font-style(sans-serif, white, 8vw); }
-
-    h1 { @include font-style(sans-serif, $secondary-accent, 8vw); }
+    h1 { @include font-style(sans-serif, $secondary-accent, 8vw); opacity: 0; }
 }
+
+
+.mob-t1-ani { animation: fade-in 1s .5s forwards; }
+.mob-t2-ani { animation: fade-in 1s 1s forwards; }
+.mob-t3-ani { animation: fade-in 1s 1.5s forwards; }
+.fall-down { animation: fall-down 1s forwards; }
+
 
 /* DESKTOP SITE */
 
