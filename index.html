@@ -30,29 +30,26 @@
 
 <!-- Mobile Nav Bar -->
 
-  <nav class="mobile-nav">
-      <div id="myLinks">
-          <a href="https://alpmusic.sourceaudio.com">Library</a>
-          <a id="mob-home" href="#m-home">Home</a>
-          <a id="mob-app" href="#app">App</a>
-          <a id="mob-about" href="#about">About</a>
-          <a id="mob-clients" href="#clients">Clients</a>
-          <a id="mob-team" href="#team">Team</a>
-          <a id="mob-contact" href="#contact">Contact</a>
-          
-      </div>
-          <img id="nav-bar-image" src="IMG/nav-bar.svg" alt="navigation bar drop down button" onclick="myFunction()">
-  </nav>
+<nav class="mobile-nav">
+  <div id="myLinks">
+    <a href="https://alpmusic.sourceaudio.com">Library</a>
+    <a id="mob-home" href="#m-home">Home</a>
+    <a id="mob-app" href="#app">App</a>
+    <a id="mob-about" href="#about">About</a>
+    <a id="mob-clients" href="#clients">Clients</a>
+    <a id="mob-team" href="#team">Team</a>
+    <a id="mob-contact" href="#contact">Contact</a>
+  </div>
+  <img id="nav-bar-image" src="IMG/nav-bar.svg" alt="navigation bar drop down button" onclick="myFunction()">
+</nav>
 
 <!-- Mobile Home Page-->
 
 <div class="mobile-home container"><a name="m-home"></a>
-    <img id="mobile-logo" src="IMG/logo-full.svg" alt="ALP Music Full Logo">
-    <div id="main-text">
-      <h2 id="mob-hq">High Quality</h2>
-      <h2 id="mob-ql">Quick License</h2>
-      <h1 id="mob-ml">Music Library</h1>
-    </div>
+  <img id="mobile-logo" src="IMG/logo-full.svg" alt="ALP Music Full Logo">
+  <h2 id="mob-hq">High Quality</h2>
+  <h2 id="mob-ql">Quick License</h2>
+  <h1 id="mob-ml">Music Library</h1>
 </div>
 
 <!-- LIBRARY SECTION -->
@@ -240,40 +237,46 @@
 
 <!-- Mobile Team -->
 
-<h1 id="team-title">Click on our pictures for more info.</h1>
-<div class="mobile-team">
-  <div class="m-team-pic-container" id="mob-nick-container">
-    <img class="m-team-pic" id="nick-m" src="IMG/Nick.jpg" alt="Nick Marko C.E.O" title="Nick Marko C.E.O">
-    <div class="mob-name-container">
-    <p id="mob-nick-name">Nick Marko - C.E.O</p>
-      <img class="circle-right" src="IMG/circle-right.svg" alt="scroll right">
-    </div>
-    <div class="mob-hidden" id="mob-nick-info" role="content-info">
-      <p>Former Sony/BMG recording artist produced by Michael Ivins of the Flaming Lips. Marko a multi-instrumentalist composed the ALP Catalog with Bazian.</p>
+  <h1 id="team-title">Click on our pictures for more info.</h1>
+  <div class="mobile-team">
+
+    <div class="m-team-pic-container" id="mob-nick-container">
+      <img class="m-team-pic" id="nick-m" src="IMG/Nick.jpg" alt="Nick Marko C.E.O" title="Nick Marko C.E.O">
+      <img class="m-team-pic-small" id="nick-m-small" src="IMG/Nick.jpg">
+      <div class="mob-name-container">
+        <p id="mob-nick-name">Nick Marko - C.E.O</p>
+        <img class="circle-right" src="IMG/circle-right.svg" href="#darrell" alt="scroll right">
       </div>
+      <div class="mob-hidden" id="mob-nick-info" role="content-info">
+        <p>Former Sony/BMG recording artist produced by Michael Ivins of the Flaming Lips. Marko a multi-instrumentalist composed the ALP Catalog with Bazian.</p>
+      </div>
+    </div>
+
+    <div class="m-team-pic-container">
+      <img class="m-team-pic" id="darrell-m" src="IMG/Darrell.jpg" alt="Darrell Bazian C T O" title="Darrell Bazian C.T.O">
+      <img class="m-team-pic-small" id="darrell-m-small" src="IMG/Darrell.jpg">
+      <div class="mob-name-container">
+        <img class="circle-left" src="IMG/circle-left.svg" alt="scroll left">
+        <p id="mob-darrell-name">Darrell Bazian - C.T.O</p>
+        <img class="circle-right" src="IMG/circle-right.svg" alt="scroll right">
+      </div>
+      <div class="mob-hidden" id="mob-darrell-info" role="content-info">
+        <p>Darrell has recorded, mixed and mastered the ALP Music Library. He is proficient in Pro Tools, Adobe Suites, HTML, CSS, Javascript, Wordpress and more.</p>
+      </div>
+    </div>
+
+    <div class="m-team-pic-container">
+      <img  id="dave-m" class="m-team-pic"  src="IMG/Dave.jpg" alt="David Karbon C.F.O" title="David Karbon C.F.O">
+      <img class="m-team-pic-small" id="dave-m-small" src="IMG/Dave.jpg">
+      <div class="mob-name-container">
+        <img class="circle-left" src="IMG/circle-left.svg" alt="scroll left">
+        <p id="mob-dave-name">Dave Karbon - C.F.O</p>
+      </div>
+      <div class="mob-hidden" id="mob-dave-info" role="content-info">
+        <p>Dave serves as ALP Music's CFO and Project Consultant, where he helps clients select the right music for their project within a budget they can afford.</p>
+      </div>
+    </div>
   </div>
-  <div class="m-team-pic-container">
-    <img class="m-team-pic" id="darrell-m" src="IMG/Darrell.jpg" alt="Darrell Bazian C T O" title="Darrell Bazian C.T.O">
-    <div class="mob-name-container">
-      <img class="circle-left" src="IMG/circle-left.svg" alt="scroll left">
-    <p id="mob-darrell-name">Darrell Bazian - C.T.O</p>
-    <img class="circle-right" src="IMG/circle-right.svg" alt="scroll right">
-    </div>
-    <div class="mob-hidden" id="mob-darrell-info" role="content-info">
-      <p>Darrell has recorded, mixed and mastered the ALP Music Library. He is proficient in Pro Tools, Adobe Suites, HTML, CSS, Javascript, Wordpress and more.</p>
-    </div>
-  </div>
-  <div class="m-team-pic-container">
-    <img  id="dave-m" class="m-team-pic"  src="IMG/Dave.jpg" alt="David Karbon C.F.O" title="David Karbon C.F.O">
-    <div class="mob-name-container">
-      <img class="circle-left" src="IMG/circle-left.svg" alt="scroll left">
-    <p id="mob-dave-name">Dave Karbon - C.F.O</p>
-    </div>
-    <div class="mob-hidden" id="mob-dave-info" role="content-info">
-      <p>Dave serves as ALP Music's CFO and Project Consultant, where he helps clients select the right music for their project within a budget they can afford.</p>
-    </div>
-  </div>
-</div>
 
 <!-- Desktop Team -->
 

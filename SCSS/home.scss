@@ -17,20 +17,20 @@ html {
     }
 }
 
-/* MOBILE SITE */
+// MOBILE
+
+// Mobile nav
 
 .mobile-nav {
-    width: 100%;
-    position: fixed;
+    @include size-position(100%, auto, auto, fixed);
     z-index: 2;
     display: none;
     @include for-size(phone-only) { display: block; }
     
     #myLinks {
+        @include size-position(100%, auto, auto, fixed);
         display: none;
-        position: fixed;
         background-color: $main-text-color;
-        width: 100%;
         opacity: .7;
 
         a {
@@ -42,13 +42,17 @@ html {
     }
 
     #nav-bar-image { 
-        margin: .5rem;
+        @include size-position(10vw, auto, .5rem, fixed);
         right: 0;
         z-index: 5;
-        position: fixed;
-        width: 10vw; 
     }
 }
+
+// Mobile Nav Animation
+
+.fall-down { animation: fall-down 1s forwards; }
+
+// Mobile Home
 
 .mobile-home { 
     @include flex-box(column, center, center);
@@ -57,31 +61,33 @@ html {
     background-color: black;
     @include for-size(phone-only) { display: flex; }
 
-    #mobile-logo {
-        width: 80vw; 
+    #mobile-logo { width: 80vw; }
+
+    h2 { 
+        @include font-style(sans-serif, white, 8vw); 
+        opacity: 0;
+        margin: 0 0 2rem 0;
     }
 
-    h2 { @include font-style(sans-serif, white, 8vw); opacity: 0; }
-
-    h1 { @include font-style(sans-serif, $secondary-accent, 8vw); opacity: 0; }
+    h1 { 
+        @include font-style(sans-serif, $secondary-accent, 8vw); 
+        opacity: 0;
+        margin: 0;
+    }
 }
 
+// Mobile Home Animations
 
 .mob-t1-ani { animation: fade-in 1s .5s forwards; }
 .mob-t2-ani { animation: fade-in 1s 1s forwards; }
 .mob-t3-ani { animation: fade-in 1s 1.5s forwards; }
-.fall-down { animation: fall-down 1s forwards; }
 
-
-/* DESKTOP SITE */
-
-/* EACH PAGE */
+// DESKTOP
 
 .container {
-    width: 100%;
+    @include size-position(100%, 100%, auto);
     scroll-snap-align: start;
     overflow: hidden;
-    height: 100%;
     @include for-size(phone-only) { height: 90%; }
 }
 
@@ -89,14 +95,15 @@ html {
 
 .desktop-nav {
     @include flex-box(row center center);
-    @include size-position(100%, 7rem, auto);
-    position: relative;
+    @include size-position(100%, 7rem, auto, relative);
+    border: {
+        top: 10px solid;
+        bottom: 10px solid;
+        image-source: linear-gradient(45deg, $main-text-color, $brand-color, $secondary-accent, $brand-color, $brand-color, $secondary-accent, $brand-color, $main-text-color);
+        image-slice: 1;
+    }
     background-color: $main-text-color;
     overflow: hidden;
-    border-top: 10px solid;
-    border-bottom: 10px solid;
-    border-image-source: linear-gradient(45deg, $main-text-color, $brand-color, $secondary-accent, $brand-color, $brand-color, $secondary-accent, $brand-color, $main-text-color);
-    border-image-slice: 1;
     @include for-size(phone-only) {
         display: none;
     }
@@ -546,6 +553,8 @@ html {
 
         .m-team-pic { width: 75%; }
 
+        .m-team-pic-small { width: 50%; display: none; }
+
         .mob-name-container {
             @include flex-box(row, center, center);
 
@@ -563,6 +572,8 @@ html {
         .mob-hidden { 
             @include flex-box(row, center, center);
             display: none;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
 
             p { @include font-style(sans-serif, white, 1rem); }

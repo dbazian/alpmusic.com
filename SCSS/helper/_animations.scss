@@ -62,3 +62,7 @@
 
 @keyframes fall-down { 0% { transform: translateY(-100vh) } 
                       100% { transform: translateY(0) } }
+
+@keyframes go-up { 0% { transform: translateY(0) }
+                  100% { transform: translateY(-100) }
+}

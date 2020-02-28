@@ -27,10 +27,11 @@
     cursor: pointer;
 }
 
-@mixin size-position($width, $height, $margin) {
+@mixin size-position($width, $height, $margin: auto, $position: static) {
     width: $width;
     height: $height;
     margin: $margin;
+    position: $position;
 }
 
 @mixin font-style($family, $color, $size, $align: center) {

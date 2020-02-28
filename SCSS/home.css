@@ -272,6 +272,28 @@
   }
 }
 
+@-webkit-keyframes go-up {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100);
+            transform: translateY(-100);
+  }
+}
+
+@keyframes go-up {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100);
+            transform: translateY(-100);
+  }
+}
+
 /* WHOLE PAGE */
 html {
   font-size: 16px;
@@ -282,6 +304,7 @@ html body {
   width: auto;
   height: 100vh;
   margin: 0;
+  position: static;
   overflow-y: scroll;
   overflow-x: hidden;
   -ms-scroll-snap-type: y mandatory;
@@ -289,9 +312,10 @@ html body {
   scroll-behavior: smooth;
 }
 
-/* MOBILE SITE */
 .mobile-nav {
   width: 100%;
+  height: auto;
+  margin: auto;
   position: fixed;
   z-index: 2;
   display: none;
@@ -304,10 +328,12 @@ html body {
 }
 
 .mobile-nav #myLinks {
-  display: none;
-  position: fixed;
-  background-color: #262626;
   width: 100%;
+  height: auto;
+  margin: auto;
+  position: fixed;
+  display: none;
+  background-color: #262626;
   opacity: .7;
 }
 
@@ -322,11 +348,17 @@ html body {
 }
 
 .mobile-nav #nav-bar-image {
-  margin: .5rem;
+  width: 10vw;
+  height: auto;
+  margin: 0.5rem;
+  position: fixed;
   right: 0;
   z-index: 5;
-  position: fixed;
-  width: 10vw;
+}
+
+.fall-down {
+  -webkit-animation: fall-down 1s forwards;
+          animation: fall-down 1s forwards;
 }
 
 .mobile-home {
@@ -368,6 +400,7 @@ html body {
   font-size: 8vw;
   text-align: center;
   opacity: 0;
+  margin: 0 0 2rem 0;
 }
 
 .mobile-home h1 {
@@ -376,6 +409,7 @@ html body {
   font-size: 8vw;
   text-align: center;
   opacity: 0;
+  margin: 0;
 }
 
 .mob-t1-ani {
@@ -393,18 +427,13 @@ html body {
           animation: fade-in 1s 1.5s forwards;
 }
 
-.fall-down {
-  -webkit-animation: fall-down 1s forwards;
-          animation: fall-down 1s forwards;
-}
-
-/* DESKTOP SITE */
-/* EACH PAGE */
 .container {
   width: 100%;
+  height: 100%;
+  margin: auto;
+  position: static;
   scroll-snap-align: start;
   overflow: hidden;
-  height: 100%;
 }
 
 @media (max-width: 769px) {
@@ -434,12 +463,12 @@ html body {
   height: 7rem;
   margin: auto;
   position: relative;
-  background-color: #262626;
-  overflow: hidden;
   border-top: 10px solid;
   border-bottom: 10px solid;
   border-image-source: linear-gradient(45deg, #262626, #009DD1, #00BFFF, #009DD1, #009DD1, #00BFFF, #009DD1, #262626);
   border-image-slice: 1;
+  background-color: #262626;
+  overflow: hidden;
 }
 
 @media (max-width: 769px) {
@@ -492,6 +521,7 @@ html body {
   width: 20vw;
   height: auto;
   margin: 0 1.2rem 0 0;
+  position: static;
 }
 
 .desktop-nav .header-center p {
@@ -727,6 +757,7 @@ html body {
   width: auto;
   height: 2rem;
   margin: 0;
+  position: static;
 }
 
 .library-under-nav .below-animation p img {
@@ -737,6 +768,7 @@ html body {
   width: 40rem;
   height: 3rem;
   margin: 1rem auto 2rem auto;
+  position: static;
   text-align: center;
 }
 
@@ -780,6 +812,7 @@ html body {
   width: 50rem;
   height: 3rem;
   margin: auto;
+  position: static;
 }
 
 .library-under-nav .below-animation .music-player .icons {
@@ -851,6 +884,7 @@ html body {
   width: 1.5rem;
   height: 1.5rem;
   margin: -0.5rem 0 0 0;
+  position: static;
   -webkit-appearance: none;
           appearance: none;
   border-radius: 50%;
@@ -906,6 +940,7 @@ html body {
   width: 100%;
   height: 100%;
   margin: auto;
+  position: static;
   position: relative;
   display: none;
 }
@@ -938,6 +973,7 @@ html body {
   width: 100%;
   height: 100%;
   margin: auto;
+  position: static;
   text-align: center;
 }
 
@@ -1036,6 +1072,7 @@ html body {
   width: 100%;
   height: calc(100% - 10rem);
   margin: auto;
+  position: static;
   position: absolute;
 }
 
@@ -1215,6 +1252,7 @@ html body {
   width: 100%;
   height: calc(100% - 10rem);
   margin: auto;
+  position: static;
   background-color: black;
 }
 
@@ -1263,6 +1301,7 @@ html body {
   width: 100%;
   height: calc(100% - 8rem);
   margin: auto;
+  position: static;
   overflow: hidden;
 }
 
@@ -1345,6 +1384,7 @@ html body {
   width: 100%;
   height: 90%;
   margin: auto;
+  position: static;
   background-color: black;
   position: relative;
   overflow-y: hidden;
@@ -1394,6 +1434,7 @@ html body {
   width: 100%;
   height: auto;
   margin: 0 0 0 0;
+  position: static;
   scroll-snap-align: start;
   pointer-events: none;
   min-width: 100%;
@@ -1402,6 +1443,11 @@ html body {
 
 #team .mobile-team .m-team-pic-container .m-team-pic {
   width: 75%;
+}
+
+#team .mobile-team .m-team-pic-container .m-team-pic-small {
+  width: 50%;
+  display: none;
 }
 
 #team .mobile-team .m-team-pic-container .mob-name-container {
@@ -1449,6 +1495,8 @@ html body {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   display: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 #team .mobile-team .m-team-pic-container p {
@@ -1487,6 +1535,7 @@ html body {
   width: 100%;
   height: 8vh;
   margin: 0;
+  position: static;
   font-family: "miller-display", "times", "serif";
   color: #262626;
   font-size: 1vw;
@@ -1516,6 +1565,7 @@ html body {
   width: 100%;
   height: 75%;
   margin: auto;
+  position: static;
   position: relative;
   overflow: hidden;
 }
@@ -1550,6 +1600,7 @@ html body {
   width: 24.2vw;
   height: auto;
   margin: 0 1em;
+  position: static;
   cursor: pointer;
   max-width: 100%;
 }
@@ -1721,6 +1772,7 @@ html body {
   width: 15rem;
   height: 4vw;
   margin: 0.5rem 0 1rem 0;
+  position: static;
   cursor: pointer;
   border-radius: 10px;
   background-color: white;

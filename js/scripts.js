@@ -335,34 +335,27 @@ fifthsong.onended = function () {
   songOne.play();
 }
 
-
 // MOBILE 
 
-// CLOSE NAV ON LINK CLICK
+// HOME PAGE ANIMATION
 
-$("#mob-app").click( function () {
-  $("#myLinks").toggle();
-})
+$('#mobile-logo').addClass('mob-logo-ani');
+$('#mob-hq').addClass('mob-t1-ani');
+$('#mob-ql').addClass('mob-t2-ani');
+$('#mob-ml').addClass('mob-t3-ani');
 
-$("#mob-about").click( function () {
-  $("#myLinks").toggle();
-})
+// NAV BAR
 
-$("#mob-home").click( function () {
-  $("#myLinks").toggle();
-})
-
-$("#mob-clients").click( function () {
-  $("#myLinks").toggle();
-})
-
-$("#mob-team").click( function () {
-  $("#myLinks").toggle();
-})
-
-$("#mob-contact").click( function () {
-  $("#myLinks").toggle();
-})
+counterD = 0;
+$("#nav-bar-image, #mob-app, #mob-about, #mob-home, #mob-clients, #mob-team, #mob-contact").click( function () {
+  counterD++;
+  if (counterD % 2 == 1) {
+    $("#myLinks").toggle().addClass("fall-down");
+  } else {
+  $("#myLinks").toggle(400);
+  $("#myLinks").removeClass("fall-down");
+  }
+});
 
 // MOBILE TEAM ANIMATIONS
 
@@ -372,25 +365,13 @@ $(".mobile-team").click(function() {
   if (counterC % 2 == 1) {
   $(".m-team-pic").toggle(400);
   $(".mob-hidden").toggle(400);
-
+  $(".m-team-pic-small").delay(400).toggle(400);
 } else {
   $(".m-team-pic").delay(400).toggle(400);
   $(".mob-hidden").toggle(400);
+  $(".m-team-pic-small").toggle(400);
   }
-
 });
 
-$('#mobile-logo').addClass('mob-logo-ani');
-$('#mob-hq').addClass('mob-t1-ani');
-$('#mob-ql').addClass('mob-t2-ani');
-$('#mob-ml').addClass('mob-t3-ani');
-
-$("#nav-bar-image").click( function () {
-  $("#myLinks").toggle();
-  $("#myLinks").addClass("fall-down");
-})
-
-
+//END
 });
-
-// OPEN AND CLOSE NAV BAR
