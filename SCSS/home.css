@@ -380,6 +380,7 @@ html body {
   display: none;
   scroll-snap-align: start;
   background-color: black;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 @media (max-width: 769px) {
@@ -434,6 +435,7 @@ html body {
   position: static;
   scroll-snap-align: start;
   overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 /* NAV BAR */
@@ -891,6 +893,12 @@ html body {
 }
 
 /* APP */
+@media (max-width: 769px) {
+  #app {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 #app .app-background {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1200,6 +1208,12 @@ html body {
   background-color: black;
 }
 
+@media (max-width: 769px) {
+  #about {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 #about .mobile-title {
   margin-left: 1rem;
   display: none;
@@ -1262,6 +1276,12 @@ html body {
 }
 
 /* CLIENTS */
+@media (max-width: 769px) {
+  #clients {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 #clients .mobile-title {
   margin-left: 1rem;
   display: none;
@@ -1342,6 +1362,12 @@ html body {
 @media (max-width: 769px) {
   #team {
     background-color: black;
+  }
+}
+
+@media (max-width: 769px) and (max-width: 769px) {
+  #team {
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
@@ -1657,6 +1683,12 @@ html body {
 @media (max-width: 769px) {
   #contact .container {
     scroll-snap-align: none;
+  }
+}
+
+@media (max-width: 769px) and (max-width: 769px) {
+  #contact .container {
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 

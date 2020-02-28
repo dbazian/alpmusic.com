@@ -59,6 +59,7 @@ html {
     display: none;
     scroll-snap-align: start;
     background-color: black;
+    height: calc(var(--vh, 1vh) * 100);
     @include for-size(phone-only) { display: flex; }
 
     #mobile-logo { width: 80vw; }
@@ -88,6 +89,7 @@ html {
     @include size-position(100%, 100%, auto);
     scroll-snap-align: start;
     overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 /* NAV BAR */
@@ -306,7 +308,7 @@ html {
 
 /* APP */
 
-#app {
+#app { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
 
 .app-background {
     @include flex-box(initial, center, center);
@@ -446,7 +448,7 @@ html {
 
 /* ABOUT */
 
-#about { background-color: black;
+#about { background-color: black; @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
 
     .mobile-title {
         margin-left: 1rem;
@@ -477,7 +479,7 @@ html {
 
 /* CLIENTS */
 
-#clients {
+#clients { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
 
     .mobile-title {
         margin-left: 1rem;
@@ -513,7 +515,7 @@ html {
 
 /* TEAM */
 
-#team { @include for-size(phone-only) { background-color: black; } 
+#team { @include for-size(phone-only) { background-color: black; @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); } } 
 
     .mobile-title {
         margin-left: 1rem;
@@ -638,7 +640,7 @@ html {
 
 /* Contact */
 
-#contact .container { @include for-size(phone-only) { scroll-snap-align: none; } }
+#contact .container { @include for-size(phone-only) { scroll-snap-align: none; @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); } } }
 
 #contact {
 
