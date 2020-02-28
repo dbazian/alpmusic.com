@@ -401,7 +401,7 @@ html body {
   font-size: 8vw;
   text-align: center;
   opacity: 0;
-  margin: 0 0 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 .mobile-home h1 {

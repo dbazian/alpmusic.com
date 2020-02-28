@@ -67,7 +67,7 @@ html {
     h2 { 
         @include font-style(sans-serif, white, 8vw); 
         opacity: 0;
-        margin: 0 0 2rem 0;
+        padding: 0 0 2rem 0;
     }
 
     h1 { 
