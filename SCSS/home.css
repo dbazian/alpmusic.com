@@ -276,6 +276,7 @@ html {
 @media (max-width: 769px) {
   html {
     overflow-y: visible;
+    scroll-behavior: smooth;
   }
 }
 
@@ -293,6 +294,7 @@ html body {
 @media (max-width: 769px) {
   html body {
     overflow: visible visible;
+    scroll-behavior: none;
   }
 }
 
@@ -304,7 +306,7 @@ html body .container {
 @media (max-width: 769px) {
   html body .container {
     height: calc(var(--vh, 1vh) * 100);
-    overflow: visible;
+    overflow: hidden;
   }
 }
 

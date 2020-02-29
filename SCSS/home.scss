@@ -7,7 +7,7 @@
 html {
     font-size: 16px;
     overflow-y: hidden;
-    @include for-size(phone-only) { overflow-y: visible; }
+    @include for-size(phone-only) { overflow-y: visible; scroll-behavior: smooth; }
 
     body { 
         @include size-position(auto, 100vh, 0);
@@ -16,6 +16,7 @@ html {
         scroll-behavior: smooth; 
         @include for-size(phone-only) { 
             overflow: visible visible;
+            scroll-behavior: none;
         }
 
         .container {   
@@ -24,7 +25,7 @@ html {
             overflow: hidden;
             @include for-size(phone-only) {  
                 height: $mobile-height;
-                overflow: visible; }
+                overflow: hidden; }
         }
     }
 }
