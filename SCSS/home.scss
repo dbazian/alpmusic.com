@@ -7,19 +7,27 @@
 html {
     font-size: 16px;
     overflow-y: hidden;
+    @include for-size(phone-only) { overflow-y: visible; }
 
     body { 
         @include size-position(auto, 100vh, 0);
-        overflow-y: scroll;
-        overflow-x: hidden;
+        overflow: hidden scroll;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
-        @include for-size(phone-only) { scroll-snap-type: none; }
+        @include for-size(phone-only) { 
+            scroll-snap-type: none;
+            overflow: visible visible;
+        }
 
         .container {   
+            @extend %full;
             scroll-snap-align: start;
             overflow: hidden;
-            height: calc(var(--vh, 1vh) * 100);
+            @include for-size(phone-only) { 
+                scroll-snap-type: none; 
+                height: $mobile-height;
+                overflow: visible; }
+                 
         }
     }
 }
@@ -136,7 +144,7 @@ html {
 // Desktop Homepage
         
 .library-under-nav { 
-    height: calc(100% - 8rem);
+    height: $desktop-height;
     text-align: center;
     @include for-size(phone-only) { display: none; }
 
@@ -357,7 +365,7 @@ html {
 
 .app-background {
     @include flex-box(initial, center, center);
-    @include size-position(auto, calc(100% - 8rem), auto, relative);
+    @include size-position(auto, $desktop-height, auto, relative);
     overflow: hidden;
     @include for-size(phone-only) { display: none; }
 
@@ -370,7 +378,7 @@ html {
 
 .app-under-nav {
     @include flex-box(row, center, center);
-    @include size-position(100%, calc(100% - 10rem), auto, absolute);
+    @include size-position(100%, $desktop-height, auto, absolute);
     @include for-size(phone-only) { display: none; }
 
     .app-container {
@@ -445,12 +453,12 @@ html {
 
     .about-under-nav {
         @include flex-box(column, center, center);
-        @include size-position(100%, calc(100% - 10rem), auto);
+        @include size-position(100%, $desktop-height, auto);
         background-color: black;
         @include for-size(phone-only) { display: none; height: 100%; }
 
         .about-alp-video {
-            @extend %max;
+            height: 95%;
             outline: none;
         }
     }
@@ -489,7 +497,7 @@ html {
 
     .clients-under-nav {
         @include flex-box(initial, center, center);
-        @include size-position(100%, calc(100% - 8rem), auto);
+        @include size-position(100%, $desktop-height, auto);
         overflow: hidden;
         @include for-size(phone-only) {display: none; }
 

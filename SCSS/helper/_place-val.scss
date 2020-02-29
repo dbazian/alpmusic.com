@@ -12,6 +12,8 @@ $secondary-font: 'forma-djr-display', sans-serif;
 
 $standard-border: 6px solid #272525;
 $contact-border: $alp-color 6px solid;
+$desktop-height: calc(100% - 7rem);
+$mobile-height: calc(var(--vh, 1vh) * 100);
 
 /* PLACEHOLDERS */
 

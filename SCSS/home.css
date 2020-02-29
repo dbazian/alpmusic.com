@@ -15,14 +15,9 @@
   color: #00BFFF;
 }
 
-#library .mobile-home-full, #app .mobile-app-full, #about .mobile-about-full, #clients .mobile-clients-full, #team .mobile-team-full, #contact .contact-under-nav {
+html body .container, #library .mobile-home-full, #app .mobile-app-full, #about .mobile-about-full, #clients .mobile-clients-full, #team .mobile-team-full, #contact .contact-under-nav {
   height: 100%;
   width: 100%;
-}
-
-#about .about-under-nav .about-alp-video {
-  max-height: 100%;
-  max-width: 100%;
 }
 
 #contact .contact-under-nav form input[type=text], #contact .contact-under-nav form input[type=email], #contact .contact-under-nav form textarea, #contact .contact-under-nav form button[type=submit] {
@@ -278,13 +273,18 @@ html {
   overflow-y: hidden;
 }
 
+@media (max-width: 769px) {
+  html {
+    overflow-y: visible;
+  }
+}
+
 html body {
   width: auto;
   height: 100vh;
   margin: 0;
   position: static;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden scroll;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -294,13 +294,22 @@ html body {
   html body {
     -ms-scroll-snap-type: none;
         scroll-snap-type: none;
+    overflow: visible visible;
   }
 }
 
 html body .container {
   scroll-snap-align: start;
   overflow: hidden;
-  height: calc(var(--vh, 1vh) * 100);
+}
+
+@media (max-width: 769px) {
+  html body .container {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: visible;
+  }
 }
 
 .mobile-nav {
@@ -522,7 +531,7 @@ html body .container {
 }
 
 #library .library-under-nav {
-  height: calc(100% - 8rem);
+  height: calc(100% - 7rem);
   text-align: center;
 }
 
@@ -1081,7 +1090,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: auto;
-  height: calc(100% - 8rem);
+  height: calc(100% - 7rem);
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -1124,7 +1133,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: calc(100% - 10rem);
+  height: calc(100% - 7rem);
   margin: auto;
   position: absolute;
 }
@@ -1326,7 +1335,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: calc(100% - 10rem);
+  height: calc(100% - 7rem);
   margin: auto;
   position: static;
   background-color: black;
@@ -1340,6 +1349,7 @@ html body .container {
 }
 
 #about .about-under-nav .about-alp-video {
+  height: 95%;
   outline: none;
 }
 
@@ -1406,7 +1416,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: calc(100% - 8rem);
+  height: calc(100% - 7rem);
   margin: auto;
   position: static;
   overflow: hidden;
