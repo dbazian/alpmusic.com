@@ -15,10 +15,10 @@ html {
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
         
-        .container {
-            @extend %full;           
+        .container {   
             scroll-snap-align: start;
             overflow: hidden;
+            height: calc(var(--vh, 1vh) * 100);
         }
     }
 }
@@ -102,12 +102,14 @@ html {
 
 // HOMEPAGE
 
-#library { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); background-color: black; }
+#library {
 
 // Mobile Homepage
 
 .mobile-home-full { 
-    @include flex-box(column, center, center);
+    @include flex-box(column, center, center); 
+    background-color: black;
+    @extend %full;
     display: none;
     @include for-size(phone-only) { display: flex; }
 
@@ -288,8 +290,7 @@ html {
 
 /* APP PAGE */
 
-#app { @include for-size(phone-only) { height: 100vh; height: calc(var(--vh, 1vh) * 100); }
-
+#app {
 // MOBILE APP
 
 .app-background-m {
@@ -307,9 +308,12 @@ html {
     }
 }
 
-.mobile-app-full {         
+.mobile-app-full {  
+    @include flex-box(column, center, center); 
+    @extend %full;
+    background-color: white;
     display: none;
-    @include for-size(phone-only) { display: block; }
+    @include for-size(phone-only) { display: flex; }
 
     .app-container {
         @include flex-box(column, center, center);
@@ -416,17 +420,19 @@ html {
 
 /* ABOUT */
 
-#about { background-color: black; @include for-size(phone-only) { height: 100vh; height: calc(var(--vh, 1vh) * 100); }
+#about {
 
     .mobile-about-full {
+        @include flex-box(column, center, center); 
+        background-color: black;
+        @extend %full;
         display: none;
-        @include for-size(phone-only) { display: block; }
+        @include for-size(phone-only) { display: flex; }
 
         .mobile-title {
             @include font-style(sans-serif, $alp-color, 5vw, left);
             margin-left: 1rem;
-            display: none;
-            @include for-size(phone-only) { display: block; }
+            align-self: start;
         }
 
         .about-alp-video-portrait {
@@ -451,31 +457,40 @@ html {
 
 /* CLIENTS */
 
-#clients { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
+#clients {
 
-    .mobile-clients-full {         
+//Mobile Clients Page
+
+.mobile-clients-full { 
+        @include flex-box(column, center, center); 
+        background-color: white;
+        @extend %full;
         display: none;
-        @include for-size(phone-only) { display: block; }
+        position: relative;
+        @include for-size(phone-only) { display: flex; }
 
     .mobile-title {
-        @include font-style(sans-serif, $alp-color, 5vw, left);
+        @include font-style(sans-serif, $alp-contrast, 5vw, left);
         margin-left: 1rem;
-        display: none;
-        @include for-size(phone-only) { display: block; }
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     #client-pic-small {
-        display: none;
         width: 100%;
-        @include for-size(phone-only) { display: flex; }
     }
 }
+
+
+// Desktop Clients Page 
 
     .clients-under-nav {
         @include flex-box(initial, center, center);
         @include size-position(100%, calc(100% - 8rem), auto);
         overflow: hidden;
-        @include for-size(phone-only) {height: 100%; }
+        @include for-size(phone-only) {display: none; }
 
     #client-pic {
         width: 75%;
@@ -490,17 +505,21 @@ html {
 
 /* TEAM */
 
-#team { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); background-color: black; } 
+#team {
 
 .mobile-team-full {
+    @include flex-box(column, center, center); 
+    background-color: black;
+    @extend %full;
     display: none;
-    @include for-size(phone-only) { display: block; }
+    @include for-size(phone-only) { display: flex; }
 
 .mobile-title {
     @include font-style(sans-serif, $alp-color, 5vw, left);
     margin-left: 1rem;
     display: none;
-    @include for-size(phone-only) { display: block; }
+    align-self: start;
+    @include for-size(phone-only) { display: flex; }
 }
 
 #team-title {
@@ -611,17 +630,21 @@ html {
 
 /* Contact */
 
-#contact { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
+#contact {
 
     .mobile-contact-full { 
+        @include flex-box(column, center, center); 
+        background-color: white;
+        @extend %full;
         display: none;
-        @include for-size(phone-only) { display: block; }
+        @include for-size(phone-only) { display: flex; }
 
     .mobile-title {
         @include font-style(sans-serif, $alp-contrast, 5vw, left);
         margin-left: 1rem;
         display: none;
-        @include for-size(phone-only) { display: block; }
+        align-self: start;
+        @include for-size(phone-only) { display: flex; }
 }
 
     .contact-under-nav { @extend %full;
