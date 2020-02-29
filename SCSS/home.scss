@@ -2,7 +2,7 @@
 @import "helper/place-val";
 @import "helper/animations";
 
-/* WHOLE PAGE */
+// Whole page
 
 html {
     font-size: 16px;
@@ -14,10 +14,14 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
+        
+        .container {
+            @extend %full;           
+            scroll-snap-align: start;
+            overflow: hidden;
+        }
     }
 }
-
-// MOBILE
 
 // Mobile nav
 
@@ -34,7 +38,7 @@ html {
         opacity: .7;
 
         a {
-            @include font-style(sans-serif, $secondary-accent, 2rem, left);
+            @include font-style(sans-serif, $alp-color, 2rem, left);
             text-decoration: none;
             display: block;
             margin: 1rem;
@@ -46,51 +50,14 @@ html {
         right: 0;
         z-index: 5;
     }
+
+    .fall-down { animation: fall-down 1s forwards; }
+
 }
 
-// Mobile Nav Animation
+// Desktop nav
 
-.fall-down { animation: fall-down 1s forwards; }
-
-// Mobile Home
-
-.mobile-home { 
-    @include flex-box(column, center, center);
-    display: none;
-    scroll-snap-align: start;
-    background-color: black;
-    @include for-size(phone-only) { display: flex; }
-
-    #mobile-logo { width: 80vw; }
-
-    h2 { 
-        @include font-style(sans-serif, white, 8vw); 
-        opacity: 0;
-        margin: 0 0 2rem 0;
-    }
-
-    h1 { 
-        @include font-style(sans-serif, $secondary-accent, 8vw); 
-        opacity: 0;
-        margin: 0;
-    }
-}
-
-// Mobile Home Animations
-
-.mob-t1-ani { animation: fade-in 1s .5s forwards; }
-.mob-t2-ani { animation: fade-in 1s 1s forwards; }
-.mob-t3-ani { animation: fade-in 1s 1.5s forwards; }
-
-// DESKTOP
-
-.container {
-    @include size-position(100%, 100%, auto);
-    scroll-snap-align: start;
-    overflow: hidden;
-}
-
-/* NAV BAR */
+#library nav { z-index: 5; }
 
 .desktop-nav {
     @include flex-box(row center center);
@@ -98,7 +65,7 @@ html {
     border: {
         top: 10px solid;
         bottom: 10px solid;
-        image-source: linear-gradient(45deg, $main-text-color, $brand-color, $secondary-accent, $brand-color, $brand-color, $secondary-accent, $brand-color, $main-text-color);
+        image-source: linear-gradient(45deg, $main-text-color, $alp-contrast, $alp-color, $alp-contrast, $alp-contrast, $alp-color, $alp-contrast, $main-text-color);
         image-slice: 1;
     }
     background-color: $main-text-color;
@@ -106,21 +73,17 @@ html {
     @include for-size(phone-only) {
         display: none;
     }
-    
+
     .header-side {
         @include flex-box(initial, center, center);
         width: 40vw;
 
         a { @extend %header-links;
-            @include for-size(tablet-down1) {
-                font-size: 2rem;
-            }    
-            @include for-size(tablet-down2) {
-                font-size: 1.5rem;
-            }
+            @include for-size(tablet-down1) { font-size: 2rem; }    
+            @include for-size(tablet-down2) { font-size: 1.5rem; }
         }
     }
-      
+    
     .header-center { 
         @include flex-box(initial, center, center);
         @include size-position(20vw, auto, 0 1.2rem 0 0 );
@@ -137,19 +100,42 @@ html {
     }
 }
 
-/* LIBRARY */
-    
-#library {
-    @include for-size(phone-only) {
-        display: none; }
+// HOMEPAGE
+
+#library { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); background-color: black; }
+
+// Mobile Homepage
+
+.mobile-home-full { 
+    @include flex-box(column, center, center);
+    display: none;
+    @include for-size(phone-only) { display: flex; }
+
+    #mobile-logo { width: 80vw; }
+
+    h2 { 
+        @include font-style(sans-serif, white, 8vw); 
+        opacity: 0;
+        margin: 0 0 2rem 0;
+    }
+
+    h1 { 
+        @include font-style(sans-serif, $alp-color, 8vw); 
+        opacity: 0;
+        margin: 0;
+    }
+
+.mob-t1-ani { animation: fade-in 1s .5s forwards; }
+.mob-t2-ani { animation: fade-in 1s 1s forwards; }
+.mob-t3-ani { animation: fade-in 1s 1.5s forwards; }
 }
 
-#library nav { z-index: 5;
- }
-
+// Desktop Homepage
+        
 .library-under-nav { 
     height: calc(100% - 8rem);
     text-align: center;
+    @include for-size(phone-only) { display: none; }
 
     h1 {
         @include font-style($main-font, $main-text-color, 1.5rem); 
@@ -159,16 +145,15 @@ html {
     }
 
     .blue-text { 
-        &:hover { color: $secondary-accent; }
-        @include font-style($main-font, $brand-color, 1.5rem);
+        &:hover { color: $alp-color; }
+        @include font-style($main-font, $alp-contrast, 1.5rem);
         text-decoration: none;
         transition: color 1s;
     }
 
     .animation-box {
+        @include size-position(auto, 15rem, auto, relative);
         @include flex-box(initial, center, center);
-        position: relative;
-        height: 15rem;
 
         .white-bg-slide {
             @include animation-pos(100%, 15rem, 1, 3);
@@ -232,26 +217,25 @@ html {
             }
 
             #song-switch-title {
-                @include font-style($secondary-font, $brand-color, 1rem);
+                @include font-style($secondary-font, $alp-contrast, 1rem);
                 margin-right: 1rem;
             }
 
             #song-switch-album {
-                @include font-style($secondary-font, $brand-color, 1rem);
+                @include font-style($secondary-font, $alp-contrast, 1rem);
                 margin: 0 1rem;
             }
         }
         
         .music-player { 
             @include flex-box (initial, center, center);
-            @include size-position(50rem, 3rem, auto);
+            @include size-position(50rem, 3rem);
 
             .icons {
                 &:hover { opacity: 1; }
-                width: 3rem;
+                @include size-position (3rem, auto, 0 1rem 0 0);
                 opacity: .5;
                 transition: opacity .5s;
-                margin-right: 1rem;
             }
 
                 #pause { display: block; }
@@ -263,27 +247,24 @@ html {
                 width: 10rem;
 
                 .slider {
+                    @include size-position(100%, 2rem);
                     appearance: none;
-                    width: 100%;
                     background: transparent;
-                    height: 2rem;
                 }
 
                 input[type=range]::-webkit-slider-runnable-track {
                     &:hover { opacity: 1; }
-                    width: 100%;
-                    height: .5rem;
+                    @include size-position(100%, .5rem);
                     border-radius: 5px;
-                    background: $secondary-accent;
+                    background: $alp-color;
                     opacity: .7;
                     transition: opacity .2s;
                 }
 
                 input[type=range]::-ms-track {
-                    width: 100%;
-                    height: .5rem;
+                    @include size-position(100%, .5rem);
                     border-radius: 5px;
-                    background: $secondary-accent;
+                    background: $alp-color;
                     opacity: .7;
                     transition: opacity .2s;
                 }
@@ -292,7 +273,7 @@ html {
                     @include size-position(1.5rem, 1.5rem, -.5rem 0 0 0);
                     appearance: none;
                     border-radius: 50%;
-                    background: $brand-color;
+                    background: $alp-contrast;
                     cursor: pointer;   
                 }
 
@@ -303,41 +284,36 @@ html {
         }
     }
 }
+}
 
-/* APP */
+/* APP PAGE */
 
-#app {
+#app { @include for-size(phone-only) { height: 100vh; height: calc(var(--vh, 1vh) * 100); }
 
-.app-background {
+// MOBILE APP
+
+.app-background-m {
     @include flex-box(initial, center, center);
-    height: calc(100% - 8rem);
+    @include size-position(auto, 100%, auto, relative);
     overflow: hidden;
-    position: relative;
-    @include for-size(phone-only) { 
-        height: 100%; }
+    display: none;
+    @include for-size(phone-only) { display: flex; }
 
-    #box-logo {
-        width: 45%;
-        position: absolute;
+    #box-logo-m {
+        @include size-position(100%, auto, auto, absolute);
         opacity: .1;
-        @include for-size(phone-only) { width: 90%; }
+        display: none;
+        @include for-size(phone-only) { display: flex; }
     }
 }
 
-// MOBILE APP PAGE
-
-.app-under-nav-mobile {
-    @include size-position(100%, 100%, auto);
-    position: relative;
+.mobile-app-full {         
     display: none;
-    @include for-size(phone-only) {
-        display: flex;
-    }
+    @include for-size(phone-only) { display: block; }
 
     .app-container {
-        position: absolute;
         @include flex-box(column, center, center);
-        @include size-position(100%, 100%, auto);
+        @include size-position(100%, 100%,);
         text-align: center;
 
         .text-box { display: inline-block; }
@@ -351,25 +327,21 @@ html {
             .for-app-mobile { @include font-style(sans-serif, $main-text-color, 6vw); }
 
             #blue-text2 {
-                @include font-style($main-font, $brand-color, 2.5vw);
-                @include for-size(phone-only) { @include font-style(sans-serif, $secondary-accent, 6vw); }
+                @include font-style($main-font, $alp-contrast, 2.5vw);
+                @include for-size(phone-only) { @include font-style(sans-serif, $alp-color, 6vw); }
             }
 
-            p { 
-                @include font-style(sans-serif, $main-text-color, 4.5vw);
-                margin: 0;
-            }
+            p { @include font-style(sans-serif, $main-text-color, 4.5vw); margin: 0; }
         
             #blue-text { 
-                @include font-style(sans-serif, $secondary-accent, 4.5vw); 
+                @include font-style(sans-serif, $alp-color, 4.5vw); 
                 margin: 0 0 2rem 0;
         }
 
         .app-links { @include flex-box(row, center, center);
 
             img { 
-                width: 30vw; 
-                margin: 1rem; 
+                @include size-position(30vw, auto, 1rem,);
                 border-radius: 1vw;
              }
         }
@@ -378,18 +350,27 @@ html {
 
 // DESKTOP APP PAGE
 
+.app-background {
+    @include flex-box(initial, center, center);
+    @include size-position(auto, calc(100% - 8rem), auto, relative);
+    overflow: hidden;
+    @include for-size(phone-only) { display: none; }
+
+    #box-logo {
+        @include size-position(45%, auto, auto, absolute);
+        opacity: .1;
+        @include for-size(phone-only) { display: none; }
+    }
+}
+
 .app-under-nav {
     @include flex-box(row, center, center);
-    @include size-position(100%, calc(100% - 10rem), auto);
-    position: absolute;
-    @include for-size(phone-only) {
-        display: none;
-    }
+    @include size-position(100%, calc(100% - 10rem), auto, absolute);
+    @include for-size(phone-only) { display: none; }
 
     .app-container {
-        position: relative;
         @include flex-box(column, center, center);
-        margin: 0 15rem 2rem 0;
+        @include size-position(auto, auto, 0 15rem 2rem 0, relative);
         text-align: center;
 
         .text-box { display: inline-block; }
@@ -400,7 +381,7 @@ html {
                 display: inline-block;
             }
 
-            #blue-text2 { @include font-style($main-font, $brand-color, 2.5vw); }
+            #blue-text2 { @include font-style($main-font, $alp-contrast, 2.5vw); }
 
             p { 
                 @include font-style($secondary-font, $main-text-color, 1.5vw); 
@@ -408,15 +389,14 @@ html {
             }
         
             #blue-text { 
-                @include font-style($secondary-font, $brand-color, 1.5vw); 
+                @include font-style($secondary-font, $alp-contrast, 1.5vw); 
                 margin: 0 0 2rem 0;
         }
 
         .app-links { @include flex-box(row, center, center);
 
             img { 
-                width: 13rem; 
-                margin: 1rem; 
+                @include size-position(13rem, auto, 1rem);
                 border-radius: 1vw;
              }
         }
@@ -429,37 +409,31 @@ html {
         #app-screen { width: 17vw; }
     }
 }
-}
 
-/* APP SCREEN ANIMATION */
-
-.app-visible {
-    opacity:0;
-    transition: opacity 1s;
-}
-      
-.slide {
-    animation-name: slide; 
-    animation-duration: 1s;
-    opacity: 1;
+.app-visible { opacity:0; transition: opacity 1s; }
+.slide { animation: slide 1s; opacity: 1; }
 }
 
 /* ABOUT */
 
-#about { background-color: black;
+#about { background-color: black; @include for-size(phone-only) { height: 100vh; height: calc(var(--vh, 1vh) * 100); }
 
-    .mobile-title {
-        margin-left: 1rem;
-        display: none;
-        @include font-style(sans-serif, $secondary-accent, 5vw, left);
-        @include for-size(phone-only) { display: block; }
-    }
-
-    .about-alp-video-portrait {
-        height: 75%;
-        width: 100%;
+    .mobile-about-full {
         display: none;
         @include for-size(phone-only) { display: block; }
+
+        .mobile-title {
+            @include font-style(sans-serif, $alp-color, 5vw, left);
+            margin-left: 1rem;
+            display: none;
+            @include for-size(phone-only) { display: block; }
+        }
+
+        .about-alp-video-portrait {
+            @include size-position(100%, 75%);
+            display: none;
+            @include for-size(phone-only) { display: block; }
+        }
     }
 
     .about-under-nav {
@@ -477,104 +451,104 @@ html {
 
 /* CLIENTS */
 
-#clients {
+#clients { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
+
+    .mobile-clients-full {         
+        display: none;
+        @include for-size(phone-only) { display: block; }
 
     .mobile-title {
+        @include font-style(sans-serif, $alp-color, 5vw, left);
         margin-left: 1rem;
         display: none;
-        @include font-style(sans-serif, $brand-color, 5vw, left);
         @include for-size(phone-only) { display: block; }
-}
-
-.clients-under-nav {
-    @include flex-box(initial, center, center);
-    @include size-position(100%, calc(100% - 8rem), auto);
-    overflow: hidden;
-    @include for-size(phone-only) {height: 100%; }
-
-    #client-pic {
-        width: 75%;
-        transition: width 1s;
-        @include for-size(phone-only) { display: none; }
     }
 
-    .client-grow {
-        animation-name: grow;
-        animation-duration: 2s;
-    }
-    
     #client-pic-small {
         display: none;
         width: 100%;
         @include for-size(phone-only) { display: flex; }
     }
 }
+
+    .clients-under-nav {
+        @include flex-box(initial, center, center);
+        @include size-position(100%, calc(100% - 8rem), auto);
+        overflow: hidden;
+        @include for-size(phone-only) {height: 100%; }
+
+    #client-pic {
+        width: 75%;
+        transition: width 1s;
+        @include for-size(phone-only) { display: none; }
+    }
+}
+
+.client-grow { animation: grow 2s; }
+
 }
 
 /* TEAM */
 
-#team { @include for-size(phone-only) { background-color: black; } 
+#team { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); background-color: black; } 
 
-    .mobile-title {
-        margin-left: 1rem;
-        display: none;
-        @include font-style(sans-serif, $secondary-accent, 5vw, left);
-        @include for-size(phone-only) { display: block; }
+.mobile-team-full {
+    display: none;
+    @include for-size(phone-only) { display: block; }
+
+.mobile-title {
+    @include font-style(sans-serif, $alp-color, 5vw, left);
+    margin-left: 1rem;
+    display: none;
+    @include for-size(phone-only) { display: block; }
 }
 
-    #team-title {
-        @include font-style(sans-serif, white, 1rem);
-        margin: 0;
-        display: none;
-        @include for-size(phone-only) { display: block; }
+#team-title {
+    @include font-style(sans-serif, white, 1rem);
+    margin: 0;
+    display: none;
+    @include for-size(phone-only) { display: block; }
+}
+
+.mobile-team {
+    @include size-position(100%, 100%, auto, relative);
+    background-color: black;
+    overflow-y: hidden;
+    max-height: 100vh;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    display: none;
+    @include for-size(phone-only) { @include flex-box(initial, initial, center); }
+
+    .m-team-pic-container {
+        @include flex-box(column, center, center);
+        @include size-position(100%, auto, 0 0 0 0);
+        scroll-snap-align: start;
+        pointer-events: none;
+        min-width: 100%;
+        max-height: 100%;
+
+    .m-team-pic { width: 75%; }
+
+    .m-team-pic-small { width: 50%; display: none; }
+
+    .mob-name-container {
+        @include flex-box(row, center, center);
+
+        .circle-right { @include size-position(10vw, auto, 0 0 0 1rem) }
+        .circle-left { @include size-position(10vw, auto, 0 1rem 0 0) }
     }
 
-    .mobile-team {
-        @include size-position(100%, 100%, auto, relative);
-        background-color: black;
-        overflow-y: hidden;
-        max-height: 100vh;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
+    .mob-hidden { 
+        @include flex-box(row, center, center);
+        margin: 0 2rem;
         display: none;
-        @include for-size(phone-only) { @include flex-box(initial, initial, center); }
-
-        .m-team-pic-container {
-            @include flex-box(column, center, center);
-            @include size-position(100%, auto, 0 0 0 0);
-            scroll-snap-align: start;
-            pointer-events: none;
-            min-width: 100%;
-            max-height: 100%;
-
-        .m-team-pic { width: 75%; }
-
-        .m-team-pic-small { width: 50%; display: none; }
-
-        .mob-name-container {
-            @include flex-box(row, center, center);
-
-            .circle-right {
-                margin-left: 1rem;
-                width: 10vw;
-            }
-
-            .circle-left {
-                margin-right: 1rem;
-                width: 10vw;
-            }
-        }
-
-        .mob-hidden { 
-            @include flex-box(row, center, center);
-            display: none;
-            margin-left: 2rem;
-            margin-right: 2rem;
-        }
-
-            p { @include font-style(sans-serif, white, 1rem); }
-        }
     }
+
+        p { @include font-style(sans-serif, white, 1rem); }
+    }
+}
+}
 
 .full-team-under-nav { 
     display: block;
@@ -585,13 +559,12 @@ html {
         @include size-position(100%, 8vh, 0);
         @include font-style($main-font, $main-text-color, 1vw);
 
-        .blue-text { color: $brand-color; }
+        .blue-text { color: $alp-color; }
     }
 
     .team-under-nav {
         @include flex-box(column, center, center, nowrap);
-        @include size-position(100%, 75%, auto);
-        position: relative;
+        @include size-position(100%, 75%, auto, relative);
         overflow: hidden;
 
         .team-photo-container { @include flex-box(row, center, center);
@@ -612,7 +585,7 @@ html {
             }
                 
                 .blue-text {
-                    @include font-style($main-font, $brand-color, 1.8vw);
+                    @include font-style($main-font, $alp-color, 1.8vw);
                     font-style: italic;
                     margin: 0; 
                 }
@@ -624,7 +597,7 @@ html {
                 max-height: 20vw;
 
                 .blue-text { 
-                    @include font-style($secondary-font, $brand-color, 1.8vw);
+                    @include font-style($secondary-font, $alp-color, 1.8vw);
                     margin: 0;
                     display: inline-block;
                 }
@@ -638,29 +611,27 @@ html {
 
 /* Contact */
 
-#contact .container { @include for-size(phone-only) { scroll-snap-align: none; } }
+#contact { @include for-size(phone-only) { height: calc(var(--vh, 1vh) * 100); }
 
-#contact {
+    .mobile-contact-full { 
+        display: none;
+        @include for-size(phone-only) { display: block; }
 
     .mobile-title {
+        @include font-style(sans-serif, $alp-contrast, 5vw, left);
         margin-left: 1rem;
         display: none;
-        @include font-style(sans-serif, $brand-color, 5vw, left);
         @include for-size(phone-only) { display: block; }
 }
 
-    .contact-under-nav {
-        @extend %full;
-        @include for-size(phone-only) { @include flex-box(column, center, center); height: 90%; scroll-snap-align: start; }
+    .contact-under-nav { @extend %full;
 
         form { 
-            text-align: center;
-            font-size: 1.2rem;
+            @include font-style($main-font, $main-text-color, 1.5rem);
             @include for-size(phone-only) { font-family: sans-serif; };
 
             label {
                 margin: 0;
-                font-family: $main-font;
                 @include for-size(phone-only) { font-family: sans-serif; };
             }
 
@@ -676,22 +647,20 @@ html {
                 @include for-size(phone-only) { width: 75vw; height: 2rem; }
             }
 
-            textarea {                 
+            textarea {    
+                &:focus { border: $contact-border }             
                 @extend %form-param; 
                 height: 8rem;
-                &:focus { border: $contact-border } 
                 @include for-size(phone-only) { width: 75vw; height: 7rem; }
             }
 
             button[type=submit] {
-                &:hover { background-color: $secondary-accent; }
-                &:active { 
-                    margin: 1rem 0 .5rem 0;
-                    box-shadow: 0px 0px; 
-                }
+                &:hover { background-color: $alp-color; }
+                &:active { margin: 1rem 0 .5rem 0; box-shadow: 0px 0px; }
                 @include size-position(15rem, 4vw, .5rem 0 1rem 0);
                 @extend %form-param;
                 cursor: pointer;
+                font-size: 1.5rem;
                 border-radius: 10px;
                 background-color: white;
                 @include for-size(phone-only) { height: 4rem; }
@@ -709,6 +678,7 @@ html {
         }
     }
 }
+}
 
 /* Scrollbar */
 
@@ -717,6 +687,6 @@ html {
 ::-webkit-scrollbar-track { background: $third-accent; @include for-size(phone-only) { display: none; } }  
 
 ::-webkit-scrollbar-thumb {
-    &:hover { background: $secondary-accent; }
-    background: $brand-color; 
+    &:hover { background: $alp-color; }
+    background: $alp-contrast; 
     @include for-size(phone-only) { display: none; } }

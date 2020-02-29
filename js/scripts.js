@@ -1,68 +1,65 @@
 $(document).ready(function() {
 
-// CHECK IF ELEM IS SCROLLED INTO VIEW
+// Check if element is in view
 
-  function isScrolledIntoView(elem) {
-    var docViewTop = $("html, body").scrollTop();
-    var docViewBottom = docViewTop + $("html, body").height();
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-      
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+function isScrolledIntoView(elem) {
+  var docViewTop = $("html, body").scrollTop();
+  var docViewBottom = docViewTop + $("html, body").height();
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+$("html, body").scroll(function() {
+
+// If app screen is in view
+
+  $('.app-under-nav').each(function() {
+    if (isScrolledIntoView(this) === true) {
+      $(this).addClass('slide');
+    } else {
+      $(this).removeClass('slide') && $(this).addClass('app-visible');
     }
+  });
 
-  $("html, body").scroll(function() {
+// If about screen is in view
 
-// IF APP SCREEN IS SCROLLED INTO VIEW
+  $('.about-alp-video').each(function() {
+    if (isScrolledIntoView(this) === true) {
+      $(this).get(0).play();
+    } else {
+      $(this).get(0).pause();
+    }
+  });
 
-    $('.app-under-nav').each(function() {
-      if (isScrolledIntoView(this) === true) {
-        $(this).addClass('slide');
-      } else {
-        $(this).removeClass('slide') && $(this).addClass('app-visible');
-      }
-      });
+// if client screen is in view
 
-// IF ABOUT SCREEN IS SCROLLED INTO VIEW
+  $('#client-pic').each(function() {
+    if (isScrolledIntoView(this) === true) {
+      $(this).addClass('client-grow');
+    } else {
+      $(this).removeClass('client-grow');
+    }
+  });
+});
 
-    $('.about-alp-video').each(function() {
-      if (isScrolledIntoView(this) === true) {
-        $(this).get(0).play();
-      } else {
-        $(this).get(0).pause();
-      }
-      });
-
-// CLIENT IMAGE GROWS WHEN CLIENT PAGE IS IN VIEW
-
-      $('#client-pic').each(function() {
-        if (isScrolledIntoView(this) === true) {
-          $(this).addClass('client-grow');
-        } else {
-          $(this).removeClass('client-grow');
-        }
-        });
-    });
-
-    // PAGE LOAD LOGO ANIMATION
+// home page on load animation
     
-    $('.white-bg-slide').addClass('slow-slide');
-    $('#note1').addClass('note-animation1');
-    $('#note2').addClass('note-animation2');
-    $('#note3').addClass('note-animation3');
-    $('#note4').addClass('note-animation4');
-    $('#note5').addClass('note-animation5');
+$('.white-bg-slide').addClass('slow-slide');
+$('#note1').addClass('note-animation1');
+$('#note2').addClass('note-animation2');
+$('#note3').addClass('note-animation3');
+$('#note4').addClass('note-animation4');
+$('#note5').addClass('note-animation5');
 
+// Team page animations
 
+//Darrell pic
 
-
-// TEAM ANIMATIONS
-
-// DARRELL PICTURE ANIMATION
 counterA = 0;
 $("#darrell").click(function() {
- counterA++;
-if (counterA % 2 == 1) {
+  counterA++;
+  if (counterA % 2 == 1) {
     $("#darrell").toggle();
     $("#db-name").toggle();
     $("#nick").toggle();
@@ -83,28 +80,29 @@ if (counterA % 2 == 1) {
   }
 });
 
-// NICK PICTURE ANIMATION
+// Nick pic
+
 counterB = 0;
 $("#nick").click(function() {
   counterB++;
-if (counterB % 2 == 1) {
-  $("#nick").toggle();
-  $("#nm-name").toggle();
-  $("#dave").toggle();
-  $("#dk-name").toggle();
-  $("#darrell").toggle();
-  $("#db-name").toggle();
-  $("#nick-info").delay(400).toggle(200);
-  $("#nick").toggle(400);
-} else {
-  $("#nick").toggle();
-  $("#nm-name").delay(800).toggle(400);
-  $("#dave").delay(400).toggle(400);
-  $("#dk-name").delay(800).toggle(400);
-  $("#darrell").delay(400).toggle(400);
-  $("#db-name").delay(800).toggle(400);
-  $("#nick-info").toggle();
-  $("#nick").toggle(400);
+  if (counterB % 2 == 1) {
+    $("#nick").toggle();
+    $("#nm-name").toggle();
+    $("#dave").toggle();
+    $("#dk-name").toggle();
+    $("#darrell").toggle();
+    $("#db-name").toggle();
+    $("#nick-info").delay(400).toggle(200);
+    $("#nick").toggle(400);
+  } else {
+    $("#nick").toggle();
+    $("#nm-name").delay(800).toggle(400);
+    $("#dave").delay(400).toggle(400);
+    $("#dk-name").delay(800).toggle(400);
+    $("#darrell").delay(400).toggle(400);
+    $("#db-name").delay(800).toggle(400);
+    $("#nick-info").toggle();
+    $("#nick").toggle(400);
   }
 });
 
@@ -112,29 +110,31 @@ if (counterB % 2 == 1) {
 
 counterC = 0;
 $("#dave").click(function() {
-  counterC++;
-if (counterC % 2 == 1) {
-  $("#dave").toggle();
-  $("#dk-name").toggle();
-  $("#darrell").toggle();
-  $("#db-name").toggle();
-  $("#nick").toggle();
-  $("#nm-name").toggle();
-  $("#dave-info").delay(400).toggle(200);
-  $("#dave").toggle(400);
-} else {
-  $("#dave").toggle();
-  $("#dk-name").delay(800).toggle(400);
-  $("#darrell").delay(400).toggle(400);
-  $("#db-name").delay(800).toggle(400);
-  $("#nick").delay(400).toggle(400);
-  $("#nm-name").delay(800).toggle(400);
-  $("#dave-info").toggle();
-  $("#dave").toggle(400);
-}
+counterC++;
+  if (counterC % 2 == 1) {
+    $("#dave").toggle();
+    $("#dk-name").toggle();
+    $("#darrell").toggle();
+    $("#db-name").toggle();
+    $("#nick").toggle();
+    $("#nm-name").toggle();
+    $("#dave-info").delay(400).toggle(200);
+    $("#dave").toggle(400);
+  } else {
+    $("#dave").toggle();
+    $("#dk-name").delay(800).toggle(400);
+    $("#darrell").delay(400).toggle(400);
+    $("#db-name").delay(800).toggle(400);
+    $("#nick").delay(400).toggle(400);
+    $("#nm-name").delay(800).toggle(400);
+    $("#dave-info").toggle();
+    $("#dave").toggle(400);
+  }
 });
 
-// Play Song 1
+// Music Player
+
+// Play song 1
 
 $('#note1').click(function() {
   songOne.play();
@@ -155,7 +155,7 @@ $('#note1').click(function() {
   .show()
 })
 
-// Play Song 2
+// Play song 2
 
 $('#note2').click(function() {
   songOne.pause();
@@ -176,7 +176,7 @@ $('#note2').click(function() {
   .show()
 })
 
-// Play Song 3
+// Play song 3
 
 $('#note3').click(function() {
   songOne.pause();
@@ -197,7 +197,7 @@ $('#note3').click(function() {
   .show()
 })
 
-// Play Song 4
+// Play song 4
 
 $('#note4').click(function() {
   songOne.pause();
@@ -218,7 +218,7 @@ $('#note4').click(function() {
   .show()
 })
 
-// Play Song 5
+// Play song 5
 
 $('#note5').click(function() {
   songOne.pause();
@@ -239,7 +239,7 @@ $('#note5').click(function() {
   .show()
 })
 
-// MUTE AND UN MUTE BUTTON
+// Mute and unmute
 
 $("#volume").click( function (){
         $("audio").prop('muted', true);
@@ -267,7 +267,7 @@ function setvolume(){
 
 volumeslider.addEventListener("mousemove", setvolume);
 
-// play pause button
+// Play pause button
 
 $("#pause").click( function () {
   songOne.pause();
@@ -281,21 +281,21 @@ $("#pause").click( function () {
 
 $("#play").click( function () {
   if (songOne.currentTime > 0) {
-      songOne.play();
-} else if (songTwo.currentTime > 0) {
-      songTwo.play();
-} else if (songThree.currentTime > 0) {
-      songThree.play();
-} else if (songFour.currentTime > 0) {
-      songFour.play();
-} else if (songFive.currentTime > 0) {
-      songFive.play();
+    songOne.play();
+  } else if (songTwo.currentTime > 0) {
+    songTwo.play();
+  } else if (songThree.currentTime > 0) {
+    songThree.play();
+  } else if (songFour.currentTime > 0) {
+    songFour.play();
+  } else if (songFive.currentTime > 0) {
+    songFive.play();
 }
   $("#play").hide();
   $("#pause").show();
 })
 
-// mute music if video is unmuted
+// Mute music if video is unmuted
 
 var vid = document.getElementById('alp-video');
 
@@ -359,10 +359,10 @@ $("#nav-bar-image, #mob-app, #mob-about, #mob-home, #mob-clients, #mob-team, #mo
 
 // MOBILE TEAM ANIMATIONS
 
-counterC = 0;
+counterE = 0;
 $(".mobile-team").click(function() {
-  counterC++;
-  if (counterC % 2 == 1) {
+  counterE++;
+  if (counterE % 2 == 1) {
   $(".m-team-pic").toggle(400);
   $(".mob-hidden").toggle(400);
   $(".m-team-pic-small").delay(400).toggle(400);
@@ -373,9 +373,13 @@ $(".mobile-team").click(function() {
   }
 });
 
-let vh = window.innerheight * 0.01;
+
+// Mobile view hight
+
+let vh = window.innerHeight * 0.01;
 
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 //END
+
 });

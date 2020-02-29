@@ -2,22 +2,21 @@
 /* VARIABLES */
 
 $main-text-color: #262626;
-$brand-color: #009DD1;
+$alp-contrast: #009DD1;
 $background-color: white;
-$secondary-accent:   #00BFFF;
+$alp-color:   #00BFFF;
 $third-accent: rgb(180, 180, 180);
 
 $main-font: 'miller-display', 'times', 'serif';
 $secondary-font: 'forma-djr-display', sans-serif;
 
 $standard-border: 6px solid #272525;
-$contact-border: $secondary-accent 6px solid;
-$main-shadow: 2px 2px 2px $secondary-accent;
+$contact-border: $alp-color 6px solid;
 
 /* PLACEHOLDERS */
 
 %header-links {
-    &:hover { color: $secondary-accent; }
+    &:hover { color: $alp-color; }
     margin: 0 1rem;
     text-decoration: none;
     color: white;
@@ -38,10 +37,11 @@ $main-shadow: 2px 2px 2px $secondary-accent;
 
 %form-param {
     width: 35vw;
-    text-align: center;
     height: 3vw;
     margin: .5rem 0;
-    font-size: 1.5rem;
     border: $standard-border;
+    font-size: 1.2rem;
     box-shadow: 8px 8px 8px -6px black;
+    text-align: center;
+    font-family: $main-font;
 }

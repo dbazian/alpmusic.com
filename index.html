@@ -26,50 +26,55 @@
 <audio class="song" id="songFour" preload="none"><source src="Audio/Queen_Annes_Revenge.mp3" type="audio/mp3"></audio>
 <audio class="song" id="songFive" preload="none"><source src="Audio/Sun_Kiss.mp3" type="audio/mp3"></audio>
 
-<!-- MOBILE SITE -->
-
 <!-- Mobile Nav Bar -->
 
 <nav class="mobile-nav">
   <div id="myLinks">
     <a href="https://alpmusic.sourceaudio.com">Library</a>
-    <a id="mob-home" href="#m-home">Home</a>
+    <a id="mob-home" href="#home">Home</a>
     <a id="mob-app" href="#app">App</a>
     <a id="mob-about" href="#about">About</a>
     <a id="mob-clients" href="#clients">Clients</a>
     <a id="mob-team" href="#team">Team</a>
     <a id="mob-contact" href="#contact">Contact</a>
   </div>
-  <img id="nav-bar-image" src="IMG/nav-bar.svg" alt="navigation bar drop down button" onclick="myFunction()">
+  <img id="nav-bar-image" src="IMG/nav-bar.svg" alt="navigation drop down button">
 </nav>
 
-<!-- Mobile Home Page-->
 
-<div class="mobile-home container"><a name="m-home"></a>
+<!-- HOMEPAGE -->
+
+<div class="container" id="library" role="presentation"><a name="home"></a>
+
+<!-- Mobile Homepage -->
+  
+<div class="mobile-home-full">
   <img id="mobile-logo" src="IMG/logo-full.svg" alt="ALP Music Full Logo">
   <h2 id="mob-hq">High Quality</h2>
   <h2 id="mob-ql">Quick License</h2>
   <h1 id="mob-ml">Music Library</h1>
 </div>
 
-<!-- LIBRARY SECTION -->
+<!-- Library Nav -->
 
-<div class="container" id="library" role="presentation"><a name="home"></a>
-  <nav class="desktop-nav">
-    <div class="header-side" role="presentation">
-        <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
-        <a href="#app">App</a>
-        <a href="#about">About</a>  
-    </div>
-    <div class="header-center" role="presentation">
-        <img src="IMG/ALP-Music-Logo-Text.png" id="logo-title" alt="ALP Music Wordmark">
-    </div>
-    <div class="header-side" role="presentation">
-        <a href="#clients" aria-label="clients">Clients</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav class="desktop-nav">
+  <div class="header-side" role="presentation">
+      <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
+      <a href="#app">App</a>
+      <a href="#about">About</a>  
+  </div>
+  <div class="header-center" role="presentation">
+      <img src="IMG/ALP-Music-Logo-Text.png" id="logo-title" alt="ALP Music Wordmark">
+  </div>
+  <div class="header-side" role="presentation">
+      <a href="#clients" aria-label="clients">Clients</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Desktop Homepage -->
+
   <div class="library-under-nav">
     <h1>High Quality / Easy to License /&nbsp;
       <a class="blue-text" href="https://alpmusic.sourceaudio.com/#!home" target="blank">Music Library</a>
@@ -108,51 +113,57 @@
   </div>
 </div>
 
-<!-- APP SECTION -->
+
+<!-- APP PAGE -->
 
 <div class="container" id="app"><a name="app"></a>
-  <nav class="desktop-nav">
-    <div class="header-side">
-      <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-    </div>
-    <div class="header-center">
-      <p>App</p>
-    </div>
-    <div class="header-side">
-      <a href="#clients">Clients</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-  <div class="app-background">
-    <img id="box-logo" src="IMG/ALP-Music-Logo-Image.png" alt="ALP App Logo">
 
-<!-- MOBILE APP -->
-
-    <div class="app-under-nav-mobile">
-      <div id="app-info" class="app-container">
-        <div class="text-box">
-          <h2>( Coming Soon! )</h2><br>
-          <h2 class="for-app-mobile">The ALP Music APP</h2><br>
-          <h2>For</h2> 
-          <h2 id="blue-text2">&nbsp;music licensing&nbsp;</h2>
-          <h2>on the go!</h2>
-        </div>
-        <p> 1.) Login. <br><br>
-            2.) Filter songs <br><br>
-            3.) Select what the song will be used for. <br><br></p>
-        <p id="blue-text">4.) Download!</p>
-        <div class="app-links">
-            <img src="IMG/appleApp.png" alt="To Apple app store">
-            <img src="IMG/googleApp.png" alt="To Google app store">
-        </div>
+<!-- Mobile App Page -->
+<div class="app-background-m">
+  <img id="box-logo-m" src="IMG/ALP-Music-Logo-Image.png" alt="ALP App Logo">
+<div class="mobile-app-full">
+    <div id="app-info" class="app-container">
+      <div class="text-box">
+        <h2>( Coming Soon! )</h2><br>
+        <h2 class="for-app-mobile">The ALP Music APP</h2><br>
+        <h2>For</h2> 
+        <h2 id="blue-text2">&nbsp;music licensing&nbsp;</h2>
+        <h2>on the go!</h2>
+      </div>
+      <p> 1.) Login. <br><br>
+          2.) Filter songs <br><br>
+          3.) Select what the song will be used for. <br><br></p>
+      <p id="blue-text">4.) Download!</p>
+      <div class="app-links">
+        <img src="IMG/appleApp.png" alt="To Apple app store">
+        <img src="IMG/googleApp.png" alt="To Google app store">
+      </div>
     </div>
 </div>
+</div>
 
-  <!-- DESKTOP APP-->
+<!-- App Nav -->
 
+<nav class="desktop-nav">
+  <div class="header-side">
+    <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+  </div>
+  <div class="header-center">
+    <p>App</p>
+  </div>
+  <div class="header-side">
+    <a href="#clients">Clients</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Desktop App Page -->
+
+  <div class="app-background">
+    <img id="box-logo" src="IMG/ALP-Music-Logo-Image.png" alt="ALP App Logo">
     <div class="app-under-nav">
     <div id="app-info" class="app-container">
       <div class="text-box">
@@ -171,75 +182,99 @@
           <img src="IMG/googleApp.png" alt="To Google app store">
       </div>
       </div>
-    <div id="app-image" class="app-container2">
+      <div id="app-image" class="app-container2">
       <img id="app-screen" src="IMG/app.png" alt="ALP App Screen">
+      </div>
     </div>
-  </div>
   </div>
 </div>
 
-<!-- ABOUT SECTION-->
+
+<!-- ABOUT PAGE -->
 
 <div class="container" id="about"><a name="about"></a>
+
+<!-- Mobile About Page -->
+
+<div class="mobile-about-full">
   <h1 class="mobile-title">About</h1>
   <video class="about-alp-video-portrait" id="alp-video-portrait" controls muted preload="auto" controlslist="nodownload" disablePictureInPicture poster="IMG/About Video Poster.png">
     <source src="IMG/About Video Portrait.mp4" type="video/mp4">
   </video>
-  <nav class="desktop-nav">
-    <div class="header-side" role="navigation">
-      <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
-      <a href="#app">App</a>
-      <a href="#home">Home</a>
-    </div>
-    <div class="header-center" role="presentation">
-      <p>About</p>
-    </div>
-    <div class="header-side" role="navigation">
-      <a href="#clients">Clients</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-    <div class="about-under-nav">
-    <video class="about-alp-video" id="alp-video" src="IMG/About Video.mp4" type="video/mp4" controls muted preload="auto" controlslist="nodownload" disablePictureInPicture></video>
-    </div>
 </div>
 
-<!-- CLIENTS SECTION-->
+<!-- About Nav -->
 
-<div class="container" id="clients"><a name="clients"></a>
-  <h2 class="mobile-title">Clients</h2>
-  <nav class="desktop-nav">
-    <div class="header-side" role="navigation">
-      <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
-      <a href="#app">App</a>
-      <a href="#about">About</a>   
-    </div>
-    <div class="header-center" role="presentation">
-      <p>Clients</p>
-    </div>
-    <div class="header-side" role="navigation">
-      <a href="#home">Home</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-  <div class="clients-under-nav">
-    <img id="client-pic" src="IMG/clients.png" alt="A.L.P Clients include Chrysler, W.J.R, Metroparks.com, The Heroes Movement, Gilda's Club, Arts Beats and Eats and Nautilus Systems." title="A.L.P Clients include Chrysler, W.J.R, Metroparks.com, The Heroes Movement, Gilda's Club, Arts Beats and Eats and Nautilus Systems." >
-    <img id="client-pic-small" src="IMG/ClientsVert.png" alt="A.L.P CLients">
+<nav class="desktop-nav">
+  <div class="header-side" role="navigation">
+    <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
+    <a href="#app">App</a>
+    <a href="#home">Home</a>
+  </div>
+  <div class="header-center" role="presentation">
+    <p>About</p>
+  </div>
+  <div class="header-side" role="navigation">
+    <a href="#clients">Clients</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Desktop About Page -->
+  <div class="about-under-nav">
+    <video class="about-alp-video" id="alp-video" src="IMG/About Video.mp4" type="video/mp4" controls muted preload="auto" controlslist="nodownload" disablePictureInPicture></video>
   </div>
 </div>
 
-<!-- TEAM SECTION -->
+
+<!-- CLIENTS PAGE -->
+
+<div class="container" id="clients"><a name="clients"></a>
+
+<!-- Mobile Clients Page -->
+
+<div class="mobile-clients-full">
+  <h2 class="mobile-title">Clients</h2>
+  <img id="client-pic-small" src="IMG/ClientsVert.png" alt="A.L.P Clients include Chrysler, W.J.R, Metroparks.com, The Heroes Movement, Gilda's Club, Arts Beats and Eats and Nautilus Systems." title="A.L.P Clients include Chrysler, W.J.R, Metroparks.com, The Heroes Movement, Gilda's Club, Arts Beats and Eats and Nautilus Systems.">
+</div>
+
+<!-- Clients Nav -->
+
+<nav class="desktop-nav">
+  <div class="header-side" role="navigation">
+    <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
+    <a href="#app">App</a>
+    <a href="#about">About</a>   
+  </div>
+  <div class="header-center" role="presentation">
+    <p>Clients</p>
+  </div>
+  <div class="header-side" role="navigation">
+    <a href="#home">Home</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Desktop Clients Page -->
+
+  <div class="clients-under-nav">
+    <img id="client-pic" src="IMG/clients.png" alt="A.L.P Clients include Chrysler, W.J.R, Metroparks.com, The Heroes Movement, Gilda's Club, Arts Beats and Eats and Nautilus Systems." title="A.L.P Clients include Chrysler, W.J.R, Metroparks.com, The Heroes Movement, Gilda's Club, Arts Beats and Eats and Nautilus Systems." >
+  </div>
+</div>
+
+
+<!-- TEAM PAGE -->
 
 <div class="container" id="team"><a name="team"></a>
+
+<!-- Mobile Team Page -->
+
+<div class="mobile-team-full">
   <h2 class="mobile-title">Team</h2>
-
-<!-- Mobile Team -->
-
   <h1 id="team-title">Click on our pictures for more info.</h1>
   <div class="mobile-team">
-
     <div class="m-team-pic-container" id="mob-nick-container">
       <img class="m-team-pic" id="nick-m" src="IMG/Nick.jpg" alt="Nick Marko C.E.O" title="Nick Marko C.E.O">
       <img class="m-team-pic-small" id="nick-m-small" src="IMG/Nick.jpg">
@@ -251,7 +286,6 @@
         <p>Former Sony/BMG recording artist produced by Michael Ivins of the Flaming Lips. Marko a multi-instrumentalist composed the ALP Catalog with Bazian.</p>
       </div>
     </div>
-
     <div class="m-team-pic-container">
       <img class="m-team-pic" id="darrell-m" src="IMG/Darrell.jpg" alt="Darrell Bazian C T O" title="Darrell Bazian C.T.O">
       <img class="m-team-pic-small" id="darrell-m-small" src="IMG/Darrell.jpg">
@@ -264,7 +298,6 @@
         <p>Darrell has recorded, mixed and mastered the ALP Music Library. He is proficient in Pro Tools, Adobe Suites, HTML, CSS, Javascript, Wordpress and more.</p>
       </div>
     </div>
-
     <div class="m-team-pic-container">
       <img  id="dave-m" class="m-team-pic"  src="IMG/Dave.jpg" alt="David Karbon C.F.O" title="David Karbon C.F.O">
       <img class="m-team-pic-small" id="dave-m-small" src="IMG/Dave.jpg">
@@ -277,25 +310,29 @@
       </div>
     </div>
   </div>
+</div>
 
-<!-- Desktop Team -->
+<!-- Team Nav -->
 
-  <nav class="desktop-nav">
-    <div class="header-side" role="navigation">
-      <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
-      <a href="#app">App</a>
-      <a href="#about">About</a>
-    </div>
-    <div class="header-center" role="presentation">
-      <p>Team</p>
-    </div>
-    <div class="header-side" role="navigation">
-      <a href="#clients">Clients</a>
-      <a href="#home">Home</a>
-      <a href="#contact">Contact</a>
-    </div>
-    </nav>
-    <div class="full-team-under-nav" role="presentation">
+<nav class="desktop-nav">
+  <div class="header-side" role="navigation">
+    <a href="https://alpmusic.sourceaudio.com/#!home" target="blank">Library</a>
+    <a href="#app">App</a>
+    <a href="#about">About</a>
+  </div>
+  <div class="header-center" role="presentation">
+    <p>Team</p>
+  </div>
+  <div class="header-side" role="navigation">
+    <a href="#clients">Clients</a>
+    <a href="#home">Home</a>
+    <a href="#contact">Contact</a>
+  </div>
+  </nav>
+
+<!-- Desktop Team Page -->
+
+  <div class="full-team-under-nav" role="presentation">
     <div class="learn-more">
       <h2 class="blue-text">Click&nbsp;</h2><h2>our pictures to learn more.</h2>
     </div>
@@ -316,52 +353,60 @@
         <div class="name" id="dk-name" aria-label="Team Member">David Karbon -&nbsp; <p class="blue-text">C.F.O</p></div>
       </div>
       <div class="hidden" id="dave-info" role="content-info"><p class="blue-text">Dave</p> serves as <p class="blue-text">&nbsp;ALP Music's&nbsp;</p> CFO and Project Consultant, where he helps clients select the right music for their project within a budget they can afford.</div>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
-<!-- CONTACT SECTION-->
+
+<!-- CONTACT PAGE -->
 
 <div class="container" id="contact"><a name="contact"></a>
+
+<!-- Mobile Contact Page -->
+
+<div class="mobile-contact-full">
   <h2 class="mobile-title">Contact</h2>
 
-  <nav class="desktop-nav">
-    <div class="header-side" role="navigation">
-      <a href="https://alpmusic.sourceaudio.com" target="blank">Library</a>
-      <a href="#app">App</a>
-      <a href="#about">About</a>
-    </div>
-    <div class="header-center" role="presentation">
-      <p>Contact</p>
-    </div>
-    <div class="header-side" role="navigation">
-      <a href="#clients">Clients</a>
-      <a href="#team">Team</a>
-      <a href="#home">Home</a>
-    </div>
-  </nav>
-  <div class="contact-under-nav">
-    <form action="https://formsubmit.co/alpmusicllc@gmail.com" method="POST">
-      <label>Full Name:<br>
-      <input type="text" name="name" class="form-control" required><br>
-      </label>
-      <label>Email Address:<br>
-      <input type="email" name="email" class="form-control" required><br>
-      </label>
-      <label>Message:<br>
-      <textarea id="message" name="message" class="form-control" required></textarea><br>
-      </label>
-      <button type="submit" class="btn btn-lg btn-dark btn-block">Submit</button>
-    </form>
+<!-- Contact Nav -->
 
-      
-<!-- LINKS SECTION -->
+<nav class="desktop-nav">
+  <div class="header-side" role="navigation">
+    <a href="https://alpmusic.sourceaudio.com" target="blank">Library</a>
+    <a href="#app">App</a>
+    <a href="#about">About</a>
+  </div>
+  <div class="header-center" role="presentation">
+    <p>Contact</p>
+  </div>
+  <div class="header-side" role="navigation">
+    <a href="#clients">Clients</a>
+    <a href="#team">Team</a>
+    <a href="#home">Home</a>
+  </div>
+</nav>
 
-    <div class="links" role="presentation">
-      <a href="https://www.facebook.com/alpmusicllc" target="_blank" rel="noopener"><img class="small-link" alt="ALP Facebook" src="IMG/Facebook.png"></a>
-      <a href="https://www.youtube.com/channel/UCwdxqYO2Nx29uj-0UREn0PA" target="_blank" rel="noopener"><img class="small-link" alt="ALP Youtube" src="IMG/Youtube.png" ></a>
+<!-- Desktop Contact Page -->
+
+    <div class="contact-under-nav">
+      <form action="https://formsubmit.co/alpmusicllc@gmail.com" method="POST">
+        <label>Full Name:<br>
+        <input type="text" name="name" class="form-control" required><br>
+        </label>
+        <label>Email Address:<br>
+        <input type="email" name="email" class="form-control" required><br>
+        </label>
+        <label>Message:<br>
+        <textarea id="message" name="message" class="form-control" required></textarea><br>
+        </label>
+        <button type="submit" class="btn btn-lg btn-dark btn-block">Submit</button>
+      </form>
+      <div class="links" role="presentation">
+        <a href="https://www.facebook.com/alpmusicllc" target="_blank" rel="noopener"><img class="small-link" alt="ALP Facebook" src="IMG/Facebook.png"></a>
+        <a href="https://www.youtube.com/channel/UCwdxqYO2Nx29uj-0UREn0PA" target="_blank" rel="noopener"><img class="small-link" alt="ALP Youtube" src="IMG/Youtube.png" ></a>
+      </div>
     </div>
   </div>
 </div>
-  </html>
+
+</html>
