@@ -632,22 +632,22 @@ html {
 
 #contact {
 
-    .mobile-contact-full { 
-        @include flex-box(column, center, center); 
-        background-color: white;
-        @extend %full;
-        display: none;
-        @include for-size(phone-only) { display: flex; }
+    .contact-under-nav { 
+        @extend %full; 
+        @include for-size(phone-only) {         
+            @include flex-box(column, center, center); 
+            background-color: white;
+            position: relative;
+        }
 
     .mobile-title {
         @include font-style(sans-serif, $alp-contrast, 5vw, left);
         margin-left: 1rem;
-        display: none;
-        align-self: start;
-        @include for-size(phone-only) { display: flex; }
-}
-
-    .contact-under-nav { @extend %full;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
 
         form { 
             @include font-style($main-font, $main-text-color, 1.5rem);
@@ -700,7 +700,6 @@ html {
             }
         }
     }
-}
 }
 
 /* Scrollbar */

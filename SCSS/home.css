@@ -15,7 +15,7 @@
   color: #00BFFF;
 }
 
-#library .mobile-home-full, #app .mobile-app-full, #about .mobile-about-full, #clients .mobile-clients-full, #team .mobile-team-full, #contact .mobile-contact-full, #contact .mobile-contact-full .contact-under-nav {
+#library .mobile-home-full, #app .mobile-app-full, #about .mobile-about-full, #clients .mobile-clients-full, #team .mobile-team-full, #contact .contact-under-nav {
   height: 100%;
   width: 100%;
 }
@@ -25,7 +25,7 @@
   max-width: 100%;
 }
 
-#contact .mobile-contact-full .contact-under-nav form input[type=text], #contact .mobile-contact-full .contact-under-nav form input[type=email], #contact .mobile-contact-full .contact-under-nav form textarea, #contact .mobile-contact-full .contact-under-nav form button[type=submit] {
+#contact .contact-under-nav form input[type=text], #contact .contact-under-nav form input[type=email], #contact .contact-under-nav form textarea, #contact .contact-under-nav form button[type=submit] {
   width: 35vw;
   height: 3vw;
   margin: .5rem 0;
@@ -1773,55 +1773,41 @@ html body .container {
 }
 
 /* Contact */
-#contact .mobile-contact-full {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: initial;
-      flex-wrap: initial;
-  background-color: white;
-  display: none;
-}
-
 @media (max-width: 769px) {
-  #contact .mobile-contact-full {
+  #contact .contact-under-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    background-color: white;
+    position: relative;
   }
 }
 
-#contact .mobile-contact-full .mobile-title {
+#contact .contact-under-nav .mobile-title {
   font-family: sans-serif;
   color: #009DD1;
   font-size: 5vw;
   text-align: left;
   margin-left: 1rem;
-  display: none;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-@media (max-width: 769px) {
-  #contact .mobile-contact-full .mobile-title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-#contact .mobile-contact-full .contact-under-nav form {
+#contact .contact-under-nav form {
   font-family: "miller-display", "times", "serif";
   color: #262626;
   font-size: 1.5rem;
@@ -1829,59 +1815,59 @@ html body .container {
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav form {
+  #contact .contact-under-nav form {
     font-family: sans-serif;
   }
 }
 
-#contact .mobile-contact-full .contact-under-nav form label {
+#contact .contact-under-nav form label {
   margin: 0;
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav form label {
+  #contact .contact-under-nav form label {
     font-family: sans-serif;
   }
 }
 
-#contact .mobile-contact-full .contact-under-nav form input[type=text]:focus {
+#contact .contact-under-nav form input[type=text]:focus {
   border: #00BFFF 6px solid;
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav form input[type=text] {
+  #contact .contact-under-nav form input[type=text] {
     width: 75vw;
     height: 2rem;
   }
 }
 
-#contact .mobile-contact-full .contact-under-nav form input[type=email]:focus {
+#contact .contact-under-nav form input[type=email]:focus {
   border: #00BFFF 6px solid;
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav form input[type=email] {
+  #contact .contact-under-nav form input[type=email] {
     width: 75vw;
     height: 2rem;
   }
 }
 
-#contact .mobile-contact-full .contact-under-nav form textarea {
+#contact .contact-under-nav form textarea {
   height: 8rem;
 }
 
-#contact .mobile-contact-full .contact-under-nav form textarea:focus {
+#contact .contact-under-nav form textarea:focus {
   border: #00BFFF 6px solid;
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav form textarea {
+  #contact .contact-under-nav form textarea {
     width: 75vw;
     height: 7rem;
   }
 }
 
-#contact .mobile-contact-full .contact-under-nav form button[type=submit] {
+#contact .contact-under-nav form button[type=submit] {
   width: 15rem;
   height: 4vw;
   margin: 0.5rem 0 1rem 0;
@@ -1892,33 +1878,33 @@ html body .container {
   background-color: white;
 }
 
-#contact .mobile-contact-full .contact-under-nav form button[type=submit]:hover {
+#contact .contact-under-nav form button[type=submit]:hover {
   background-color: #00BFFF;
 }
 
-#contact .mobile-contact-full .contact-under-nav form button[type=submit]:active {
+#contact .contact-under-nav form button[type=submit]:active {
   margin: 1rem 0 .5rem 0;
   -webkit-box-shadow: 0px 0px;
           box-shadow: 0px 0px;
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav form button[type=submit] {
+  #contact .contact-under-nav form button[type=submit] {
     height: 4rem;
   }
 }
 
-#contact .mobile-contact-full .contact-under-nav .links {
+#contact .contact-under-nav .links {
   text-align: center;
 }
 
-#contact .mobile-contact-full .contact-under-nav .links .small-link {
+#contact .contact-under-nav .links .small-link {
   display: inline-block;
   width: 5vw;
 }
 
 @media (max-width: 769px) {
-  #contact .mobile-contact-full .contact-under-nav .links .small-link {
+  #contact .contact-under-nav .links .small-link {
     width: 10vw;
   }
 }
