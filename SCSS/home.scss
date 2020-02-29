@@ -12,14 +12,13 @@ html {
         @include size-position(auto, 100vh, 0);
         overflow: hidden scroll;
         scroll-snap-type: y mandatory;
-        scroll-behavior: smooth; 
+        scroll-behavior: smooth;
 
         .container {   
             @extend %full;
             scroll-snap-align: start;
             overflow: hidden;
-            @include for-size(phone-only) {  
-                height: $mobile-height; }
+            @include for-size(phone-only) { height: $mobile-height; }
         }
     }
 }
