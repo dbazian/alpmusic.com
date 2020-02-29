@@ -14,7 +14,8 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
-        
+        @include for-size(phone-only) { scroll-snap-type: none; }
+
         .container {   
             scroll-snap-align: start;
             overflow: hidden;

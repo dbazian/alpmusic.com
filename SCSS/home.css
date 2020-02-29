@@ -290,6 +290,13 @@ html body {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 769px) {
+  html body {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+  }
+}
+
 html body .container {
   scroll-snap-align: start;
   overflow: hidden;
