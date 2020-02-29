@@ -273,13 +273,6 @@ html {
   overflow-y: hidden;
 }
 
-@media (max-width: 769px) {
-  html {
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-  }
-}
-
 html body {
   width: auto;
   height: 100vh;
@@ -291,13 +284,6 @@ html body {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 769px) {
-  html body {
-    overflow: hidden scroll;
-    scroll-behavior: none;
-  }
-}
-
 html body .container {
   scroll-snap-align: start;
   overflow: hidden;
@@ -306,7 +292,6 @@ html body .container {
 @media (max-width: 769px) {
   html body .container {
     height: calc(var(--vh, 1vh) * 100);
-    overflow: hidden;
   }
 }
 
