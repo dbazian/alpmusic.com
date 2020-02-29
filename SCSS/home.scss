@@ -25,7 +25,6 @@ html {
             @include for-size(phone-only) {  
                 height: $mobile-height;
                 overflow: visible; }
-                 
         }
     }
 }
