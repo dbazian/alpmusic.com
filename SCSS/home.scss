@@ -7,7 +7,6 @@
 html {
     font-size: 16px;
     overflow-y: hidden;
-    @include for-size(phone-only) { scroll-snap-type: none; overflow: visible visible; }
 
     body { 
         @include size-position(auto, 100vh, 0);
@@ -15,13 +14,12 @@ html {
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth; 
-        @include for-size(phone-only) { scroll-snap-type: none; overflow: visible visible; }
+        @include for-size(phone-only) { scroll-snap-type: none; }
 
         .container {   
             scroll-snap-align: start;
             overflow: hidden;
             height: calc(var(--vh, 1vh) * 100);
-            @include for-size(phone-only) { scroll-snap-type: none; overflow: visible visible; }
         }
     }
 }
