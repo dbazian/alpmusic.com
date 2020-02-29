@@ -292,8 +292,6 @@ html body {
 
 @media (max-width: 769px) {
   html body {
-    -ms-scroll-snap-type: none;
-        scroll-snap-type: none;
     overflow: visible visible;
   }
 }
@@ -305,8 +303,6 @@ html body .container {
 
 @media (max-width: 769px) {
   html body .container {
-    -ms-scroll-snap-type: none;
-        scroll-snap-type: none;
     height: calc(var(--vh, 1vh) * 100);
     overflow: visible;
   }
