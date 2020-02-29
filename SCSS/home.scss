@@ -40,11 +40,11 @@ html {
     #myLinks {
         @include size-position(100%, auto, auto, fixed);
         display: none;
-        background-color: $main-text-color;
-        opacity: .7;
+        background-color: white;
+        opacity: .9;
 
         a {
-            @include font-style(sans-serif, $alp-color, 2rem, left);
+            @include font-style(sans-serif, $alp-contrast, 2rem, left);
             text-decoration: none;
             display: block;
             margin: 1rem;
@@ -323,6 +323,15 @@ html {
     display: none;
     @include for-size(phone-only) { display: flex; }
 
+    .mobile-title {
+        @include font-style(sans-serif, $alp-contrast, 5vw, left);
+        margin-left: 1rem;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
     .app-container {
         @include flex-box(column, center, center);
         @include size-position(100%, 100%,);
@@ -530,13 +539,6 @@ html {
     @include for-size(phone-only) { display: flex; }
 }
 
-#team-title {
-    @include font-style(sans-serif, white, 1rem);
-    margin: 0;
-    display: none;
-    @include for-size(phone-only) { display: block; }
-}
-
 .mobile-team {
     @include size-position(100%, 100%, auto, relative);
     background-color: black;
@@ -554,6 +556,14 @@ html {
         pointer-events: none;
         min-width: 100%;
         max-height: 100%;
+
+        #team-title {
+            height: 4rem;
+            @include font-style(sans-serif, white, 1rem);
+            display: none;
+            position: relative;
+            @include for-size(phone-only) { display: flex; }
+        }
 
     .m-team-pic { width: 75%; }
 

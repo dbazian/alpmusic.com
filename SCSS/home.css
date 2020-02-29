@@ -329,13 +329,13 @@ html body .container {
   margin: auto;
   position: fixed;
   display: none;
-  background-color: #262626;
-  opacity: .7;
+  background-color: white;
+  opacity: .9;
 }
 
 .mobile-nav #myLinks a {
   font-family: sans-serif;
-  color: #00BFFF;
+  color: #009DD1;
   font-size: 2rem;
   text-align: left;
   text-decoration: none;
@@ -970,6 +970,18 @@ html body .container {
   }
 }
 
+#app .mobile-app-full .mobile-title {
+  font-family: sans-serif;
+  color: #009DD1;
+  font-size: 5vw;
+  text-align: left;
+  margin-left: 1rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 #app .mobile-app-full .app-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1492,21 +1504,6 @@ html body .container {
   }
 }
 
-#team .mobile-team-full #team-title {
-  font-family: sans-serif;
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-  margin: 0;
-  display: none;
-}
-
-@media (max-width: 769px) {
-  #team .mobile-team-full #team-title {
-    display: block;
-  }
-}
-
 #team .mobile-team-full .mobile-team {
   width: 100%;
   height: 100%;
@@ -1565,6 +1562,24 @@ html body .container {
   pointer-events: none;
   min-width: 100%;
   max-height: 100%;
+}
+
+#team .mobile-team-full .mobile-team .m-team-pic-container #team-title {
+  height: 4rem;
+  font-family: sans-serif;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  display: none;
+  position: relative;
+}
+
+@media (max-width: 769px) {
+  #team .mobile-team-full .mobile-team .m-team-pic-container #team-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 #team .mobile-team-full .mobile-team .m-team-pic-container .m-team-pic {

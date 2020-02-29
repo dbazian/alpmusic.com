@@ -366,10 +366,12 @@ $(".mobile-team").click(function() {
   $(".m-team-pic").toggle(400);
   $(".mob-hidden").toggle(400);
   $(".m-team-pic-small").delay(400).toggle(400);
+  $("#team-title").fadeTo('fast', 0)
 } else {
   $(".m-team-pic").delay(400).toggle(400);
   $(".mob-hidden").toggle(400);
   $(".m-team-pic-small").toggle(400);
+  $("#team-title").delay(400).fadeTo('slow', 1)
   }
 });
 
