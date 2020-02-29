@@ -643,10 +643,11 @@ html {
     .mobile-title {
         @include font-style(sans-serif, $alp-contrast, 5vw, left);
         margin-left: 1rem;
-        display: block;
+        display: none;
         position: absolute;
         top: 0;
         left: 0;
+        @include for-size(phone-only) { display: block; }
         }
 
         form { 

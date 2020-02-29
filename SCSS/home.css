@@ -1801,10 +1801,16 @@ html body .container {
   font-size: 5vw;
   text-align: left;
   margin-left: 1rem;
-  display: block;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media (max-width: 769px) {
+  #contact .contact-under-nav .mobile-title {
+    display: block;
+  }
 }
 
 #contact .contact-under-nav form {
