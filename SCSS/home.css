@@ -307,7 +307,7 @@ html body .container {
 @media (max-width: 769px) and (orientation: landscape) {
   html body .container {
     overflow: visible;
-    height: 511px;
+    height: 548px;
   }
 }
 
@@ -1301,6 +1301,12 @@ html body .container {
   }
 }
 
+#about .mobile-about-full h1 {
+  font-family: sans-serif;
+  text-decoration: underline;
+  color: white;
+}
+
 #about .mobile-about-full .about-alp-video-portrait {
   width: 100%;
   height: auto;
@@ -1406,6 +1412,11 @@ html body .container {
   }
 }
 
+#clients .mobile-clients-full h1 {
+  font-family: sans-serif;
+  text-decoration: underline;
+}
+
 #clients .mobile-clients-full #client-pic-small {
   width: 100%;
 }
@@ -1485,6 +1496,28 @@ html body .container {
 }
 
 /* TEAM */
+@media (max-width: 769px) and (orientation: landscape) {
+  #team {
+    background-color: black;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+  }
+}
+
 #team .mobile-team-full {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1669,6 +1702,12 @@ html body .container {
   }
 }
 
+@media (max-width: 769px) and (orientation: landscape) {
+  #team .full-team-under-nav {
+    height: 100vh;
+  }
+}
+
 #team .full-team-under-nav .learn-more {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1693,6 +1732,13 @@ html body .container {
   color: #262626;
   font-size: 1vw;
   text-align: center;
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #team .full-team-under-nav .learn-more {
+    color: white;
+    font-size: 2vw;
+  }
 }
 
 #team .full-team-under-nav .learn-more .blue-text {
@@ -1779,6 +1825,22 @@ html body .container {
   text-align: center;
 }
 
+@media (max-width: 769px) and (orientation: landscape) {
+  #team .full-team-under-nav .team-under-nav .team-photo-container #darrell-animation, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-animation, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-animation {
+    color: white;
+  }
+}
+
+#team .full-team-under-nav .team-under-nav .team-photo-container p {
+  margin: 0;
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #team .full-team-under-nav .team-under-nav .team-photo-container p {
+    color: white;
+  }
+}
+
 #team .full-team-under-nav .team-under-nav .team-photo-container .blue-text {
   font-family: "miller-display", "times", "serif";
   color: #00BFFF;
@@ -1796,6 +1858,12 @@ html body .container {
   width: 40rem;
   max-width: 50vw;
   max-height: 20vw;
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #team .full-team-under-nav .team-under-nav .team-photo-container #darrell-info, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-info, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-info {
+    color: white;
+  }
 }
 
 #team .full-team-under-nav .team-under-nav .team-photo-container #darrell-info .blue-text, #team .full-team-under-nav .team-under-nav .team-photo-container #nick-info .blue-text, #team .full-team-under-nav .team-under-nav .team-photo-container #dave-info .blue-text {
@@ -1832,6 +1900,11 @@ html body .container {
     background-color: white;
     position: relative;
   }
+}
+
+#contact .contact-under-nav h1 {
+  font-family: sans-serif;
+  text-decoration: underline;
 }
 
 #contact .contact-under-nav form {

@@ -20,7 +20,7 @@ html {
             scroll-snap-align: start;
             overflow: hidden;
             @include for-size(phone-only) { height: $mobile-height; scroll-snap-align: none; }
-            @include for-size(phone-land) { overflow: visible; height: 511px; }
+            @include for-size(phone-land) { overflow: visible; height: 548px; }
         }
     }
 }
@@ -438,6 +438,8 @@ html {
         position: relative;
         @include for-size(phone-only) { display: flex; }
 
+        h1 { font-family: sans-serif; text-decoration: underline; color: white; }
+
         .about-alp-video-portrait {
             @include size-position(100%, auto);
             display: none;
@@ -480,6 +482,8 @@ html {
         position: relative;
         @include for-size(phone-only) { display: flex; }
 
+        h1 { font-family: sans-serif; text-decoration: underline; }
+
     #client-pic-small {
         width: 100%;
         @include for-size(phone-only) { display: block; }
@@ -514,7 +518,7 @@ html {
 
 /* TEAM */
 
-#team { 
+#team { @include for-size(phone-land) { background-color: black; color: white; @include flex-box(initial, center, center) }
 
 .mobile-team-full {
     @include flex-box(column, center, center); 
@@ -574,11 +578,13 @@ html {
 .full-team-under-nav { 
     display: block;
     @include for-size(phone-port) { display: none; }
+    @include for-size(phone-land) { height: 100vh; }
 
     .learn-more {
         @include flex-box(row, center, center);
         @include size-position(100%, 8vh, 0);
         @include font-style($main-font, $main-text-color, 1vw);
+        @include for-size(phone-land) { color: white; font-size: 2vw; }
 
         .blue-text { color: $alp-color; }
     }
@@ -603,6 +609,12 @@ html {
                 .name { 
                     @include flex-box(row, center, center);
                     @include font-style($secondary-font, $main-text-color, 1.8vw); }
+                    @include for-size(phone-land) { color: white; }
+            }
+
+            p { 
+                margin: 0;
+                @include for-size(phone-land) { color: white; }
             }
                 
                 .blue-text {
@@ -616,6 +628,7 @@ html {
                 width: 40rem;
                 max-width: 50vw;
                 max-height: 20vw;
+                @include for-size(phone-land) { color: white; }
 
                 .blue-text { 
                     @include font-style($secondary-font, $alp-color, 1.8vw);
@@ -641,6 +654,8 @@ html {
             background-color: white;
             position: relative;
         }
+
+        h1 { font-family: sans-serif; text-decoration: underline; }
 
         form { 
             @include font-style($main-font, $main-text-color, 1.5rem);
