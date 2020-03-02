@@ -1906,11 +1906,11 @@ html body .container {
 }
 
 #contact .contact-under-nav h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: sans-serif;
   text-decoration: underline;
   display: none;
-  padding-bottom: 1rem;
+  padding-bottom: .5rem;
 }
 
 @media (max-width: 1025px) {
