@@ -45,6 +45,12 @@
     @if $size == phone-only {
     @media (max-width: 769px) { @content; }
 
+    } @else if $size == phone-land {
+      @media (max-width: 769px) and (orientation: landscape) { @content; }
+
+    } @else if $size == phone-port {
+      @media (max-width: 769px) and (orientation: portrait) { @content; }
+
     } @else if $size == tablet-down2 {
       @media (max-width: 1400px) { @content; }
 

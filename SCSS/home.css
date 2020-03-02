@@ -284,6 +284,14 @@ html body {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 769px) {
+  html body {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+    scroll-behavior: none;
+  }
+}
+
 html body .container {
   scroll-snap-align: start;
   overflow: hidden;
@@ -296,9 +304,16 @@ html body .container {
   }
 }
 
+@media (max-width: 769px) and (orientation: landscape) {
+  html body .container {
+    overflow: visible;
+    height: 511px;
+  }
+}
+
 .mobile-nav {
   width: 100%;
-  height: auto;
+  height: 3rem;
   margin: auto;
   position: fixed;
   z-index: 2;
@@ -332,7 +347,7 @@ html body .container {
 }
 
 .mobile-nav #nav-bar-image {
-  width: 10vw;
+  width: 2.5rem;
   height: auto;
   margin: 0.5rem;
   position: fixed;
@@ -478,13 +493,13 @@ html body .container {
 }
 
 #library .mobile-home-full #mobile-logo {
-  width: 80vw;
+  width: 20rem;
 }
 
 #library .mobile-home-full h2 {
   font-family: sans-serif;
   color: white;
-  font-size: 8vw;
+  font-size: 2rem;
   text-align: center;
   opacity: 0;
   padding: 0;
@@ -494,7 +509,7 @@ html body .container {
 #library .mobile-home-full h1 {
   font-family: sans-serif;
   color: #00BFFF;
-  font-size: 8vw;
+  font-size: 2rem;
   text-align: center;
   opacity: 0;
   padding: 0 0 3rem 0;
@@ -958,16 +973,10 @@ html body .container {
   }
 }
 
-#app .mobile-app-full .mobile-title {
-  font-family: sans-serif;
-  color: #009DD1;
-  font-size: 5vw;
-  text-align: left;
-  margin-left: 1rem;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
+@media (max-width: 769px) and (orientation: landscape) {
+  #app .mobile-app-full {
+    margin: 5rem 0;
+  }
 }
 
 #app .mobile-app-full .app-container {
@@ -987,7 +996,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: 100%;
+  height: 80%;
   margin: auto;
   position: static;
   text-align: center;
@@ -1000,7 +1009,7 @@ html body .container {
 #app .mobile-app-full .app-container h2 {
   font-family: sans-serif;
   color: #262626;
-  font-size: 6vw;
+  font-size: 1.5rem;
   text-align: center;
   margin: 0 0 2rem 0;
   display: inline-block;
@@ -1009,14 +1018,14 @@ html body .container {
 #app .mobile-app-full .app-container .for-app-mobile {
   font-family: sans-serif;
   color: #262626;
-  font-size: 6vw;
+  font-size: 1rem;
   text-align: center;
 }
 
 #app .mobile-app-full .app-container #blue-text2 {
   font-family: "miller-display", "times", "serif";
   color: #009DD1;
-  font-size: 2.5vw;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -1024,7 +1033,7 @@ html body .container {
   #app .mobile-app-full .app-container #blue-text2 {
     font-family: sans-serif;
     color: #00BFFF;
-    font-size: 6vw;
+    font-size: 1.5rem;
     text-align: center;
   }
 }
@@ -1032,7 +1041,7 @@ html body .container {
 #app .mobile-app-full .app-container p {
   font-family: sans-serif;
   color: #262626;
-  font-size: 4.5vw;
+  font-size: 1rem;
   text-align: center;
   margin: 0;
 }
@@ -1040,7 +1049,7 @@ html body .container {
 #app .mobile-app-full .app-container #blue-text {
   font-family: sans-serif;
   color: #00BFFF;
-  font-size: 4.5vw;
+  font-size: 1rem;
   text-align: center;
   margin: 0 0 2rem 0;
 }
@@ -1064,11 +1073,11 @@ html body .container {
 }
 
 #app .mobile-app-full .app-container .app-links img {
-  width: 30vw;
+  width: 7rem;
   height: auto;
   margin: 1rem;
   position: static;
-  border-radius: 1vw;
+  border-radius: .5rem;
 }
 
 #app .app-background {
@@ -1281,6 +1290,7 @@ html body .container {
       flex-wrap: initial;
   background-color: black;
   display: none;
+  position: relative;
 }
 
 @media (max-width: 769px) {
@@ -1291,20 +1301,9 @@ html body .container {
   }
 }
 
-#about .mobile-about-full .mobile-title {
-  font-family: sans-serif;
-  color: #00BFFF;
-  font-size: 5vw;
-  text-align: left;
-  margin-left: 1rem;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-}
-
 #about .mobile-about-full .about-alp-video-portrait {
   width: 100%;
-  height: 75%;
+  height: auto;
   margin: auto;
   position: static;
   display: none;
@@ -1312,6 +1311,32 @@ html body .container {
 
 @media (max-width: 769px) {
   #about .mobile-about-full .about-alp-video-portrait {
+    display: block;
+  }
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #about .mobile-about-full .about-alp-video-portrait {
+    display: none;
+  }
+}
+
+#about .mobile-about-full .about-alp-video {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: static;
+  display: none;
+}
+
+@media (max-width: 769px) {
+  #about .mobile-about-full .about-alp-video {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #about .mobile-about-full .about-alp-video {
     display: block;
   }
 }
@@ -1381,20 +1406,36 @@ html body .container {
   }
 }
 
-#clients .mobile-clients-full .mobile-title {
-  font-family: sans-serif;
-  color: #009DD1;
-  font-size: 5vw;
-  text-align: left;
-  margin-left: 1rem;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 #clients .mobile-clients-full #client-pic-small {
   width: 100%;
+}
+
+@media (max-width: 769px) {
+  #clients .mobile-clients-full #client-pic-small {
+    display: block;
+  }
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #clients .mobile-clients-full #client-pic-small {
+    display: none;
+  }
+}
+
+#clients .mobile-clients-full #client-pic-land {
+  width: 100%;
+}
+
+@media (max-width: 769px) {
+  #clients .mobile-clients-full #client-pic-land {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) and (orientation: landscape) {
+  #clients .mobile-clients-full #client-pic-land {
+    display: block;
+  }
 }
 
 #clients .clients-under-nav {
@@ -1438,7 +1479,7 @@ html body .container {
   }
 }
 
-#clients .client-grow {
+#clients .clients-under-nav .client-grow {
   -webkit-animation: grow 2s;
           animation: grow 2s;
 }
@@ -1464,28 +1505,8 @@ html body .container {
   display: none;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 769px) and (orientation: portrait) {
   #team .mobile-team-full {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-#team .mobile-team-full .mobile-title {
-  font-family: sans-serif;
-  color: #00BFFF;
-  font-size: 5vw;
-  text-align: left;
-  margin-left: 1rem;
-  display: none;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-}
-
-@media (max-width: 769px) {
-  #team .mobile-team-full .mobile-title {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1506,7 +1527,7 @@ html body .container {
   display: none;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 769px) and (orientation: portrait) {
   #team .mobile-team-full .mobile-team {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1544,7 +1565,7 @@ html body .container {
       flex-wrap: initial;
   width: 100%;
   height: auto;
-  margin: 0 0 0 0;
+  margin: 0;
   position: static;
   scroll-snap-align: start;
   pointer-events: none;
@@ -1562,7 +1583,7 @@ html body .container {
   position: relative;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 769px) and (orientation: portrait) {
   #team .mobile-team-full .mobile-team .m-team-pic-container #team-title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1642,7 +1663,7 @@ html body .container {
   display: block;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 769px) and (orientation: portrait) {
   #team .full-team-under-nav {
     display: none;
   }
@@ -1813,24 +1834,6 @@ html body .container {
   }
 }
 
-#contact .contact-under-nav .mobile-title {
-  font-family: sans-serif;
-  color: #009DD1;
-  font-size: 5vw;
-  text-align: left;
-  margin-left: 1rem;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@media (max-width: 769px) {
-  #contact .contact-under-nav .mobile-title {
-    display: block;
-  }
-}
-
 #contact .contact-under-nav form {
   font-family: "miller-display", "times", "serif";
   color: #262626;
@@ -1915,6 +1918,7 @@ html body .container {
 @media (max-width: 769px) {
   #contact .contact-under-nav form button[type=submit] {
     height: 4rem;
+    font-family: sans-serif;
   }
 }
 
@@ -1929,7 +1933,7 @@ html body .container {
 
 @media (max-width: 769px) {
   #contact .contact-under-nav .links .small-link {
-    width: 10vw;
+    width: 3rem;
   }
 }
 
