@@ -655,9 +655,11 @@ html {
         }
 
         h1 { 
+            font-size: 2rem;
             font-family: sans-serif; 
             text-decoration: underline;
             display: none;
+            padding-bottom: 1rem;
             @include for-size(phone-only) { display: flex; }
         }
 
