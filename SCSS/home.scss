@@ -654,15 +654,6 @@ html {
             background-color: white;
         }
 
-        h1 { 
-            font-size: 1.5rem;
-            font-family: sans-serif; 
-            text-decoration: underline;
-            display: none;
-            padding-bottom: .5rem;
-            @include for-size(phone-only) { display: flex; }
-        }
-
         form { 
             @include font-style($main-font, $main-text-color, 1.5rem);
             @include for-size(phone-only) { font-family: sans-serif; };
