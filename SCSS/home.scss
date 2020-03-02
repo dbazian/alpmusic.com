@@ -13,13 +13,13 @@ html {
         overflow: hidden scroll;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
-        @include for-size(phone-only) {scroll-snap-type: none; scroll-behavior: none; }
+        @include for-size(mobile) {scroll-snap-type: none; scroll-behavior: none; }
 
         .container {   
             @extend %full;
             scroll-snap-align: start;
             overflow: hidden;
-            @include for-size(phone-only) { 
+            @include for-size(mobile) { 
                 height: $mobile-height;
                 scroll-snap-align: none;
             }
@@ -35,7 +35,7 @@ html {
     @include size-position(100%, 3rem, auto, fixed);
     z-index: 2;
     display: none;
-    @include for-size(phone-only) { display: block; }
+    @include for-size(mobile) { display: block; }
     
     #myLinks {
         @include size-position(100%, auto, auto, fixed);
@@ -76,7 +76,7 @@ html {
     }
     background-color: $main-text-color;
     overflow: hidden;
-    @include for-size(phone-only) {
+    @include for-size(mobile) {
         display: none;
     }
 
@@ -117,7 +117,7 @@ html {
     background-color: black;
     @extend %full;
     display: none;
-    @include for-size(phone-only) { display: flex; }
+    @include for-size(mobile) { display: flex; }
 
     #mobile-logo { width: 20rem; }
 
@@ -145,7 +145,7 @@ html {
 .library-under-nav { 
     height: $desktop-height;
     text-align: center;
-    @include for-size(phone-only) { display: none; }
+    @include for-size(mobile) { display: none; }
 
     h1 {
         @include font-style($main-font, $main-text-color, 1.5rem); 
@@ -307,14 +307,14 @@ html {
     @include size-position(auto, 100%, auto, relative);
     overflow: hidden;
     display: none;
-    @include for-size(phone-only) { display: flex; }
+    @include for-size(mobile) { display: flex; }
     
 
     #box-logo-m {
         @include size-position(100%, auto, auto, absolute);
         opacity: .1;
         display: none;
-        @include for-size(phone-only) { display: flex; }
+        @include for-size(mobile) { display: flex; }
     }
 }
 
@@ -323,7 +323,7 @@ html {
     @extend %full;
     background-color: white;
     display: none;
-    @include for-size(phone-only) { display: flex; }
+    @include for-size(mobile) { display: flex; }
     @include for-size(phone-land) { margin: 5rem 0; }
 
     .app-container {
@@ -343,7 +343,7 @@ html {
 
             #blue-text2 {
                 @include font-style($main-font, $alp-contrast, 1rem);
-                @include for-size(phone-only) { @include font-style(sans-serif, $alp-color, 1.5rem); }
+                @include for-size(mobile) { @include font-style(sans-serif, $alp-color, 1.5rem); }
             }
 
             p { @include font-style(sans-serif, $main-text-color, 1rem); margin: 0; }
@@ -369,19 +369,19 @@ html {
     @include flex-box(initial, center, center);
     @include size-position(auto, $desktop-height, auto, relative);
     overflow: hidden;
-    @include for-size(phone-only) { display: none; }
+    @include for-size(mobile) { display: none; }
 
     #box-logo {
         @include size-position(45%, auto, auto, absolute);
         opacity: .1;
-        @include for-size(phone-only) { display: none; }
+        @include for-size(mobile) { display: none; }
     }
 }
 
 .app-under-nav {
     @include flex-box(row, center, center);
     @include size-position(100%, $desktop-height, auto, absolute);
-    @include for-size(phone-only) { display: none; }
+    @include for-size(mobile) { display: none; }
 
     .app-container {
         @include flex-box(column, center, center);
@@ -438,19 +438,19 @@ html {
         background-color: black;
         @extend %full;
         display: none;
-        @include for-size(phone-only) { display: flex; }
+        @include for-size(mobile) { display: flex; }
 
         .about-alp-video-portrait {
             @include size-position(100%, auto);
             display: none;
-            @include for-size(phone-only) { display: flex; }
+            @include for-size(mobile) { display: flex; }
             @include for-size(phone-land) { display: none; }
         }
 
         .about-alp-video {
             @include size-position(100%, auto);
             display: none;
-            @include for-size(phone-only) { display: none; }
+            @include for-size(mobile) { display: none; }
             @include for-size(phone-land) { display: flex; }
         }
     }
@@ -459,10 +459,10 @@ html {
         @include flex-box(column, center, center);
         @include size-position(100%, $desktop-height, auto);
         background-color: black;
-        @include for-size(phone-only) { display: none; height: 100%; }
+        @include for-size(mobile) { display: none; height: 100%; }
 
         .about-alp-video {
-            height: 95%;
+            height: 80%;
             outline: none;
         }
     }
@@ -479,23 +479,23 @@ html {
         background-color: white;
         @extend %full;
         display: none;
-        @include for-size(phone-only) { display: flex; }
+        @include for-size(mobile) { display: flex; }
 
         h1 { 
             font-family: sans-serif; 
             text-decoration: underline; 
-            @include for-size(phone-only) { display: flex; }  
+            @include for-size(mobile) { display: flex; }  
         }
 
     #client-pic-small {
         width: 75%;
-        @include for-size(phone-only) { display: block; }
+        @include for-size(mobile) { display: block; }
         @include for-size(phone-land) { display: none; }
     }
 
     #client-pic-land {
         width: 100%;
-        @include for-size(phone-only) { display: none; }
+        @include for-size(mobile) { display: none; }
         @include for-size(phone-land) { display: block; }
     }
 }
@@ -507,12 +507,12 @@ html {
         @include flex-box(initial, center, center);
         @include size-position(100%, $desktop-height, auto);
         overflow: hidden;
-        @include for-size(phone-only) {display: none; }
+        @include for-size(mobile) {display: none; }
 
     #client-pic {
         width: 75%;
         transition: width 1s;
-        @include for-size(phone-only) { display: none; }
+        @include for-size(mobile) { display: none; }
     }
 
     .client-grow { animation: grow 2s; }
@@ -652,41 +652,45 @@ html {
 
     .contact-under-nav { 
         @extend %full; 
-        @include for-size(phone-only) {         
+        @include for-size(mobile) {         
             @include flex-box(column, center, center); 
             background-color: white;
         }
 
         .form-link { 
-            height: 100%;
-            @include flex-box(column, center, center);
+            margin-top: .5rem;
+            display: block;
+            @include for-size(mobile) {            
+                height: 100%;
+                @include flex-box(column, center, center);
+            }
 
         form { 
             @include font-style($main-font, $main-text-color, 1.5rem);
-            @include for-size(phone-only) { font-family: sans-serif; };
+            @include for-size(mobile) { font-family: sans-serif; };
 
             label {
                 margin: 0;
-                @include for-size(phone-only) { font-family: sans-serif; };
+                @include for-size(mobile) { font-family: sans-serif; };
             }
 
             input[type=text] {
                 &:focus { border: $contact-border }
                 @extend %form-param;
-                @include for-size(phone-only) { width: 75vw; height: 2rem; }
+                @include for-size(mobile) { width: 75vw; height: 2rem; }
             }
 
             input[type=email] {
                 &:focus { border: $contact-border }
                 @extend %form-param;
-                @include for-size(phone-only) { width: 75vw; height: 2rem; }
+                @include for-size(mobile) { width: 75vw; height: 2rem; }
             }
 
             textarea {    
                 &:focus { border: $contact-border }             
                 @extend %form-param; 
                 height: 8rem;
-                @include for-size(phone-only) { width: 75vw; height: 7rem; }
+                @include for-size(mobile) { width: 75vw; height: 7rem; }
             }
 
             button[type=submit] {
@@ -698,7 +702,7 @@ html {
                 font-size: 1.5rem;
                 border-radius: 10px;
                 background-color: white;
-                @include for-size(phone-only) { height: 4rem; font-family: sans-serif; }
+                @include for-size(mobile) { height: 4rem; font-family: sans-serif; }
             }
         }
 
@@ -708,7 +712,7 @@ html {
             .small-link {
                 display: inline-block;
                 width: 5vw;
-                @include for-size(phone-only) { width: 3rem; }
+                @include for-size(mobile) { width: 3rem; }
             }
         }
     }
@@ -717,11 +721,11 @@ html {
 
 /* Scrollbar */
 
-::-webkit-scrollbar { width: 1vw; @include for-size(phone-only) { display: none; } }
+::-webkit-scrollbar { width: 1vw; @include for-size(mobile) { display: none; } }
 
-::-webkit-scrollbar-track { background: $third-accent; @include for-size(phone-only) { display: none; } }  
+::-webkit-scrollbar-track { background: $third-accent; @include for-size(mobile) { display: none; } }  
 
 ::-webkit-scrollbar-thumb {
     &:hover { background: $alp-color; }
     background: $alp-contrast; 
-    @include for-size(phone-only) { display: none; } }
+    @include for-size(mobile) { display: none; } }

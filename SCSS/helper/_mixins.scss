@@ -42,7 +42,7 @@
 }
 
 @mixin for-size($size) {
-    @if $size == phone-only {
+    @if $size == mobile {
     @media (max-width: 1025px) { @content; }
 
     } @else if $size == phone-land {
