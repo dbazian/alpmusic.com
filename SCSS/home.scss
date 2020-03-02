@@ -19,7 +19,10 @@ html {
             @extend %full;
             scroll-snap-align: start;
             overflow: hidden;
-            @include for-size(phone-only) { height: $mobile-height; scroll-snap-align: none; }
+            @include for-size(phone-only) { 
+                height: $mobile-height;
+                scroll-snap-align: none;
+            }
             @include for-size(phone-land) { overflow: visible; height: auto; }
         }
     }
@@ -654,6 +657,10 @@ html {
             background-color: white;
         }
 
+        .form-link { 
+            height: 100%;
+            @include flex-box(column, center, center);
+
         form { 
             @include font-style($main-font, $main-text-color, 1.5rem);
             @include for-size(phone-only) { font-family: sans-serif; };
@@ -705,6 +712,7 @@ html {
             }
         }
     }
+}
 }
 
 /* Scrollbar */
