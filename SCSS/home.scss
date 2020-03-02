@@ -20,7 +20,7 @@ html {
             scroll-snap-align: start;
             overflow: hidden;
             @include for-size(phone-only) { height: $mobile-height; scroll-snap-align: none; }
-            @include for-size(phone-land) { overflow: visible; height: 548px; }
+            @include for-size(phone-land) { overflow: visible; height: auto; }
         }
     }
 }
@@ -431,19 +431,16 @@ html {
 #about {
 
     .mobile-about-full {
-        @include flex-box(column, center, center); 
+        @include flex-box(column, center, center);
         background-color: black;
         @extend %full;
         display: none;
-        position: relative;
         @include for-size(phone-only) { display: flex; }
-
-        h1 { font-family: sans-serif; text-decoration: underline; color: white; }
 
         .about-alp-video-portrait {
             @include size-position(100%, auto);
             display: none;
-            @include for-size(phone-only) { display: block; }
+            @include for-size(phone-only) { display: flex; }
             @include for-size(phone-land) { display: none; }
         }
 
@@ -451,7 +448,7 @@ html {
             @include size-position(100%, auto);
             display: none;
             @include for-size(phone-only) { display: none; }
-            @include for-size(phone-land) { display: block; }
+            @include for-size(phone-land) { display: flex; }
         }
     }
 
@@ -479,13 +476,16 @@ html {
         background-color: white;
         @extend %full;
         display: none;
-        position: relative;
         @include for-size(phone-only) { display: flex; }
 
-        h1 { font-family: sans-serif; text-decoration: underline; }
+        h1 { 
+            font-family: sans-serif; 
+            text-decoration: underline; 
+            @include for-size(phone-only) { display: flex; }  
+        }
 
     #client-pic-small {
-        width: 100%;
+        width: 75%;
         @include for-size(phone-only) { display: block; }
         @include for-size(phone-land) { display: none; }
     }
@@ -560,7 +560,7 @@ html {
     .mob-name-container {
         @include flex-box(row, center, center);
 
-        .circle-right { @include size-position(10vw, auto, 0 0 0 1rem) }
+        .circle-right { @include size-position(1.5rem, auto, 0 0 0 1rem) }
         .circle-left { @include size-position(10vw, auto, 0 1rem 0 0) }
     }
 
@@ -652,10 +652,14 @@ html {
         @include for-size(phone-only) {         
             @include flex-box(column, center, center); 
             background-color: white;
-            position: relative;
         }
 
-        h1 { font-family: sans-serif; text-decoration: underline; }
+        h1 { 
+            font-family: sans-serif; 
+            text-decoration: underline;
+            display: none;
+            @include for-size(phone-only) { display: flex; }
+        }
 
         form { 
             @include font-style($main-font, $main-text-color, 1.5rem);
