@@ -23,7 +23,14 @@ html {
                 height: $mobile-height;
                 scroll-snap-align: none;
             }
-            @include for-size(phone-land) { overflow: visible; height: auto; }
+            @include for-size(tablet-land) { 
+                overflow: visible; 
+                height: $mobile-height; 
+            }
+            @include for-size(phone-land) { 
+                overflow: visible; 
+                height: 511px; 
+            }
         }
     }
 }
@@ -119,20 +126,28 @@ html {
     display: none;
     @include for-size(mobile) { display: flex; }
 
-    #mobile-logo { width: 20rem; }
+    #mobile-logo { 
+        width: 30rem; 
+        @include for-size(phone-port) { width: 20rem; }
+        @include for-size(phone-land) { width: 20rem; }
+    }
 
     h2 { 
-        @include font-style(sans-serif, white, 2rem); 
+        @include font-style(sans-serif, white, 3rem); 
         opacity: 0;
         padding: 0;
         margin: 0 0 1rem 0;
+        @include for-size(phone-port) { font-size: 2rem; }
+        @include for-size(phone-land) { font-size: 2rem; }
     }
 
     h1 { 
-        @include font-style(sans-serif, $alp-color, 2rem); 
+        @include font-style(sans-serif, $alp-color, 3rem); 
         opacity: 0;
         padding: 0 0 3rem 0;
         margin: 0;
+        @include for-size(phone-port) { font-size: 2rem; }
+        @include for-size(phone-land) { font-size: 2rem; }
     }
 
 .mob-t1-ani { animation: fade-in 1s .5s forwards; }
@@ -324,7 +339,8 @@ html {
     background-color: white;
     display: none;
     @include for-size(mobile) { display: flex; }
-    @include for-size(phone-land) { margin: 5rem 0; }
+    @include for-size(tablet-land) { margin: 5rem 0; }
+
 
     .app-container {
         @include flex-box(column, center, center);
@@ -337,20 +353,44 @@ html {
                 @include font-style(sans-serif, $main-text-color, 1.5rem);
                 margin: 0 0 2rem 0; 
                 display: inline-block;
+                @include for-size(tablet-port) { font-size: 2rem; }
+                @include for-size(phone-port) { font-size: 1.5rem; }
+                @include for-size(tablet-land) { font-size: 2rem; }
+                @include for-size(phone-land) {  font-size: 1.5rem; }
             }
 
-            .for-app-mobile { @include font-style(sans-serif, $main-text-color, 1rem); }
+            .for-app-mobile { 
+                @include font-style(sans-serif, $main-text-color, 1rem); 
+                @include for-size(tablet-port) { font-size: 2rem; }
+                @include for-size(phone-port) { font-size: 1rem; }
+                @include for-size(tablet-land) { font-size: 2rem; }
+                @include for-size(phone-land) {  font-size: 1.5rem; }
+
+            }
 
             #blue-text2 {
                 @include font-style($main-font, $alp-contrast, 1rem);
-                @include for-size(mobile) { @include font-style(sans-serif, $alp-color, 1.5rem); }
+                @include for-size(tablet-port) { @include font-style(sans-serif, $alp-color, 2rem); }
+                @include for-size(phone-port) { font-size: 1.5rem; }        
+                @include for-size(tablet-land) { font-family: sans-serif; font-size: 2rem; } 
+                @include for-size(phone-land) {  font-size: 1.5rem; }
+
             }
 
-            p { @include font-style(sans-serif, $main-text-color, 1rem); margin: 0; }
-        
+            p { @include font-style(sans-serif, $main-text-color, 1rem); margin: 0;
+                @include for-size(tablet-port) { font-size: 2rem; }
+                @include for-size(phone-port) { font-size: 1rem; } 
+                @include for-size(tablet-land) { font-size: 2rem; }
+                @include for-size(phone-land) {  font-size: 1.5rem; }
+            }
+                
             #blue-text { 
                 @include font-style(sans-serif, $alp-color, 1rem); 
                 margin: 0 0 2rem 0;
+                @include for-size(tablet-port) { font-size: 2rem; }
+                @include for-size(phone-port) { font-size: 1rem; } 
+                @include for-size(tablet-land) { font-size: 2rem; }
+                @include for-size(phone-land) {  font-size: 1.5rem; }
         }
 
         .app-links { @include flex-box(row, center, center);
@@ -358,6 +398,9 @@ html {
             img { 
                 @include size-position(7rem, auto, 1rem,);
                 border-radius: .5rem;
+                @include for-size(tablet-port) { width: 12rem; }
+                @include for-size(phone-port) { width: 7rem; }
+                @include for-size(tablet-land) { width: 12rem; }
              }
         }
     }
@@ -444,14 +487,14 @@ html {
             @include size-position(100%, auto);
             display: none;
             @include for-size(mobile) { display: flex; }
-            @include for-size(phone-land) { display: none; }
+            @include for-size(tablet-land) { display: none; }
         }
 
         .about-alp-video {
             @include size-position(100%, auto);
             display: none;
             @include for-size(mobile) { display: none; }
-            @include for-size(phone-land) { display: flex; }
+            @include for-size(tablet-land) { display: flex; }
         }
     }
 
@@ -474,29 +517,29 @@ html {
 
 //Mobile Clients Page
 
-.mobile-clients-full { 
-        @include flex-box(column, center, center); 
+.mobile-clients-full {  
         background-color: white;
         @extend %full;
         display: none;
-        @include for-size(mobile) { display: flex; }
+        @include for-size(mobile) { @include flex-box(column, center, center); }
 
         h1 { 
             font-family: sans-serif; 
-            text-decoration: underline; 
-            @include for-size(mobile) { display: flex; }  
+            @include for-size(mobile) { display: flex; } 
+            @include for-size(tablet-port) { font-size: 2rem; } 
+            @include for-size(phone-port) { font-size: 1.5rem; }
         }
 
     #client-pic-small {
         width: 75%;
-        @include for-size(mobile) { display: block; }
-        @include for-size(phone-land) { display: none; }
+        @include for-size(mobile) { display: flex; }
+        @include for-size(tablet-land) { display: none; }
     }
 
     #client-pic-land {
-        width: 100%;
+        width: 90%;
         @include for-size(mobile) { display: none; }
-        @include for-size(phone-land) { display: block; }
+        @include for-size(tablet-land) { display: flex; }
     }
 }
 
@@ -521,14 +564,14 @@ html {
 
 /* TEAM */
 
-#team { @include for-size(phone-land) { background-color: black; color: white; @include flex-box(initial, center, center) }
+#team { @include for-size(tablet-land) { background-color: black; color: white; @include flex-box(initial, center, center) }
 
 .mobile-team-full {
     @include flex-box(column, center, center); 
     background-color: black;
     @extend %full;
     display: none;
-    @include for-size(phone-port) { display: flex; }
+    @include for-size(tablet-port) { display: flex; }
 
 .mobile-team {
     @include size-position(100%, 100%, auto, relative);
@@ -538,7 +581,7 @@ html {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     display: none;
-    @include for-size(phone-port) { @include flex-box(initial, initial, center); }
+    @include for-size(tablet-port) { @include flex-box(initial, initial, center); }
 
     .m-team-pic-container {
         @include flex-box(column, center, center);
@@ -553,7 +596,11 @@ html {
             @include font-style(sans-serif, white, 1rem);
             display: none;
             position: relative;
-            @include for-size(phone-port) { display: flex; }
+            @include for-size(tablet-port) { 
+                display: flex; 
+                font-size: 2rem;
+            }
+            @include for-size(phone-port) { font-size: 1rem; }
         }
 
     .m-team-pic { width: 75%; }
@@ -573,21 +620,26 @@ html {
         display: none;
     }
 
-        p { @include font-style(sans-serif, white, 1rem); }
+        p { 
+            @include font-style(sans-serif, white, 1rem); 
+            @include for-size(tablet-port) { font-size: 2rem; }
+            @include for-size(phone-port) { font-size: 1rem; }
+        }
     }
     }
 }
 
 .full-team-under-nav { 
     display: block;
-    @include for-size(phone-port) { display: none; }
-    @include for-size(phone-land) { height: 100vh; }
+
+    @include for-size(tablet-port) { display: none; }
+    @include for-size(tablet-land) { height: 511px }
 
     .learn-more {
         @include flex-box(row, center, center);
         @include size-position(100%, 8vh, 0);
         @include font-style($main-font, $main-text-color, 1vw);
-        @include for-size(phone-land) { color: white; font-size: 2vw; }
+        @include for-size(tablet-land) { color: white; font-size: 2vw; }
 
         .blue-text { color: $alp-color; }
     }
@@ -612,12 +664,12 @@ html {
                 .name { 
                     @include flex-box(row, center, center);
                     @include font-style($secondary-font, $main-text-color, 1.8vw); }
-                    @include for-size(phone-land) { color: white; }
+                    @include for-size(tablet-land) { color: white; }
             }
 
             p { 
                 margin: 0;
-                @include for-size(phone-land) { color: white; }
+                @include for-size(tablet-land) { color: white; }
             }
                 
                 .blue-text {
@@ -631,7 +683,7 @@ html {
                 width: 40rem;
                 max-width: 50vw;
                 max-height: 20vw;
-                @include for-size(phone-land) { color: white; }
+                @include for-size(tablet-land) { color: white; }
 
                 .blue-text { 
                     @include font-style($secondary-font, $alp-color, 1.8vw);

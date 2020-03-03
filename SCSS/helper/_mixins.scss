@@ -45,10 +45,16 @@
     @if $size == mobile {
     @media (max-width: 1025px) { @content; }
 
-    } @else if $size == phone-land {
+    } @else if $size == tablet-land {
       @media (max-width: 1025px) and (orientation: landscape) { @content; }
 
     } @else if $size == phone-port {
+      @media (max-width: 550px) and (orientation: portrait) { @content; }
+
+    } @else if $size == phone-land {
+      @media (max-width: 850px) and (orientation: landscape) { @content; }
+
+    } @else if $size == tablet-port {
       @media (max-width: 1025px) and (orientation: portrait) { @content; }
 
     } @else if $size == tablet-down2 {
