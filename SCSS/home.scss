@@ -611,7 +611,7 @@ html {
         @include flex-box(row, center, center);
 
         .circle-right { @include size-position(1.5rem, auto, 0 0 0 1rem) }
-        .circle-left { @include size-position(10vw, auto, 0 1rem 0 0) }
+        .circle-left { @include size-position(1.5rem, auto, 0 1rem 0 0) }
     }
 
     .mob-hidden { 
