@@ -1,21 +1,20 @@
 /* MIXIN */
 /* VARIABLES */
 /* PLACEHOLDERS */
-.desktop-nav .header-side a {
-  margin: 0 1rem;
+.header-side-r a {
   text-decoration: none;
   color: white;
-  font-size: 2.5rem;
+  font-size: 2vw;
   font-family: "miller-display", "times", "serif";
   -webkit-transition: color .6s ease;
   transition: color .6s ease;
 }
 
-.desktop-nav .header-side a:hover {
+.header-side-r a:hover {
   color: #00BFFF;
 }
 
-html body .container, #library .mobile-home-full, #app .mobile-app-full, #about .mobile-about-full, #clients .mobile-clients-full, #team .mobile-team-full, #contact .contact-under-nav {
+html body .container, #library .mobile-home-full, #app .mobile-app-full, #about .mobile-about-full, #clients .mobile-clients-full, #team .mobile-team-full {
   height: 100%;
   width: 100%;
 }
@@ -23,13 +22,13 @@ html body .container, #library .mobile-home-full, #app .mobile-app-full, #about 
 #contact .contact-under-nav .form-link form input[type=text], #contact .contact-under-nav .form-link form input[type=email], #contact .contact-under-nav .form-link form textarea, #contact .contact-under-nav .form-link form button[type=submit] {
   width: 35vw;
   height: 3vw;
-  margin: .5rem 0;
-  border: 6px solid #272525;
+  border: 4px solid #272525;
   font-size: 1.2rem;
   -webkit-box-shadow: 8px 8px 8px -6px black;
           box-shadow: 8px 8px 8px -6px black;
   text-align: center;
   font-family: "miller-display", "times", "serif";
+  margin-bottom: 1rem;
 }
 
 @-webkit-keyframes grow {
@@ -318,6 +317,10 @@ html body .container {
   }
 }
 
+html body .active-link {
+  color: #00BFFF;
+}
+
 .mobile-nav {
   width: 100%;
   height: 3rem;
@@ -367,28 +370,24 @@ html body .container {
           animation: fall-down 1s forwards;
 }
 
-#library nav {
-  z-index: 5;
-}
-
-.desktop-nav {
+.nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row center center;
-          flex-direction: row center center;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
-  -webkit-box-align: initial;
-      -ms-flex-align: initial;
-          align-items: initial;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: 7rem;
+  height: 6rem;
   margin: auto;
   position: relative;
   border-top: 10px solid;
@@ -396,79 +395,42 @@ html body .container {
   border-image-source: linear-gradient(45deg, #262626, #009DD1, #00BFFF, #009DD1, #009DD1, #00BFFF, #009DD1, #262626);
   border-image-slice: 1;
   background-color: #262626;
-  overflow: hidden;
 }
 
 @media (max-width: 1025px) {
-  .desktop-nav {
+  .nav-bar {
     display: none;
   }
 }
 
-.desktop-nav .header-side {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: initial;
-  -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-          flex-direction: initial;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: initial;
-      flex-wrap: initial;
-  width: 40vw;
-}
-
-@media (max-width: 1600px) {
-  .desktop-nav .header-side a {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 1400px) {
-  .desktop-nav .header-side a {
-    font-size: 1.5rem;
-  }
-}
-
-.desktop-nav .header-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: initial;
-  -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-          flex-direction: initial;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: initial;
-      flex-wrap: initial;
-  width: 20vw;
+.nav-bar .header-side-l {
+  width: 50%;
   height: auto;
-  margin: 0 1.2rem 0 0;
-  position: static;
+  margin: 0 0 0 5rem;
+  position: absolute;
+  left: 0;
 }
 
-.desktop-nav .header-center p {
+.nav-bar .header-side-l #logo-title {
+  max-height: 5rem;
+  display: block;
+  cursor: pointer;
+}
+
+.header-side-r {
+  width: 75%;
+  height: auto;
+  margin: 0 5rem 0 0;
+  position: absolute;
   font-family: "miller-display", "times", "serif";
   color: white;
-  font-size: 4rem;
-  text-align: center;
-  letter-spacing: 2px;
-  vertical-align: center;
+  font-size: 2vw;
+  text-align: right;
+  right: 0;
 }
 
-.desktop-nav .header-center #logo-title {
-  width: 21vw;
+.header-side-r p {
+  margin: 0;
 }
 
 #library .mobile-home-full {
@@ -574,8 +536,12 @@ html body .container {
           animation: fade-in 1s 1.5s forwards;
 }
 
+#library .library-nav {
+  z-index: 5;
+}
+
 #library .library-under-nav {
-  height: calc(100% - 7rem);
+  height: calc(100% - 6rem);
   text-align: center;
 }
 
@@ -1273,7 +1239,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: auto;
-  height: calc(100% - 7rem);
+  height: calc(100% - 6rem);
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -1316,7 +1282,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: calc(100% - 7rem);
+  height: calc(100% - 6rem);
   margin: auto;
   position: absolute;
 }
@@ -1345,7 +1311,7 @@ html body .container {
       flex-wrap: initial;
   width: auto;
   height: auto;
-  margin: 0 15rem 2rem 0;
+  margin: 4rem 15rem 4rem 0;
   position: relative;
   text-align: center;
 }
@@ -1537,7 +1503,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: calc(100% - 7rem);
+  height: calc(100% - 6rem);
   margin: auto;
   position: static;
   background-color: black;
@@ -1658,7 +1624,7 @@ html body .container {
   -ms-flex-wrap: initial;
       flex-wrap: initial;
   width: 100%;
-  height: calc(100% - 7rem);
+  height: calc(100% - 6rem);
   margin: auto;
   position: static;
   overflow: hidden;
@@ -2091,6 +2057,17 @@ html body .container {
 }
 
 /* Contact */
+#contact .contact-under-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 1025px) {
   #contact .contact-under-nav {
     display: -webkit-box;
@@ -2139,6 +2116,8 @@ html body .container {
 }
 
 #contact .contact-under-nav .form-link form {
+  margin-top: 2rem;
+  margin-left: 1rem;
   font-family: "miller-display", "times", "serif";
   color: #262626;
   font-size: 1.5rem;
@@ -2153,12 +2132,49 @@ html body .container {
 
 #contact .contact-under-nav .form-link form label {
   margin: 0;
+  height: auto;
 }
 
 @media (max-width: 1025px) {
   #contact .contact-under-nav .form-link form label {
     font-family: sans-serif;
   }
+}
+
+#contact .contact-under-nav .form-link form input::-webkit-input-placeholder {
+  color: #009DD1;
+}
+
+#contact .contact-under-nav .form-link form input:-ms-input-placeholder {
+  color: #009DD1;
+}
+
+#contact .contact-under-nav .form-link form input::-ms-input-placeholder {
+  color: #009DD1;
+}
+
+#contact .contact-under-nav .form-link form input::placeholder {
+  color: #009DD1;
+}
+
+#contact .contact-under-nav .form-link form textarea::-webkit-input-placeholder {
+  color: #009DD1;
+  vertical-align: center;
+}
+
+#contact .contact-under-nav .form-link form textarea:-ms-input-placeholder {
+  color: #009DD1;
+  vertical-align: center;
+}
+
+#contact .contact-under-nav .form-link form textarea::-ms-input-placeholder {
+  color: #009DD1;
+  vertical-align: center;
+}
+
+#contact .contact-under-nav .form-link form textarea::placeholder {
+  color: #009DD1;
+  vertical-align: center;
 }
 
 #contact .contact-under-nav .form-link form input[type=text]:focus {
@@ -2199,12 +2215,12 @@ html body .container {
 }
 
 #contact .contact-under-nav .form-link form button[type=submit] {
-  width: 15rem;
+  width: 15vw;
   height: 4vw;
   margin: 0.5rem 0 1rem 0;
   position: static;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   border-radius: 10px;
   background-color: white;
 }
@@ -2228,6 +2244,8 @@ html body .container {
 
 #contact .contact-under-nav .form-link .links {
   text-align: center;
+  margin-left: .7rem;
+  padding: 0;
 }
 
 #contact .contact-under-nav .form-link .links .small-link {
@@ -2244,6 +2262,7 @@ html body .container {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 1vw;
+  z-index: 5;
 }
 
 @media (max-width: 1025px) {

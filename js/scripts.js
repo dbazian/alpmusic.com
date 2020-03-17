@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
 // Check if element is in view
 
@@ -10,7 +10,7 @@ function isScrolledIntoView(elem) {
   return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
-$("html, body").scroll(function() {
+$("html, body").scroll(() => {
 
 // If app screen is in view
 

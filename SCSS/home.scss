@@ -32,9 +32,10 @@ html {
                 height: 511px; 
             }
         }
+
+        .active-link { color: $alp-color; }
     }
 }
-
 
 // Mobile nav
 
@@ -70,11 +71,9 @@ html {
 
 // Desktop nav
 
-#library nav { z-index: 5; }
-
-.desktop-nav {
-    @include flex-box(row center center);
-    @include size-position(100%, 7rem, auto, relative);
+.nav-bar {
+    @include flex-box(row, center, center);
+    @include size-position(100%, 6rem, auto, relative);
     border: {
         top: 10px solid;
         bottom: 10px solid;
@@ -82,36 +81,28 @@ html {
         image-slice: 1;
     }
     background-color: $main-text-color;
-    overflow: hidden;
-    @include for-size(mobile) {
-        display: none;
-    }
+    @include for-size(mobile) { display: none; }
 
-    .header-side {
-        @include flex-box(initial, center, center);
-        width: 40vw;
-
-        a { @extend %header-links;
-            @include for-size(tablet-down1) { font-size: 2rem; }    
-            @include for-size(tablet-down2) { font-size: 1.5rem; }
-        }
-    }
-    
-    .header-center { 
-        @include flex-box(initial, center, center);
-        @include size-position(20vw, auto, 0 1.2rem 0 0 );
-            
-        p {
-            @include font-style($main-font, white, 4rem);
-            letter-spacing: 2px;
-            vertical-align: center;
-        }
+    .header-side-l {
+        @include size-position(50%, auto, 0 0 0 5rem, absolute);
+        left: 0;
 
         #logo-title { 
-            width: 21vw;
+        max-height: 5rem;
+        display: block;
+        cursor: pointer;
         }
     }
 }
+
+    .header-side-r {
+        @include size-position(75%, auto, 0 5rem 0 0, absolute);
+        @include font-style($main-font, white, 2vw, right);
+        right: 0;
+
+        a { @extend %header-links; }
+        p { margin: 0; }
+    }
 
 // HOMEPAGE
 
@@ -156,6 +147,8 @@ html {
 }
 
 // Desktop Homepage
+
+.library-nav { z-index: 5; }
         
 .library-under-nav { 
     height: $desktop-height;
@@ -428,7 +421,7 @@ html {
 
     .app-container {
         @include flex-box(column, center, center);
-        @include size-position(auto, auto, 0 15rem 2rem 0, relative);
+        @include size-position(auto, auto, 4rem 15rem 4rem 0, relative);
         text-align: center;
 
         .text-box { display: inline-block; }
@@ -703,7 +696,10 @@ html {
 #contact {
 
     .contact-under-nav { 
-        @extend %full; 
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
         @include for-size(mobile) {         
             @include flex-box(column, center, center); 
             background-color: white;
@@ -718,13 +714,19 @@ html {
             }
 
         form { 
+            margin-top: 2rem;
+            margin-left: 1rem;
             @include font-style($main-font, $main-text-color, 1.5rem);
             @include for-size(mobile) { font-family: sans-serif; };
 
             label {
                 margin: 0;
+                height: auto;
                 @include for-size(mobile) { font-family: sans-serif; };
             }
+
+            input::placeholder { color: $alp-contrast; }
+            textarea::placeholder { color: $alp-contrast; vertical-align: center; }
 
             input[type=text] {
                 &:focus { border: $contact-border }
@@ -748,10 +750,10 @@ html {
             button[type=submit] {
                 &:hover { background-color: $alp-color; }
                 &:active { margin: 1rem 0 .5rem 0; box-shadow: 0px 0px; }
-                @include size-position(15rem, 4vw, .5rem 0 1rem 0);
+                @include size-position(15vw, 4vw, .5rem 0 1rem 0);
                 @extend %form-param;
                 cursor: pointer;
-                font-size: 1.5rem;
+                font-size: 1.5vw;
                 border-radius: 10px;
                 background-color: white;
                 @include for-size(mobile) { height: 4rem; font-family: sans-serif; }
@@ -760,6 +762,8 @@ html {
 
         .links { 
             text-align: center;
+            margin-left: .7rem;
+            padding: 0;
             
             .small-link {
                 display: inline-block;
@@ -773,7 +777,7 @@ html {
 
 /* Scrollbar */
 
-::-webkit-scrollbar { width: 1vw; @include for-size(mobile) { display: none; } }
+::-webkit-scrollbar { width: 1vw; z-index: 5; @include for-size(mobile) { display: none; } }
 
 ::-webkit-scrollbar-track { background: $third-accent; @include for-size(mobile) { display: none; } }  
 
