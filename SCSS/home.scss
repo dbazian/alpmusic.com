@@ -731,23 +731,24 @@ html {
             input[type=text] {
                 &:focus { border: $contact-border }
                 @extend %form-param;
-                @include for-size(mobile) { width: 75vw; height: 2rem; }
                 @include for-size(tablet-port) { height: 4rem;  }
+                @include for-size(mobile) { width: 75vw; height: 2rem; }
             }
 
             input[type=email] {
                 &:focus { border: $contact-border }
                 @extend %form-param;
-                @include for-size(mobile) { width: 75vw; height: 2rem; }
                 @include for-size(tablet-port) { height: 4rem;  }
+                @include for-size(mobile) { width: 75vw; height: 2rem; }
             }
 
             textarea {    
                 &:focus { border: $contact-border }             
                 @extend %form-param; 
                 height: 8rem;
-                @include for-size(mobile) { width: 75vw; height: 7rem; }
+
                 @include for-size(tablet-port) { height: 10rem;  }
+                @include for-size(mobile) { width: 75vw; height: 6rem; }
             }
 
             button[type=submit] {
