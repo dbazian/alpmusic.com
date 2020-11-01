@@ -666,7 +666,7 @@ html {
             }
                 
                 .blue-text {
-                    @include font-style($main-font, $alp-color, 1.8vw);
+                    @include font-style($main-font, $alp-color, 1.3vw);
                     font-style: italic;
                     margin: 0; 
                 }
