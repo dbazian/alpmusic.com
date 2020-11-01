@@ -15,7 +15,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="Assets/Images/Logos/logo-icon.png" alt="Logo" width="200" height="80">
+    <img src="Assets/Images/Logos/logo-icon.png" alt="Logo" width="200" height="200">
 
   <h3 align="center">ALPMUSIC.COM</h3>
 
