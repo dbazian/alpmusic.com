@@ -390,16 +390,6 @@ html {
     @include for-size(mobile) {
       display: flex;
     }
-
-    #box-logo-m {
-      @include size-position(100%, auto, auto, absolute);
-      opacity: 0.1;
-      display: none;
-      z-index: 0;
-      @include for-size(mobile) {
-        display: flex;
-      }
-    }
   }
 
   .mobile-app-full {
@@ -510,7 +500,6 @@ html {
 
       .app-links {
         @include flex-box(row, center, center);
-        z-index: 1;
         img {
           @include size-position(7rem, auto, 1rem);
           border-radius: 0.5rem;
@@ -525,11 +514,6 @@ html {
           }
         }
       }
-      .app-links-mobile {
-        @include flex-box(row, center, center);
-        a {
-          z-index: 2;
-        }
 
         img {
           @include size-position(7rem, auto, 1rem);

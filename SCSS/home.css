@@ -944,7 +944,7 @@ html body .active-link {
   position: absolute;
   opacity: 0.1;
   display: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 @media (max-width: 1025px) {
@@ -1195,7 +1195,6 @@ html body .active-link {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
-  z-index: 1;
 }
 
 #app .mobile-app-full .app-container .app-links img {
@@ -1243,7 +1242,7 @@ html body .active-link {
 }
 
 #app .mobile-app-full .app-container .app-links-mobile a {
-  z-index: 2;
+  z-index: 1;
 }
 
 #app .mobile-app-full .app-container .app-links-mobile img {
