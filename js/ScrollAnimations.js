@@ -21,7 +21,9 @@ $(document).ready(() => {
     });
 
     $("#client-pic").each(function () {
-      isScrolledIntoView(this) ? $(this).addClass("client-grow") : $(this).removeClass("client-grow");
+      isScrolledIntoView(this)
+        ? $(this).addClass("client-grow")
+        : $(this).removeClass("client-grow");
     });
   });
 

@@ -5,7 +5,9 @@ $(document).ready(() => {
   $("#mob-ml").addClass("mob-t3-ani");
 
   counterD = 0;
-  $("#nav-bar-image, #mob-app, #mob-about, #mob-home, #mob-clients, #mob-team, #mob-contact").click(function () {
+  $(
+    "#nav-bar-image, #mob-app, #mob-about, #mob-home, #mob-clients, #mob-team, #mob-contact"
+  ).click(function () {
     counterD++;
     if (counterD % 2 == 1) {
       $("#myLinks").toggle().addClass("fall-down");

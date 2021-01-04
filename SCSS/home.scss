@@ -5,578 +5,766 @@
 // Whole page
 
 html {
-    font-size: 16px;
-    overflow-y: hidden;
+  font-size: 16px;
+  overflow-y: hidden;
 
-    body { 
-        @include size-position(auto, 100vh, 0);
-        overflow: hidden scroll;
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-        @include for-size(mobile) {scroll-snap-type: none; scroll-behavior: none; }
-
-        .container {   
-            @extend %full;
-            scroll-snap-align: start;
-            overflow: hidden;
-            @include for-size(mobile) { 
-                height: $mobile-height;
-                scroll-snap-align: none;
-            }
-            @include for-size(tablet-land) { 
-                overflow: visible; 
-                height: $mobile-height; 
-            }
-            @include for-size(phone-land) { 
-                overflow: visible; 
-                height: 511px; 
-            }
-        }
-
-        .active-link { color: $alp-color; }
+  body {
+    @include size-position(auto, 100vh, 0);
+    overflow: hidden scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    @include for-size(mobile) {
+      scroll-snap-type: none;
+      scroll-behavior: none;
     }
+
+    .container {
+      @extend %full;
+      scroll-snap-align: start;
+      overflow: hidden;
+      @include for-size(mobile) {
+        height: $mobile-height;
+        scroll-snap-align: none;
+      }
+      @include for-size(tablet-land) {
+        overflow: visible;
+        height: $mobile-height;
+      }
+      @include for-size(phone-land) {
+        overflow: visible;
+        height: 511px;
+      }
+    }
+
+    .active-link {
+      color: $alp-color;
+    }
+  }
 }
 
 // Mobile nav
 
 .mobile-nav {
-    @include size-position(100%, 3rem, auto, fixed);
-    z-index: 2;
+  @include size-position(100%, 3rem, auto, fixed);
+  z-index: 2;
+  display: none;
+  @include for-size(mobile) {
+    display: block;
+  }
+
+  #myLinks {
+    @include size-position(100%, auto, auto, fixed);
     display: none;
-    @include for-size(mobile) { display: block; }
-    
-    #myLinks {
-        @include size-position(100%, auto, auto, fixed);
-        display: none;
-        background-color: white;
-        opacity: .9;
+    background-color: white;
+    opacity: 0.9;
 
-        a {
-            @include font-style(sans-serif, $alp-contrast, 2rem, left);
-            text-decoration: none;
-            display: block;
-            margin: 1rem;
-        }
+    a {
+      @include font-style(sans-serif, $alp-contrast, 2rem, left);
+      text-decoration: none;
+      display: block;
+      margin: 1rem;
     }
+  }
 
-    #nav-bar-image { 
-        @include size-position(2.5rem, auto, .5rem, fixed);
-        right: 0;
-        z-index: 5;
-    }
+  #nav-bar-image {
+    @include size-position(2.5rem, auto, 0.5rem, fixed);
+    right: 0;
+    z-index: 5;
+  }
 
-    .fall-down { animation: fall-down 1s forwards; }
-
+  .fall-down {
+    animation: fall-down 1s forwards;
+  }
 }
 
 // Desktop nav
 
 .nav-bar {
-    @include flex-box(row, center, center);
-    @include size-position(100%, 6rem, auto, relative);
-    border: {
-        top: 10px solid;
-        bottom: 10px solid;
-        image-source: linear-gradient(45deg, $main-text-color, $alp-contrast, $alp-color, $alp-contrast, $alp-contrast, $alp-color, $alp-contrast, $main-text-color);
-        image-slice: 1;
-    }
-    background-color: $main-text-color;
-    @include for-size(mobile) { display: none; }
+  @include flex-box(row, center, center);
+  @include size-position(100%, 6rem, auto, relative);
+  border: {
+    top: 10px solid;
+    bottom: 10px solid;
+    image-source: linear-gradient(
+      45deg,
+      $main-text-color,
+      $alp-contrast,
+      $alp-color,
+      $alp-contrast,
+      $alp-contrast,
+      $alp-color,
+      $alp-contrast,
+      $main-text-color
+    );
+    image-slice: 1;
+  }
+  background-color: $main-text-color;
+  @include for-size(mobile) {
+    display: none;
+  }
 
-    .header-side-l {
-        @include size-position(50%, auto, 0 0 0 5rem, absolute);
-        left: 0;
+  .header-side-l {
+    @include size-position(50%, auto, 0 0 0 5rem, absolute);
+    left: 0;
 
-        #logo-title { 
-        max-height: 5rem;
-        display: block;
-        cursor: pointer;
-        }
+    #logo-title {
+      max-height: 5rem;
+      display: block;
+      cursor: pointer;
     }
+  }
 }
 
-    .header-side-r {
-        @include size-position(75%, auto, 0 5rem 0 0, absolute);
-        @include font-style($main-font, white, 2vw, right);
-        right: 0;
+.header-side-r {
+  @include size-position(75%, auto, 0 5rem 0 0, absolute);
+  @include font-style($main-font, white, 2vw, right);
+  right: 0;
 
-        a { @extend %header-links; }
-        p { margin: 0; }
-    }
+  a {
+    @extend %header-links;
+  }
+  p {
+    margin: 0;
+  }
+}
 
 // HOMEPAGE
 
 #library {
+  // Mobile Homepage
 
-// Mobile Homepage
-
-.mobile-home-full { 
-    @include flex-box(column, center, center); 
+  .mobile-home-full {
+    @include flex-box(column, center, center);
     background-color: black;
     @extend %full;
     display: none;
-    @include for-size(mobile) { display: flex; }
-
-    #mobile-logo { 
-        width: 30rem; 
-        @include for-size(phone-port) { width: 20rem; }
-        @include for-size(phone-land) { width: 20rem; }
+    @include for-size(mobile) {
+      display: flex;
     }
 
-    h2 { 
-        @include font-style(sans-serif, white, 3rem); 
-        opacity: 0;
-        padding: 0;
-        margin: 0 0 1rem 0;
-        @include for-size(phone-port) { font-size: 2rem; }
-        @include for-size(phone-land) { font-size: 2rem; }
+    #mobile-logo {
+      width: 30rem;
+      @include for-size(phone-port) {
+        width: 20rem;
+      }
+      @include for-size(phone-land) {
+        width: 20rem;
+      }
     }
 
-    h1 { 
-        @include font-style(sans-serif, $alp-color, 3rem); 
-        opacity: 0;
-        padding: 0 0 3rem 0;
-        margin: 0;
-        @include for-size(phone-port) { font-size: 2rem; }
-        @include for-size(phone-land) { font-size: 2rem; }
+    h2 {
+      @include font-style(sans-serif, white, 3rem);
+      opacity: 0;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      @include for-size(phone-port) {
+        font-size: 2rem;
+      }
+      @include for-size(phone-land) {
+        font-size: 2rem;
+      }
     }
-
-.mob-t1-ani { animation: fade-in 1s .5s forwards; }
-.mob-t2-ani { animation: fade-in 1s 1s forwards; }
-.mob-t3-ani { animation: fade-in 1s 1.5s forwards; }
-}
-
-// Desktop Homepage
-
-.library-nav { z-index: 5; }
-        
-.library-under-nav { 
-    height: $desktop-height;
-    text-align: center;
-    @include for-size(mobile) { display: none; }
 
     h1 {
-        @include font-style($main-font, $main-text-color, 1.5rem); 
-        margin: 1rem 0 0 0;
-        padding: 1rem 0;
-        display: inline-block;
+      @include font-style(sans-serif, $alp-color, 3rem);
+      opacity: 0;
+      padding: 0 0 3rem 0;
+      margin: 0;
+      @include for-size(phone-port) {
+        font-size: 2rem;
+      }
+      @include for-size(phone-land) {
+        font-size: 2rem;
+      }
     }
 
-    .blue-text { 
-        &:hover { color: $alp-color; }
-        @include font-style($main-font, $alp-contrast, 1.5rem);
-        text-decoration: none;
-        transition: color 1s;
+    .mob-t1-ani {
+      animation: fade-in 1s 0.5s forwards;
+    }
+    .mob-t2-ani {
+      animation: fade-in 1s 1s forwards;
+    }
+    .mob-t3-ani {
+      animation: fade-in 1s 1.5s forwards;
+    }
+  }
+
+  // Desktop Homepage
+
+  .library-nav {
+    z-index: 5;
+  }
+
+  .library-under-nav {
+    height: $desktop-height;
+    text-align: center;
+    @include for-size(mobile) {
+      display: none;
+    }
+
+    h1 {
+      @include font-style($main-font, $main-text-color, 1.5rem);
+      margin: 1rem 0 0 0;
+      padding: 1rem 0;
+      display: inline-block;
+    }
+
+    .blue-text {
+      &:hover {
+        color: $alp-color;
+      }
+      @include font-style($main-font, $alp-contrast, 1.5rem);
+      text-decoration: none;
+      transition: color 1s;
     }
 
     .animation-box {
-        @include size-position(auto, 15rem, auto, relative);
-        @include flex-box(initial, center, center);
+      @include size-position(auto, 15rem, auto, relative);
+      @include flex-box(initial, center, center);
 
-        .white-bg-slide {
-            @include animation-pos(100%, 15rem, 1, 3);
-            background-color: $background-color;
-            animation: slow-slide 4s forwards;
+      .white-bg-slide {
+        @include animation-pos(100%, 15rem, 1, 3);
+        background-color: $background-color;
+        animation: slow-slide 4s forwards;
+      }
+
+      .staff {
+        @include animation-pos(60rem, auto, 1, 1);
+      }
+
+      .logo-notes {
+        @include animation-pos(60rem, 10rem, 1, 2);
+        @include flex-box(row, initial, center);
+        position: relative;
+
+        .logo {
+          width: 16rem;
         }
 
-        .staff { @include animation-pos(60rem, auto, 1, 1); }
-
-        .logo-notes { 
-            @include animation-pos(60rem, 10rem, 1, 2);
-            @include flex-box(row, initial, center);
-            position: relative;
-
-            .logo { width: 16rem; }
-
-            #note1 { 
-                    @include note-style(18rem);
-                    animation: note-animation1 3s .5s forwards; }
-
-            #note2 { 
-                    @include note-style(26rem); 
-                    animation: note-animation2 3s 1s forwards; }
-
-            #note3 { 
-                    @include note-style(34rem);
-                    animation: note-animation3 3s 1.5s forwards; }
-
-            #note4 { 
-                    @include note-style(42rem); 
-                    animation: note-animation4 3s 2s forwards; }
-
-            #note5 { 
-                    @include note-style(50rem);
-                    animation: note-animation5 3s 3s forwards; }
-            }
+        #note1 {
+          @include note-style(18rem);
+          animation: note-animation1 3s 0.5s forwards;
         }
 
-    .below-animation { position: relative; 
-
-        .white-bg-slide {
-            @include animation-pos(100%, 100%, 1, 3);
-            background-color: $background-color;
-            animation: slow-slide 3s 5s forwards;
-        }
-        
-        p {
-            @include font-style($secondary-font, $main-text-color, 1.5rem);
-            @include size-position(auto, 2rem, 0);
-
-            img { width: 1.5rem; }
+        #note2 {
+          @include note-style(26rem);
+          animation: note-animation2 3s 1s forwards;
         }
 
-        .song-information {
-            @include size-position(40rem, 3rem, 1rem auto 2rem auto);
-            text-align: center;
-
-            p { 
-                padding-top: 1rem; 
-                display: inline-block;
-            }
-
-            #song-switch-title {
-                @include font-style($secondary-font, $alp-contrast, 1rem);
-                margin-right: 1rem;
-            }
-
-            #song-switch-album {
-                @include font-style($secondary-font, $alp-contrast, 1rem);
-                margin: 0 1rem;
-            }
+        #note3 {
+          @include note-style(34rem);
+          animation: note-animation3 3s 1.5s forwards;
         }
-        
-        .music-player { 
-            @include flex-box (initial, center, center);
-            @include size-position(50rem, 3rem);
 
-            .icons {
-                &:hover { opacity: 1; }
-                @include size-position (3rem, auto, 0 1rem 0 0);
-                opacity: .5;
-                transition: opacity .5s;
-            }
-
-                #pause { display: block; }
-                #play { display: none; }
-                #mute { display: none; }
-                #volume { display: block; }
-            
-            .slide-container {
-                width: 10rem;
-
-                .slider {
-                    @include size-position(100%, 2rem);
-                    appearance: none;
-                    background: transparent;
-                }
-
-                input[type=range]::-webkit-slider-runnable-track {
-                    &:hover { opacity: 1; }
-                    @include size-position(100%, .5rem);
-                    border-radius: 5px;
-                    background: $alp-color;
-                    opacity: .7;
-                    transition: opacity .2s;
-                }
-
-                input[type=range]::-ms-track {
-                    @include size-position(100%, .5rem);
-                    border-radius: 5px;
-                    background: $alp-color;
-                    opacity: .7;
-                    transition: opacity .2s;
-                }
-
-                input[type=range]::-webkit-slider-thumb {
-                    @include size-position(1.5rem, 1.5rem, -.5rem 0 0 0);
-                    appearance: none;
-                    border-radius: 50%;
-                    background: $alp-contrast;
-                    cursor: pointer;   
-                }
-
-                input[type=range]::-ms-thumb {
-                    margin-top: 0;
-                }
-            }
+        #note4 {
+          @include note-style(42rem);
+          animation: note-animation4 3s 2s forwards;
         }
+
+        #note5 {
+          @include note-style(50rem);
+          animation: note-animation5 3s 3s forwards;
+        }
+      }
     }
-}
+
+    .below-animation {
+      position: relative;
+
+      .white-bg-slide {
+        @include animation-pos(100%, 100%, 1, 3);
+        background-color: $background-color;
+        animation: slow-slide 3s 5s forwards;
+      }
+
+      p {
+        @include font-style($secondary-font, $main-text-color, 1.5rem);
+        @include size-position(auto, 2rem, 0);
+
+        img {
+          width: 1.5rem;
+        }
+      }
+
+      .song-information {
+        @include size-position(40rem, 3rem, 1rem auto 2rem auto);
+        text-align: center;
+
+        p {
+          padding-top: 1rem;
+          display: inline-block;
+        }
+
+        #song-switch-title {
+          @include font-style($secondary-font, $alp-contrast, 1rem);
+          margin-right: 1rem;
+        }
+
+        #song-switch-album {
+          @include font-style($secondary-font, $alp-contrast, 1rem);
+          margin: 0 1rem;
+        }
+      }
+
+      .music-player {
+        @include flex-box(initial, center, center);
+        @include size-position(50rem, 3rem);
+
+        .icons {
+          &:hover {
+            opacity: 1;
+          }
+          @include size-position(3rem, auto, 0 1rem 0 0);
+          opacity: 0.5;
+          transition: opacity 0.5s;
+        }
+
+        #pause {
+          display: block;
+        }
+        #play {
+          display: none;
+        }
+        #mute {
+          display: none;
+        }
+        #volume {
+          display: block;
+        }
+
+        .slide-container {
+          width: 10rem;
+
+          .slider {
+            @include size-position(100%, 2rem);
+            appearance: none;
+            background: transparent;
+          }
+
+          input[type="range"]::-webkit-slider-runnable-track {
+            &:hover {
+              opacity: 1;
+            }
+            @include size-position(100%, 0.5rem);
+            border-radius: 5px;
+            background: $alp-color;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+          }
+
+          input[type="range"]::-ms-track {
+            @include size-position(100%, 0.5rem);
+            border-radius: 5px;
+            background: $alp-color;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+          }
+
+          input[type="range"]::-webkit-slider-thumb {
+            @include size-position(1.5rem, 1.5rem, -0.5rem 0 0 0);
+            appearance: none;
+            border-radius: 50%;
+            background: $alp-contrast;
+            cursor: pointer;
+          }
+
+          input[type="range"]::-ms-thumb {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* APP PAGE */
 
 #app {
+  // MOBILE APP
 
-// MOBILE APP
-
-.app-background-m {
+  .app-background-m {
     @include flex-box(initial, center, center);
     @include size-position(auto, 100%, auto, relative);
     overflow: hidden;
     display: none;
-    @include for-size(mobile) { display: flex; }
-    
+    @include for-size(mobile) {
+      display: flex;
+    }
 
     #box-logo-m {
-        @include size-position(100%, auto, auto, absolute);
-        opacity: .1;
-        display: none;
-        @include for-size(mobile) { display: flex; }
+      @include size-position(100%, auto, auto, absolute);
+      opacity: 0.1;
+      display: none;
+      @include for-size(mobile) {
+        display: flex;
+      }
     }
-}
+  }
 
-.mobile-app-full {  
-    @include flex-box(column, center, center); 
+  .mobile-app-full {
+    @include flex-box(column, center, center);
     @extend %full;
     background-color: white;
     display: none;
-    @include for-size(mobile) { display: flex; }
-    @include for-size(tablet-land) { margin: 5rem 0; }
-
+    @include for-size(mobile) {
+      display: flex;
+    }
+    @include for-size(tablet-land) {
+      margin: 5rem 0;
+    }
 
     .app-container {
-        @include flex-box(column, center, center);
-        @include size-position(100%, 80%);
-        text-align: center;
+      @include flex-box(column, center, center);
+      @include size-position(100%, 80%);
+      text-align: center;
 
-        .text-box { display: inline-block; }
- 
-            h2  { 
-                @include font-style(sans-serif, $main-text-color, 1.5rem);
-                margin: 0 0 2rem 0; 
-                display: inline-block;
-                @include for-size(tablet-port) { font-size: 2rem; }
-                @include for-size(phone-port) { font-size: 1.5rem; }
-                @include for-size(tablet-land) { font-size: 2rem; }
-                @include for-size(phone-land) {  font-size: 1.5rem; }
-            }
+      .text-box {
+        display: inline-block;
+      }
 
-            .for-app-mobile { 
-                @include font-style(sans-serif, $main-text-color, 1rem); 
-                @include for-size(tablet-port) { font-size: 2rem; }
-                @include for-size(phone-port) { font-size: 1rem; }
-                @include for-size(tablet-land) { font-size: 2rem; }
-                @include for-size(phone-land) {  font-size: 1.5rem; }
-
-            }
-
-            #blue-text2 {
-                @include font-style($main-font, $alp-contrast, 1rem);
-                @include for-size(tablet-port) { @include font-style(sans-serif, $alp-color, 2rem); }
-                @include for-size(phone-port) { font-size: 1.5rem; }        
-                @include for-size(tablet-land) { font-family: sans-serif; font-size: 2rem; } 
-                @include for-size(phone-land) {  font-size: 1.5rem; }
-
-            }
-
-            p { @include font-style(sans-serif, $main-text-color, 1rem); margin: 0;
-                @include for-size(tablet-port) { font-size: 2rem; }
-                @include for-size(phone-port) { font-size: 1rem; } 
-                @include for-size(tablet-land) { font-size: 2rem; }
-                @include for-size(phone-land) {  font-size: 1.5rem; }
-            }
-                
-            #blue-text { 
-                @include font-style(sans-serif, $alp-color, 1rem); 
-                margin: 0 0 2rem 0;
-                @include for-size(tablet-port) { font-size: 2rem; }
-                @include for-size(phone-port) { font-size: 1rem; } 
-                @include for-size(tablet-land) { font-size: 2rem; }
-                @include for-size(phone-land) {  font-size: 1.5rem; }
+      h2 {
+        @include font-style(sans-serif, $main-text-color, 1.5rem);
+        margin: 0 0 2rem 0;
+        display: inline-block;
+        @include for-size(tablet-port) {
+          font-size: 2rem;
         }
-
-        .app-links { @include flex-box(row, center, center);
-
-            img { 
-                @include size-position(7rem, auto, 1rem,);
-                border-radius: .5rem;
-                @include for-size(tablet-port) { width: 12rem; }
-                @include for-size(phone-port) { width: 7rem; }
-                @include for-size(tablet-land) { width: 12rem; }
-             }
+        @include for-size(phone-port) {
+          font-size: 1.5rem;
         }
+        @include for-size(tablet-land) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-land) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .for-app-mobile {
+        @include font-style(sans-serif, $main-text-color, 1rem);
+        @include for-size(tablet-port) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-port) {
+          font-size: 1rem;
+        }
+        @include for-size(tablet-land) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-land) {
+          font-size: 1.5rem;
+        }
+      }
+
+      #blue-text2 {
+        @include font-style($main-font, $alp-contrast, 1rem);
+        @include for-size(tablet-port) {
+          @include font-style(sans-serif, $alp-color, 2rem);
+        }
+        @include for-size(phone-port) {
+          font-size: 1.5rem;
+        }
+        @include for-size(tablet-land) {
+          font-family: sans-serif;
+          font-size: 2rem;
+        }
+        @include for-size(phone-land) {
+          font-size: 1.5rem;
+        }
+      }
+
+      p {
+        @include font-style(sans-serif, $main-text-color, 1rem);
+        margin: 0;
+        @include for-size(tablet-port) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-port) {
+          font-size: 1rem;
+        }
+        @include for-size(tablet-land) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-land) {
+          font-size: 1.5rem;
+        }
+      }
+
+      #blue-text {
+        @include font-style(sans-serif, $alp-color, 1rem);
+        margin: 0 0 2rem 0;
+        @include for-size(tablet-port) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-port) {
+          font-size: 1rem;
+        }
+        @include for-size(tablet-land) {
+          font-size: 2rem;
+        }
+        @include for-size(phone-land) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .app-links {
+        @include flex-box(row, center, center);
+
+        img {
+          @include size-position(7rem, auto, 1rem);
+          border-radius: 0.5rem;
+          @include for-size(tablet-port) {
+            width: 12rem;
+          }
+          @include for-size(phone-port) {
+            width: 7rem;
+          }
+          @include for-size(tablet-land) {
+            width: 12rem;
+          }
+        }
+      }
     }
-}
+  }
 
-// DESKTOP APP PAGE
+  // DESKTOP APP PAGE
 
-.app-background {
+  .app-background {
     @include flex-box(initial, center, center);
     @include size-position(auto, $desktop-height, auto, relative);
     overflow: hidden;
-    @include for-size(mobile) { display: none; }
+    @include for-size(mobile) {
+      display: none;
+    }
 
     #box-logo {
-        @include size-position(45%, auto, auto, absolute);
-        opacity: .1;
-        @include for-size(mobile) { display: none; }
+      @include size-position(45%, auto, auto, absolute);
+      opacity: 0.1;
+      @include for-size(mobile) {
+        display: none;
+      }
     }
-}
+  }
 
-.app-under-nav {
+  .app-under-nav {
     @include flex-box(row, center, center);
     @include size-position(100%, $desktop-height, auto, absolute);
-    @include for-size(mobile) { display: none; }
+    @include for-size(mobile) {
+      display: none;
+    }
 
     .app-container {
-        @include flex-box(column, center, center);
-        @include size-position(auto, auto, 4rem 15rem 4rem 0, relative);
-        text-align: center;
+      @include flex-box(column, center, center);
+      @include size-position(auto, auto, 4rem 15rem 4rem 0, relative);
+      text-align: center;
 
-        .text-box { display: inline-block; }
- 
-            h2  { 
-                @include font-style($main-font, $main-text-color, 2.5vw);
-                margin: 0 0 2rem 0; 
-                display: inline-block;
-            }
+      .text-box {
+        display: inline-block;
+      }
 
-            #blue-text2 { @include font-style($main-font, $alp-contrast, 2.5vw); }
+      h2 {
+        @include font-style($main-font, $main-text-color, 2.5vw);
+        margin: 0 0 2rem 0;
+        display: inline-block;
+      }
 
-            p { 
-                @include font-style($secondary-font, $main-text-color, 1.5vw); 
-                margin: 0;
-            }
-        
-            #blue-text { 
-                @include font-style($secondary-font, $alp-contrast, 1.5vw); 
-                margin: 0 0 2rem 0;
+      #blue-text2 {
+        @include font-style($main-font, $alp-contrast, 2.5vw);
+      }
+
+      p {
+        @include font-style($secondary-font, $main-text-color, 1.5vw);
+        margin: 0;
+      }
+
+      #blue-text {
+        @include font-style($secondary-font, $alp-contrast, 1.5vw);
+        margin: 0 0 2rem 0;
+      }
+
+      .app-links {
+        @include flex-box(row, center, center);
+
+        img {
+          @include size-position(13rem, auto, 1rem);
+          border-radius: 1vw;
         }
-
-        .app-links { @include flex-box(row, center, center);
-
-            img { 
-                @include size-position(13rem, auto, 1rem);
-                border-radius: 1vw;
-             }
-        }
+      }
     }
-    
+
     .app-container2 {
-        @include flex-box(initial, center, center);
-        position: relative;
+      @include flex-box(initial, center, center);
+      position: relative;
 
-        #app-screen { width: 17vw; }
+      #app-screen {
+        width: 17vw;
+      }
     }
-}
+  }
 
-.app-visible { opacity:0; transition: opacity 1s; }
-.slide { animation: slide 1s; opacity: 1; }
+  .app-visible {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .slide {
+    animation: slide 1s;
+    opacity: 1;
+  }
 }
 
 /* ABOUT */
 
 #about {
+  .mobile-about-full {
+    @include flex-box(column, center, center);
+    background-color: black;
+    @extend %full;
+    display: none;
+    @include for-size(mobile) {
+      display: flex;
+    }
 
-    .mobile-about-full {
-        @include flex-box(column, center, center);
-        background-color: black;
-        @extend %full;
+    .about-alp-video-portrait {
+      @include size-position(100%, auto);
+      display: none;
+      @include for-size(mobile) {
+        display: flex;
+      }
+      @include for-size(tablet-land) {
         display: none;
-        @include for-size(mobile) { display: flex; }
-
-        .about-alp-video-portrait {
-            @include size-position(100%, auto);
-            display: none;
-            @include for-size(mobile) { display: flex; }
-            @include for-size(tablet-land) { display: none; }
-        }
-
-        .about-alp-video {
-            @include size-position(100%, auto);
-            display: none;
-            @include for-size(mobile) { display: none; }
-            @include for-size(tablet-land) { display: flex; }
-        }
+      }
     }
 
-    .about-under-nav {
-        @include flex-box(column, center, center);
-        @include size-position(100%, $desktop-height, auto);
-        background-color: black;
-        @include for-size(mobile) { display: none; height: 100%; }
-
-        .about-alp-video {
-            height: 80%;
-            outline: none;
-        }
+    .about-alp-video {
+      @include size-position(100%, auto);
+      display: none;
+      @include for-size(mobile) {
+        display: none;
+      }
+      @include for-size(tablet-land) {
+        display: flex;
+      }
     }
+  }
+
+  .about-under-nav {
+    @include flex-box(column, center, center);
+    @include size-position(100%, $desktop-height, auto);
+    background-color: black;
+    @include for-size(mobile) {
+      display: none;
+      height: 100%;
+    }
+
+    .about-alp-video {
+      height: 80%;
+      outline: none;
+    }
+  }
 }
 
 /* CLIENTS */
 
 #clients {
+  //Mobile Clients Page
 
-//Mobile Clients Page
+  .mobile-clients-full {
+    background-color: white;
+    @extend %full;
+    display: none;
+    @include for-size(mobile) {
+      @include flex-box(column, center, center);
+    }
 
-.mobile-clients-full {  
-        background-color: white;
-        @extend %full;
-        display: none;
-        @include for-size(mobile) { @include flex-box(column, center, center); }
-
-        h1 { 
-            font-family: sans-serif; 
-            @include for-size(mobile) { display: flex; } 
-            @include for-size(tablet-port) { font-size: 2rem; } 
-            @include for-size(phone-port) { font-size: 1.5rem; }
-        }
+    h1 {
+      font-family: sans-serif;
+      @include for-size(mobile) {
+        display: flex;
+      }
+      @include for-size(tablet-port) {
+        font-size: 2rem;
+      }
+      @include for-size(phone-port) {
+        font-size: 1.5rem;
+      }
+    }
 
     #client-pic-small {
-        width: 75%;
-        @include for-size(mobile) { display: flex; }
-        @include for-size(tablet-land) { display: none; }
+      width: 75%;
+      @include for-size(mobile) {
+        display: flex;
+      }
+      @include for-size(tablet-land) {
+        display: none;
+      }
     }
 
     #client-pic-land {
-        width: 90%;
-        @include for-size(mobile) { display: none; }
-        @include for-size(tablet-land) { display: flex; }
+      width: 90%;
+      @include for-size(mobile) {
+        display: none;
+      }
+      @include for-size(tablet-land) {
+        display: flex;
+      }
     }
-}
+  }
 
+  // Desktop Clients Page
 
-// Desktop Clients Page 
-
-    .clients-under-nav {
-        @include flex-box(initial, center, center);
-        @include size-position(100%, $desktop-height, auto);
-        overflow: hidden;
-        @include for-size(mobile) {display: none; }
+  .clients-under-nav {
+    @include flex-box(initial, center, center);
+    @include size-position(100%, $desktop-height, auto);
+    overflow: hidden;
+    @include for-size(mobile) {
+      display: none;
+    }
 
     #client-pic {
-        width: 75%;
-        transition: width 1s;
-        @include for-size(mobile) { display: none; }
+      width: 75%;
+      transition: width 1s;
+      @include for-size(mobile) {
+        display: none;
+      }
     }
 
-    .client-grow { animation: grow 2s; }
-}
+    .client-grow {
+      animation: grow 2s;
+    }
+  }
 }
 
 /* TEAM */
 
-#team { @include for-size(tablet-land) { background-color: black; color: white; @include flex-box(initial, center, center) }
+#team {
+  @include for-size(tablet-land) {
+    background-color: black;
+    color: white;
+    @include flex-box(initial, center, center);
+  }
 
-.mobile-team-full {
-    @include flex-box(column, center, center); 
+  .mobile-team-full {
+    @include flex-box(column, center, center);
     background-color: black;
     @extend %full;
     display: none;
-    @include for-size(tablet-port) { display: flex; }
+    @include for-size(tablet-port) {
+      display: flex;
+    }
 
-.mobile-team {
-    @include size-position(100%, 100%, auto, relative);
-    background-color: black;
-    overflow-y: hidden;
-    max-height: 100vh;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    display: none;
-    @include for-size(tablet-port) { @include flex-box(initial, initial, center); }
+    .mobile-team {
+      @include size-position(100%, 100%, auto, relative);
+      background-color: black;
+      overflow-y: hidden;
+      max-height: 100vh;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      display: none;
+      @include for-size(tablet-port) {
+        @include flex-box(initial, initial, center);
+      }
 
-    .m-team-pic-container {
+      .m-team-pic-container {
         @include flex-box(column, center, center);
         @include size-position(100%, auto, 0);
         scroll-snap-align: start;
@@ -585,209 +773,307 @@ html {
         max-height: 100%;
 
         #team-title {
-            height: 4rem;
-            @include font-style(sans-serif, white, 1rem);
-            display: none;
-            position: relative;
-            @include for-size(tablet-port) { 
-                display: flex; 
-                font-size: 2rem;
-            }
-            @include for-size(phone-port) { font-size: 1rem; }
+          height: 4rem;
+          @include font-style(sans-serif, white, 1rem);
+          display: none;
+          position: relative;
+          @include for-size(tablet-port) {
+            display: flex;
+            font-size: 2rem;
+          }
+          @include for-size(phone-port) {
+            font-size: 1rem;
+          }
         }
 
-    .m-team-pic { width: 75%; }
-
-    .m-team-pic-small { width: 50%; display: none; }
-
-    .mob-name-container {
-        @include flex-box(row, center, center);
-
-        .circle-right { @include size-position(1.5rem, auto, 0 0 0 1rem) }
-        .circle-left { @include size-position(1.5rem, auto, 0 1rem 0 0) }
-    }
-
-    .mob-hidden { 
-        @include flex-box(row, center, center);
-        margin: 0 2rem;
-        display: none;
-    }
-
-        p { 
-            @include font-style(sans-serif, white, 1rem); 
-            @include for-size(tablet-port) { font-size: 2rem; }
-            @include for-size(phone-port) { font-size: 1rem; }
+        .m-team-pic {
+          width: 75%;
         }
-    }
-    }
-}
 
-.full-team-under-nav { 
+        .m-team-pic-small {
+          width: 50%;
+          display: none;
+        }
+
+        .mob-name-container {
+          @include flex-box(row, center, center);
+
+          .circle-right {
+            @include size-position(1.5rem, auto, 0 0 0 1rem);
+          }
+          .circle-left {
+            @include size-position(1.5rem, auto, 0 1rem 0 0);
+          }
+        }
+
+        .mob-hidden {
+          @include flex-box(row, center, center);
+          margin: 0 2rem;
+          display: none;
+        }
+
+        p {
+          @include font-style(sans-serif, white, 1rem);
+          @include for-size(tablet-port) {
+            font-size: 2rem;
+          }
+          @include for-size(phone-port) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .full-team-under-nav {
     display: block;
 
-    @include for-size(tablet-port) { display: none; }
-    @include for-size(tablet-land) { height: 511px }
+    @include for-size(tablet-port) {
+      display: none;
+    }
+    @include for-size(tablet-land) {
+      height: 511px;
+    }
 
     .learn-more {
-        @include flex-box(row, center, center);
-        @include size-position(100%, 8vh, 0);
-        @include font-style($main-font, $main-text-color, 1vw);
-        @include for-size(tablet-land) { color: white; font-size: 2vw; }
+      @include flex-box(row, center, center);
+      @include size-position(100%, 8vh, 0);
+      @include font-style($main-font, $main-text-color, 1vw);
+      @include for-size(tablet-land) {
+        color: white;
+        font-size: 2vw;
+      }
 
-        .blue-text { color: $alp-color; }
+      .blue-text {
+        color: $alp-color;
+      }
     }
 
     .team-under-nav {
-        @include flex-box(column, center, center, nowrap);
-        @include size-position(100%, 75%, auto, relative);
-        overflow: hidden;
+      @include flex-box(column, center, center, nowrap);
+      @include size-position(100%, 75%, auto, relative);
+      overflow: hidden;
 
-        .team-photo-container { @include flex-box(row, center, center);
-            
-            #darrell-animation, #nick-animation, #dave-animation {
-                flex-direction: column;
-                min-height: 100%;
-            
-                #darrell, #nick, #dave  { 
-                    @include size-position(24.2vw, auto, 0 1em);
-                    cursor: pointer;
-                    max-width: 100%;
-                }
+      .team-photo-container {
+        @include flex-box(row, center, center);
 
-                .name { 
-                    @include flex-box(row, center, center);
-                    @include font-style($secondary-font, $main-text-color, 1.8vw); }
-                    @include for-size(tablet-land) { color: white; }
-            }
+        #darrell-animation,
+        #nick-animation,
+        #dave-animation {
+          flex-direction: column;
+          min-height: 100%;
 
-            p { 
-                margin: 0;
-                @include for-size(tablet-land) { color: white; }
-            }
-                
-                .blue-text {
-                    @include font-style($main-font, $alp-color, 1.3vw);
-                    font-style: italic;
-                    margin: 0; 
-                }
+          #darrell,
+          #nick,
+          #dave {
+            @include size-position(24.2vw, auto, 0 1em);
+            cursor: pointer;
+            max-width: 100%;
+          }
 
-            #darrell-info, #nick-info, #dave-info {
-                @include font-style($secondary-font, $main-text-color, 1.8vw);
-                width: 40rem;
-                max-width: 50vw;
-                max-height: 20vw;
-                @include for-size(tablet-land) { color: white; }
-
-                .blue-text { 
-                    @include font-style($secondary-font, $alp-color, 1.8vw);
-                    margin: 0;
-                    display: inline-block;
-                }
-            }
-            
-            .hidden { display: none; }
-            }
+          .name {
+            @include flex-box(row, center, center);
+            @include font-style($secondary-font, $main-text-color, 1.8vw);
+          }
+          @include for-size(tablet-land) {
+            color: white;
+          }
         }
+
+        p {
+          margin: 0;
+          @include for-size(tablet-land) {
+            color: white;
+          }
+        }
+
+        .blue-text {
+          @include font-style($main-font, $alp-color, 1.3vw);
+          font-style: italic;
+          margin: 0;
+        }
+
+        #darrell-info,
+        #nick-info,
+        #dave-info {
+          @include font-style($secondary-font, $main-text-color, 1.8vw);
+          width: 40rem;
+          max-width: 50vw;
+          max-height: 20vw;
+          @include for-size(tablet-land) {
+            color: white;
+          }
+
+          .blue-text {
+            @include font-style($secondary-font, $alp-color, 1.8vw);
+            margin: 0;
+            display: inline-block;
+          }
+        }
+
+        .hidden {
+          display: none;
+        }
+      }
     }
+  }
 }
 
 /* Contact */
 
 #contact {
-
-    .contact-under-nav { 
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        @include for-size(mobile) {         
-            @include flex-box(column, center, center); 
-            background-color: white;
-        }
-
-        .form-link { 
-            margin-top: .5rem;
-            display: block;
-            @include for-size(mobile) {            
-                height: 100%;
-                @include flex-box(column, center, center);
-            }
-
-        form { 
-            margin-top: 2rem;
-            margin-left: 1rem;
-            @include font-style($main-font, $main-text-color, 1.5rem);
-            @include for-size(mobile) { font-family: sans-serif; };
-
-            label {
-                margin: 0;
-                height: auto;
-                @include for-size(mobile) { font-family: sans-serif; };
-            }
-
-            input::placeholder { color: $alp-contrast; }
-            textarea::placeholder { color: $alp-contrast; vertical-align: center; }
-
-            input[type=text] {
-                &:focus { border: $contact-border }
-                @extend %form-param;
-                @include for-size(tablet-port) { height: 4rem;  }
-                @include for-size(mobile) { width: 75vw; height: 2rem; }
-            }
-
-            input[type=email] {
-                &:focus { border: $contact-border }
-                @extend %form-param;
-                @include for-size(tablet-port) { height: 4rem;  }
-                @include for-size(mobile) { width: 75vw; height: 2rem; }
-            }
-
-            textarea {    
-                &:focus { border: $contact-border }             
-                @extend %form-param; 
-                height: 8rem;
-
-                @include for-size(tablet-port) { height: 10rem;  }
-                @include for-size(mobile) { width: 75vw; height: 6rem; }
-            }
-
-            button[type=submit] {
-                &:hover { background-color: $alp-color; }
-                &:active { margin: 1rem 0 .5rem 0; box-shadow: 0px 0px; }
-                @include size-position(15vw, 4vw, .5rem 0 1rem 0);
-                @extend %form-param;
-                cursor: pointer;
-                font-size: 1.5vw;
-                border-radius: 10px;
-                background-color: white;
-                @include for-size(mobile) { width: 12rem; height: 4rem; font-family: sans-serif; font-size: 1.5rem; }
-
-            }
-        }
-
-        .links { 
-            text-align: center;
-            margin-left: .7rem;
-            padding: 0;
-            
-            .small-link {
-                display: inline-block;
-                width: 5vw;
-                @include for-size(mobile) { width: 3rem; }
-                @include for-size(tablet-port) { width: 5rem;  }
-            }
-        }
+  .contact-under-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    @include for-size(mobile) {
+      @include flex-box(column, center, center);
+      background-color: white;
     }
-}
+
+    .form-link {
+      margin-top: 0.5rem;
+      display: block;
+      @include for-size(mobile) {
+        height: 100%;
+        @include flex-box(column, center, center);
+      }
+
+      form {
+        margin-top: 2rem;
+        margin-left: 1rem;
+        @include font-style($main-font, $main-text-color, 1.5rem);
+        @include for-size(mobile) {
+          font-family: sans-serif;
+        }
+
+        label {
+          margin: 0;
+          height: auto;
+          @include for-size(mobile) {
+            font-family: sans-serif;
+          }
+        }
+
+        input::placeholder {
+          color: $alp-contrast;
+        }
+        textarea::placeholder {
+          color: $alp-contrast;
+          vertical-align: center;
+        }
+
+        input[type="text"] {
+          &:focus {
+            border: $contact-border;
+          }
+          @extend %form-param;
+          @include for-size(tablet-port) {
+            height: 4rem;
+          }
+          @include for-size(mobile) {
+            width: 75vw;
+            height: 2rem;
+          }
+        }
+
+        input[type="email"] {
+          &:focus {
+            border: $contact-border;
+          }
+          @extend %form-param;
+          @include for-size(tablet-port) {
+            height: 4rem;
+          }
+          @include for-size(mobile) {
+            width: 75vw;
+            height: 2rem;
+          }
+        }
+
+        textarea {
+          &:focus {
+            border: $contact-border;
+          }
+          @extend %form-param;
+          height: 8rem;
+
+          @include for-size(tablet-port) {
+            height: 10rem;
+          }
+          @include for-size(mobile) {
+            width: 75vw;
+            height: 6rem;
+          }
+        }
+
+        button[type="submit"] {
+          &:hover {
+            background-color: $alp-color;
+          }
+          &:active {
+            margin: 1rem 0 0.5rem 0;
+            box-shadow: 0px 0px;
+          }
+          @include size-position(15vw, 4vw, 0.5rem 0 1rem 0);
+          @extend %form-param;
+          cursor: pointer;
+          font-size: 1.5vw;
+          border-radius: 10px;
+          background-color: white;
+          @include for-size(mobile) {
+            width: 12rem;
+            height: 4rem;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .links {
+        text-align: center;
+        margin-left: 0.7rem;
+        padding: 0;
+
+        .small-link {
+          display: inline-block;
+          width: 5vw;
+          @include for-size(mobile) {
+            width: 3rem;
+          }
+          @include for-size(tablet-port) {
+            width: 5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Scrollbar */
 
-::-webkit-scrollbar { width: 1vw; z-index: 5; @include for-size(mobile) { display: none; } }
+::-webkit-scrollbar {
+  width: 1vw;
+  z-index: 5;
+  @include for-size(mobile) {
+    display: none;
+  }
+}
 
-::-webkit-scrollbar-track { background: $third-accent; @include for-size(mobile) { display: none; } }  
+::-webkit-scrollbar-track {
+  background: $third-accent;
+  @include for-size(mobile) {
+    display: none;
+  }
+}
 
 ::-webkit-scrollbar-thumb {
-    &:hover { background: $alp-color; }
-    background: $alp-contrast; 
-    @include for-size(mobile) { display: none; } }
+  &:hover {
+    background: $alp-color;
+  }
+  background: $alp-contrast;
+  @include for-size(mobile) {
+    display: none;
+  }
+}

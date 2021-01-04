@@ -1,6 +1,11 @@
 /* MIXIN */
 
-@mixin flex-box($flex-direction: initial, $justify-content: initial, $align-items: initial, $flex-wrap: initial) {
+@mixin flex-box(
+  $flex-direction: initial,
+  $justify-content: initial,
+  $align-items: initial,
+  $flex-wrap: initial
+) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
@@ -17,7 +22,9 @@
 }
 
 @mixin note-style($left) {
-  &:hover { width: 6rem; }
+  &:hover {
+    width: 6rem;
+  }
   left: $left;
   width: 5rem;
   transform: translateY(-100vh);
@@ -42,28 +49,37 @@
 }
 
 @mixin for-size($size) {
-    @if $size == mobile {
-    @media (max-width: 1025px) { @content; }
-
-    } @else if $size == tablet-land {
-      @media (max-width: 1025px) and (orientation: landscape) { @content; }
-
-    } @else if $size == phone-port {
-      @media (max-width: 550px) and (orientation: portrait) { @content; }
-
-    } @else if $size == phone-land {
-      @media (max-width: 850px) and (orientation: landscape) { @content; }
-
-    } @else if $size == tablet-port {
-      @media (max-width: 1025px) and (orientation: portrait) { @content; }
-
-    } @else if $size == tablet-down2 {
-      @media (max-width: 1400px) { @content; }
-
-    } @else if $size == tablet-down1 {
-      @media (max-width: 1600px) { @content; }
-      
-    } @else if $size == big-desktop-up {
-      @media (min-width: 2000px) { @content; }
+  @if $size == mobile {
+    @media (max-width: 1025px) {
+      @content;
     }
+  } @else if $size == tablet-land {
+    @media (max-width: 1025px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $size == phone-port {
+    @media (max-width: 550px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $size == phone-land {
+    @media (max-width: 850px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $size == tablet-port {
+    @media (max-width: 1025px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $size == tablet-down2 {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  } @else if $size == tablet-down1 {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 2000px) {
+      @content;
+    }
+  }
 }
