@@ -395,6 +395,7 @@ html {
       @include size-position(100%, auto, auto, absolute);
       opacity: 0.1;
       display: none;
+      z-index: 0;
       @include for-size(mobile) {
         display: flex;
       }
@@ -509,6 +510,26 @@ html {
 
       .app-links {
         @include flex-box(row, center, center);
+        z-index: 1;
+        img {
+          @include size-position(7rem, auto, 1rem);
+          border-radius: 0.5rem;
+          @include for-size(tablet-port) {
+            width: 12rem;
+          }
+          @include for-size(phone-port) {
+            width: 7rem;
+          }
+          @include for-size(tablet-land) {
+            width: 12rem;
+          }
+        }
+      }
+      .app-links-mobile {
+        @include flex-box(row, center, center);
+        a {
+          z-index: 2;
+        }
 
         img {
           @include size-position(7rem, auto, 1rem);

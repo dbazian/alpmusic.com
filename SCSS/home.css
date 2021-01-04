@@ -944,6 +944,7 @@ html body .active-link {
   position: absolute;
   opacity: 0.1;
   display: none;
+  z-index: 0;
 }
 
 @media (max-width: 1025px) {
@@ -1194,6 +1195,7 @@ html body .active-link {
           align-items: center;
   -ms-flex-wrap: initial;
       flex-wrap: initial;
+  z-index: 1;
 }
 
 #app .mobile-app-full .app-container .app-links img {
@@ -1218,6 +1220,54 @@ html body .active-link {
 
 @media (max-width: 1025px) and (orientation: landscape) {
   #app .mobile-app-full .app-container .app-links img {
+    width: 12rem;
+  }
+}
+
+#app .mobile-app-full .app-container .app-links-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: initial;
+      flex-wrap: initial;
+}
+
+#app .mobile-app-full .app-container .app-links-mobile a {
+  z-index: 2;
+}
+
+#app .mobile-app-full .app-container .app-links-mobile img {
+  width: 7rem;
+  height: auto;
+  margin: 1rem;
+  position: static;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 1025px) and (orientation: portrait) {
+  #app .mobile-app-full .app-container .app-links-mobile img {
+    width: 12rem;
+  }
+}
+
+@media (max-width: 550px) and (orientation: portrait) {
+  #app .mobile-app-full .app-container .app-links-mobile img {
+    width: 7rem;
+  }
+}
+
+@media (max-width: 1025px) and (orientation: landscape) {
+  #app .mobile-app-full .app-container .app-links-mobile img {
     width: 12rem;
   }
 }
